@@ -1,3 +1,4 @@
+import json
 import numpy as np
 import pandas as pd
 
@@ -36,6 +37,12 @@ print("converting price euro to price in dollars ...")
 df['Price'] = df['Price_euros'].apply(lambda x: round(x * 1.19, 2))
 df.drop(columns=['Price_euros'], inplace=True)
 
+# identify categorical and numerical columns
+print("identifying categorical and numerical columns ...")
+categorical = df.select_dtypes(include=['object', 'category']).columns.to_list()
+numerical = df.select_dtypes(include=['int', 'float']).columns.to_list()
+output_data = {'categorical': categorical, 'numerical': numerical}
+
 # dictionary to store mappings
 mappings = {}
 # convert non-numeric data columns to categorical data
@@ -51,8 +58,21 @@ for col in df.columns:
 print(f"exporting {EXPORT} ...")
 df.to_csv(EXPORT, index=False)
 
+# export categorical and numerical columns to a JSON file
+print("exporting categorical and numerical columns ...")
+with open('data/metadata.json', 'w') as f:
+    json.dump(output_data, f, indent=4)
+
 # export mappings to a JSON file
 print("exporting mappings ...")
-import json
 with open('data/mappings.json', 'w') as f:
-    json.dump(mappings, f)
+    json.dump(mappings, f, indent=4)
+
+# print metadata like the number of rows, columns, number of mappings, number of numerical and categorical columns
+print("\nmetadata:")
+print(f"rows: {df.shape[0]}")
+print(f"columns: {df.shape[1]}")
+print(f"mappings: {len(mappings)}")
+print(f"categorical columns: {len(categorical)}")
+print(f"numerical columns: {len(numerical)}")
+print("done.\n")

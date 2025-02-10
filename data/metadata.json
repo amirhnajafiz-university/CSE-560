@@ -1,0 +1,25 @@
+{
+    "categorical": [
+        "Company",
+        "Model",
+        "Laptop",
+        "OS",
+        "Screen",
+        "CPU Company",
+        "CPU Model",
+        "Primary Storage Type",
+        "GPU Company",
+        "GPU Model"
+    ],
+    "numerical": [
+        "Screen Size",
+        "RAM",
+        "Weight",
+        "Screen Width",
+        "Screen Height",
+        "CPU Frequency",
+        "Primary Storage",
+        "Secondary Storage",
+        "Price"
+    ]
+}
