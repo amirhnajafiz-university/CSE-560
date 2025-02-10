@@ -69,10 +69,5 @@ with open('data/mappings.json', 'w') as f:
     json.dump(mappings, f, indent=4)
 
 # print metadata like the number of rows, columns, number of mappings, number of numerical and categorical columns
-print("\nmetadata:")
-print(f"rows: {df.shape[0]}")
-print(f"columns: {df.shape[1]}")
-print(f"mappings: {len(mappings)}")
-print(f"categorical columns: {len(categorical)}")
-print(f"numerical columns: {len(numerical)}")
-print("done.\n")
+print(f"\nrows: {df.shape[0]}", f"columns: {df.shape[1]}", f"mappings: {len(mappings)}")
+print(f"categorical columns: {len(categorical)}", f"numerical columns: {len(numerical)}")
