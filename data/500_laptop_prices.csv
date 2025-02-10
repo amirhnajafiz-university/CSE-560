@@ -1,501 +1,501 @@
 Company,Model,Laptop,Screen Size,RAM,OS,Weight,Screen,Screen Width,Screen Height,CPU Company,CPU Frequency,CPU Model,Primary Storage,Secondary Storage,Primary Storage Type,GPU Company,GPU Model,Price
-Dell,Inspiron 7560,Notebook,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.7,Core i7 7500U,128,1024,SSD,Nvidia,GeForce 940MX,1436.33
-Dell,Latitude 3380,Notebook,13.3,4,Windows 10,1.65,Standard,1366,768,Intel,2.0,Core i3 6006U,128,0,SSD,Intel,HD Graphics 520,819.91
-Toshiba,Portégé Z30-C-16K,Ultrabook,13.3,8,Windows 10,1.2,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1892.1
-Lenovo,ThinkPad E480,Notebook,14.0,8,Windows 10,1.75,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,1248.31
-HP,15-bs025nv (i5-7200U/8GB/256GB/W10),Notebook,15.6,8,Windows 10,1.91,Standard,1366,768,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,689.01
-Dell,Latitude E5270,Ultrabook,12.5,4,Windows 7,1.5,Standard,1366,768,Intel,2.3,Core i3 6100U,500,0,HDD,Intel,HD Graphics 520,1350.83
-Dell,Inspiron 7378,2 in 1 Convertible,13.3,12,Windows 10,1.6,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1545.81
-HP,Probook 450,Notebook,15.6,8,Windows 10,2.04,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 930MX,1057.91
-HP,Pavilion X360,2 in 1 Convertible,13.3,8,Windows 10,1.58,Standard,1366,768,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,995.55
-MSI,PL60 7RD,Gaming,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.7,Core i7 7500U,1024,0,HDD,Nvidia,GeForce GTX 1050,998.41
-Toshiba,Portege Z30-C-1CV,Notebook,13.3,4,Windows 7,1.2,Full HD,1920,1080,Intel,2.3,Core i5 6200U,128,0,SSD,Intel,HD Graphics 520,1422.05
-Toshiba,Satellite Pro,Notebook,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1122.17
-Dell,Vostro 3568,Notebook,15.6,4,Linux,2.18,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,AMD,Radeon R5 M420,553.35
-Lenovo,IdeaPad Y900-17ISK,Gaming,17.3,16,Windows 10,4.6,Full HD,1920,1080,Intel,2.7,Core i7 6820HK,256,1024,SSD,Nvidia,GeForce GTX 980M,3272.49
-Lenovo,Ideapad 700-15ISK,Notebook,15.6,4,Windows 10,2.3,Full HD,1920,1080,Intel,2.3,Core i5 6300HQ,1024,0,HDD,Nvidia,GeForce GTX 950M,1162.63
-Toshiba,Satellite Pro,Notebook,15.6,8,Windows 10,2.2,Standard,1366,768,Intel,2.5,Core i7 6500U,500,0,HDD,Nvidia,GeForce 930M,966.28
-HP,EliteBook 840,Notebook,14.0,8,Windows 10,1.48,Full HD,1920,1080,Intel,2.6,Core i5 7300U,256,0,SSD,Intel,HD Graphics 620,1508.92
-HP,EliteBook 850,Ultrabook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,1652.91
-Asus,FX553VD-DM627T (i5-7300HQ/8GB/1TB,Notebook,15.6,8,Windows 10,2.5,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,128,1024,SSD,Nvidia,GeForce GTX 1050,998.41
-HP,17-bs001nv (i5-7200U/6GB/2TB/Radeon,Notebook,17.3,6,Windows 10,2.71,Full HD,1920,1080,Intel,2.5,Core i5 7200U,2048,0,HDD,AMD,Radeon 520,831.81
-Lenovo,IdeaPad 320-17IKBR,Notebook,17.3,8,No OS,2.8,Full HD,1920,1080,Intel,1.8,Core i7 8550U,2048,0,HDD,Nvidia,GeForce MX150,1010.31
-HP,Elitebook 820,Netbook,12.5,4,Windows 7,2.4,Standard,1366,768,Intel,2.3,Core i5 6200U,128,0,SSD,Intel,HD Graphics 520,1902.81
-Acer,Aspire E5-576G,Notebook,15.6,8,Windows 10,2.23,Full HD,1920,1080,Intel,2.7,Core i7 7500U,1024,0,HDD,Nvidia,GeForce 940MX,882.98
-Lenovo,IdeaPad 320-15IKBN,Notebook,15.6,8,No OS,2.2,Full HD,1920,1080,Intel,2.5,Core i5 7200U,2048,0,HDD,Intel,HD Graphics 620,617.61
-HP,EliteBook 820,Ultrabook,12.5,8,Windows 10,1.26,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1605.31
-HP,EliteBook 820,Ultrabook,12.5,4,Windows 10,1.26,Full HD,1920,1080,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,1879.01
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,16,Windows 10,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,0,SSD,Nvidia,GeForce GTX 1050 Ti,1284.01
-Lenovo,B51-80 (i5-6200U/8GB/1008GB/Radeon,Notebook,15.6,8,Windows 10,2.5,Full HD,1920,1080,Intel,2.3,Core i5 6200U,1024,0,Hybrid,AMD,Radeon R5 M330,938.3
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.21,4K Ultra HD,3840,2160,Intel,1.6,Core i5 8250U,128,0,SSD,Intel,UHD Graphics 620,1902.81
-MSI,GS63VR 7RG,Gaming,15.6,16,Windows 10,1.8,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,2048,SSD,Nvidia,GeForce GTX 1070,2667.38
-Acer,Aspire 3,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.0,Celeron Dual Core N3350,500,0,HDD,Intel,HD Graphics 500,396.27
-Lenovo,ThinkPad X1,Ultrabook,14.0,8,Windows 10,1.13,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,Flash Storage,Intel,HD Graphics 620,2231.25
-Acer,Aspire E5-475,Notebook,14.0,8,Windows 10,2.1,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,462.91
-HP,ProBook 450,Notebook,15.6,8,Windows 10,2.04,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Nvidia,GeForce 930MX,1212.6
-Acer,Aspire 3,Notebook,15.6,4,Windows 10,2.4,Standard,1366,768,Intel,2.4,Core i3 7100U,1024,0,HDD,Intel,HD Graphics 620,456.96
-HP,EliteBook 1040,Notebook,14.0,8,Windows 7,1.43,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1748.11
-MSI,GS70 Stealth,Gaming,17.3,8,Windows 10,2.6,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,0,SSD,Nvidia,GeForce GTX 965M,1902.81
-HP,EliteBook Folio,Netbook,12.5,8,Windows 10,0.97,Full HD,1920,1080,Intel,1.2,Core M 6Y75,512,0,SSD,Intel,HD Graphics 515,2270.52
-HP,15-cb003na (i5-7300HQ/8GB/1TB,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,128,1024,SSD,Nvidia,GeForce GTX 1050,1307.81
-Lenovo,Thinkpad X1,Ultrabook,14.0,8,Windows 10,1.13,Standard,2560,1440,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2715.58
-Asus,G701VO-IH74K (i7-6820HK/32GB/2x,Gaming,17.3,32,Windows 10,3.58,Full HD,1920,1080,Intel,2.7,Core i7 6820HK,256,256,SSD,Nvidia,GeForce GTX 980M,1522.01
-Dell,XPS 13,Ultrabook,13.3,16,Windows 10,1.21,4K Ultra HD,3840,2160,Intel,1.8,Core i7 8550U,1024,0,SSD,Intel,UHD Graphics 620,2973.81
-Lenovo,ThinkPad T470s,Ultrabook,14.0,16,Windows 10,1.7,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2735.81
-Asus,VivoBook E201NA,Netbook,11.6,4,Windows 10 S,1.2,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,64,0,Flash Storage,Intel,HD Graphics 500,404.6
-Dell,Vostro 5568,Notebook,15.6,8,Windows 10,2.18,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Nvidia,GeForce 940MX,1201.78
-Apple,"MacBook 12""",Ultrabook,12.0,8,Mac OS X,0.92,Standard,2304,1440,Intel,1.1,Core M,256,0,Flash Storage,Intel,HD Graphics 515,1547.0
-Dell,Latitude 3480,Notebook,14.0,4,Windows 10,1.76,Standard,1366,768,Intel,2.0,Core i3 6006U,500,0,HDD,Intel,HD Graphics 520,696.15
-Acer,Aspire E5-575,Notebook,15.6,4,Windows 10,2.4,Full HD,1920,1080,Intel,2.4,Core i3 7100U,1024,0,HDD,Intel,HD Graphics 620,593.81
-Microsoft,Surface Laptop,Ultrabook,13.5,4,Windows 10 S,1.252,Standard,2256,1504,Intel,2.5,Core i5 7200U,128,0,SSD,Intel,HD Graphics 620,1295.91
-Dell,Inspiron 3552,Notebook,15.6,4,Windows 10,2.2,Standard,1366,768,Intel,1.6,Pentium Quad Core N3700,500,0,HDD,Intel,HD Graphics,528.35
-Lenovo,Thinkpad T560,Notebook,15.6,8,Windows 10,2.3,Full HD,1920,1080,Intel,2.6,Core i7 6600U,256,0,SSD,Intel,HD Graphics 520,1819.51
-Acer,TravelMate P238-M,Notebook,13.3,4,Windows 10,1.6,Standard,1366,768,Intel,2.3,Core i5 6200U,128,0,SSD,Intel,HD Graphics 520,779.45
-Lenovo,Yoga 500-15ISK,2 in 1 Convertible,15.6,4,Windows 10,1.8,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1007.93
-Asus,X556UJ-XO044T (i7-6500U/4GB/500GB/GeForce,Notebook,15.6,4,Windows 10,2.2,Standard,1366,768,Intel,2.5,Core i7 6500U,500,0,HDD,Nvidia,GeForce 920M,857.18
-Lenovo,Yoga 910-13IKB,2 in 1 Convertible,14.0,16,Windows 10,1.38,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2081.31
-HP,ProBook 470,Notebook,17.3,8,Windows 10,2.63,Standard,1600,900,Intel,2.5,Core i5 7200U,1024,0,HDD,Nvidia,GeForce 930MX,1082.9
-Dell,Alienware 17,Gaming,17.3,32,Windows 10,4.42,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,3332.0
-Dell,Vostro 3568,Notebook,15.6,4,Linux,2.18,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,528.24
-Acer,Aspire ES1-572,Notebook,15.6,4,Windows 10,2.4,Standard,1366,768,Intel,2.0,Core i3 6006U,500,0,HDD,Intel,HD Graphics 520,488.85
-Acer,Chromebook 14,Notebook,14.0,4,Chrome OS,1.45,Standard,1366,768,Intel,1.6,Celeron Dual Core 3855U,32,0,Flash Storage,Intel,HD Graphics 510,446.25
-HP,Pavilion X360,2 in 1 Convertible,14.0,4,Windows 10,1.63,Full HD,1920,1080,Intel,2.4,Core i3 7100U,128,0,SSD,Nvidia,GeForce 940MX,831.81
-Lenovo,ThinkPad E480,Notebook,14.0,8,Windows 10,1.75,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,AMD,Radeon RX 550,1328.06
-HP,EliteBook 840,Notebook,14.0,4,Windows 10,1.54,Full HD,1920,1080,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,1190.0
-Acer,Aspire A315-51,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.0,Core i3 6006U,128,0,SSD,Intel,HD Graphics 520,534.31
-Lenovo,IdeaPad Y700-15ACZ,Gaming,15.6,16,Windows 10,2.5,Full HD,1920,1080,AMD,2.1,FX 8800P,512,1024,SSD,AMD,Radeon R9 M385,1188.81
-HP,Pavilion x360,2 in 1 Convertible,15.6,4,Windows 10,2.3,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,814.91
-HP,Omen 17-w207nv,Gaming,17.3,12,Windows 10,3.35,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,2378.81
-HP,15-bw003nv (A9-Series-9420/4GB/256GB/FHD/W10),Notebook,15.6,4,Windows 10,1.91,Full HD,1920,1080,AMD,3.0,A9-Series 9420,256,0,SSD,AMD,Radeon R5,581.9
-Asus,ZenBook 3,Ultrabook,14.0,16,Windows 10,1.1,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2261.0
-Asus,X541NA-GO414T (N3350/8GB/1TB/W10),Notebook,15.6,8,Windows 10,2.0,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,1024,0,HDD,Intel,HD Graphics 500,474.81
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,16,Windows 10,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1050 Ti,1403.01
-Lenovo,B51-80 (i7-6500U/8GB/1008GB/Radeon,Notebook,15.6,8,Windows 7,2.32,Full HD,1920,1080,Intel,2.5,Core i7 6500U,1024,0,Hybrid,AMD,Radeon R5 M330,1065.05
-Acer,Aspire A515-51G-59QF,Notebook,15.6,4,Windows 10,2.2,Full HD,1920,1080,Intel,1.6,Core i5 8250U,1024,0,HDD,Nvidia,GeForce MX150,729.47
-Lenovo,ThinkPad E480,Ultrabook,14.0,8,Windows 10,1.75,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,AMD,Radeon RX 550,1446.3
-Acer,Aspire 3,Notebook,15.6,4,Linux,2.1,Standard,1366,768,Intel,2.0,Core i3 6006U,128,0,SSD,Intel,HD Graphics 520,490.28
-Asus,Pro P2540UA-XO0192R,Notebook,15.6,4,Windows 10,2.37,Standard,1366,768,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1011.38
-HP,15-bs005nv (i3-6006U/4GB/1TB,Notebook,15.6,4,Windows 10,2.1,Full HD,1920,1080,Intel,2.0,Core i3 6006U,128,1024,SSD,AMD,Radeon 520,593.81
-HP,Omen 15-ce007nv,Gaming,15.6,12,Windows 10,2.62,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050,1486.31
-Lenovo,ThinkPad T560,Notebook,15.6,8,Windows 10,2.3,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1605.31
-Asus,Vivobook Max,Notebook,15.6,8,Windows 10,2.0,Standard,1920,1080,Intel,1.1,Pentium Dual Core N4200,128,0,SSD,Intel,HD Graphics 505,692.46
-Lenovo,IdeaPad 320-14IAP,Notebook,14.0,4,Windows 10,2.1,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,500,0,HDD,Intel,HD Graphics 500,355.81
-Dell,Alienware 15,Gaming,15.6,16,Windows 10,3.21,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,3301.81
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,8,Windows 10,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050,1247.12
-Acer,Aspire 5,Notebook,15.6,8,Windows 10,2.2,Standard,1366,768,AMD,2.5,A10-Series 9620P,1024,0,HDD,AMD,Radeon RX 540,689.01
-MSI,GT62VR 6RD,Gaming,15.6,16,Windows 10,2.94,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,2164.61
-Lenovo,ThinkPad L570,Notebook,15.6,4,Windows 10,2.38,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,1255.45
-Lenovo,ThinkPad X270,Ultrabook,12.5,8,Windows 10,1.36,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1700.51
-Dell,Inspiron 5570,Notebook,15.6,16,Windows 10,2.2,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,2048,SSD,AMD,Radeon 530,1350.65
-HP,ProBook 430,Notebook,13.3,8,Windows 10,1.49,Full HD,1920,1080,Intel,1.6,Core i5 8250U,512,0,SSD,Intel,UHD Graphics 620,1141.21
-Lenovo,IdeaPad 320-15ABR,Notebook,15.6,6,Windows 10,2.2,Full HD,1920,1080,AMD,3.6,A12-Series 9720P,256,0,SSD,AMD,Radeon 530,653.31
-Lenovo,IdeaPad Y900-17ISK,Gaming,17.3,32,Windows 10,4.6,Full HD,1920,1080,Intel,2.7,Core i7 6820HK,512,1024,SSD,Nvidia,GeForce GTX 980M,3855.6
-Dell,Inspiron 5570,Notebook,15.6,8,Windows 10,2.02,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,2048,SSD,AMD,Radeon 530,1359.46
-Lenovo,V110-15ISK (i3-6006U/4GB/1TB/No,Notebook,15.6,4,No OS,1.9,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,403.41
-Acer,Aspire A515-51G-32MX,Notebook,15.6,4,Windows 10,2.2,Full HD,1920,1080,Intel,2.7,Core i3 7130U,1024,0,HDD,Nvidia,GeForce MX130,630.7
-Dell,Vostro 3568,Notebook,15.6,4,Linux,2.18,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,AMD,Radeon R5 M420X,542.28
-Dell,Precision 7720,Workstation,17.3,16,Windows 10,3.42,Full HD,1920,1080,Intel,2.9,Core i7 7820HQ,256,0,SSD,Nvidia,Quadro M1200,3432.98
-HP,EliteBook 850,Notebook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.6,Core i5 7300U,256,0,SSD,AMD,Radeon R7 M465,1605.31
-Dell,Alienware 17,Gaming,17.3,32,Windows 10,4.36,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,1024,1024,SSD,Nvidia,GeForce GTX 1070,4354.69
-Dell,Alienware 15,Gaming,15.6,16,Windows 10,3.49,Full HD,1920,1080,Intel,2.9,Core i7 7820HK,256,1024,SSD,Nvidia,GeForce GTX 1070,3348.36
-Lenovo,V310-15ISK (i5-6200U/4GB/1TB/FHD/No,Notebook,15.6,4,No OS,2.15,Full HD,1920,1080,Intel,2.3,Core i5 6200U,1024,0,HDD,Intel,HD Graphics 520,550.2
-Lenovo,ThinkPad E570,Notebook,15.6,8,Windows 10,2.3,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,1012.29
-Toshiba,Satellite Pro,Notebook,15.6,4,Windows 10,2.0,Standard,1366,768,Intel,2.4,Core i3 7100U,500,0,HDD,Intel,HD Graphics 620,796.11
-Lenovo,Ideapad 510S-13IKB,Notebook,13.3,4,Windows 10,1.5,Full HD,1920,1080,Intel,2.4,Core i3 7100U,128,0,SSD,Intel,HD Graphics 620,653.31
-Dell,Inspiron 7773,Notebook,17.3,16,Windows 10,2.77,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Nvidia,GeForce 150MX,1843.31
-HP,250 G6,Notebook,15.6,8,Windows 10,1.96,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,712.8
-Lenovo,IdeaPad 100S-14IBR,Notebook,14.0,4,Windows 10,1.43,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,32,0,Flash Storage,Intel,HD Graphics,326.06
-HP,Spectre 13-V100nv,Notebook,13.3,8,Windows 10,1.11,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1367.31
-Dell,XPS 15,Notebook,15.6,8,Windows 10,2.04,4K Ultra HD,3840,2160,Intel,2.3,Core i5 6300HQ,256,0,SSD,Nvidia,GeForce 960M,2678.31
-MSI,GT73EVR 7RE,Gaming,17.3,16,Windows 10,4.14,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,1024,SSD,Nvidia,GeForce GTX 1070,2973.81
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.2,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,UHD Graphics 620,1724.31
-Asus,Rog GL702VM-GC017T,Gaming,17.3,16,Windows 10,2.73,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,512,1024,SSD,Nvidia,GeForce GTX 1060,2140.81
-HP,15-BS101nv (i7-8550U/8GB/256GB/FHD/W10),Ultrabook,15.6,8,Windows 10,1.91,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,HD Graphics 620,784.21
-Acer,Aspire R7,2 in 1 Convertible,13.3,8,Windows 10,1.6,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,819.91
-Lenovo,ThinkPad T570,Notebook,15.6,8,Windows 10,1.99,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2057.51
-MSI,GP62MVR 6RF,Gaming,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 1060,1756.57
-HP,ZBook 17,Workstation,17.3,8,Windows 7,3.0,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,0,SSD,Nvidia,Quadro M3000M,4699.79
-Dell,XPS 15,Notebook,15.6,16,Windows 10,2.06,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX 1050,2412.63
-Lenovo,Thinkpad P51,Notebook,15.6,8,Windows 10,2.67,Full HD,1920,1080,Intel,2.9,Core i7 7820HQ,256,0,SSD,Nvidia,Quadro M2200M,2487.1
-Lenovo,V310-15IKB (i5-7200U/4GB/1TB/No,Notebook,15.6,4,No OS,1.9,Standard,1366,768,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,582.98
-Lenovo,ThinkPad T570,Notebook,15.6,8,Windows 10,1.95,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1654.1
-Asus,VivoBook Max,Notebook,15.6,4,Linux,2.1,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Nvidia,GeForce 920,617.61
-Lenovo,IdeaPad Y900-17ISK,Gaming,17.3,16,Windows 10,4.6,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 980M,2725.09
-HP,ProBook 470,Notebook,17.3,8,Windows 10,2.5,Full HD,1920,1080,Intel,1.6,Core i5 8250U,1024,0,HDD,Nvidia,GeForce 930MX,1066.24
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.21,4K Ultra HD,3840,2160,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,UHD Graphics 620,2319.31
-HP,15-bs023nv (i3-6006U/4GB/1TB/FHD/W10),Notebook,15.6,4,Windows 10,2.1,Full HD,1920,1080,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,568.82
-Lenovo,IdeaPad Y700-15ISK,Gaming,15.6,8,Windows 10,2.6,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 960<U+039C>,1513.68
-HP,Probook 440,Notebook,14.0,4,Windows 10,1.64,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,927.01
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,8,No OS,2.4,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,256,0,SSD,Nvidia,GeForce GTX 1050,927.01
-Lenovo,V310-15ISK (i3-6006U/4GB/500GB/No,Notebook,15.6,4,No OS,1.9,Standard,1366,768,Intel,2.0,Core i3 6006U,500,0,HDD,Intel,HD Graphics 520,535.5
-HP,ProBook 450,Notebook,15.6,8,Windows 10,2.1,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Nvidia,GeForce 930MX ,1046.01
-Lenovo,Lenovo IdeaPad,Notebook,11.6,2,Windows 10,1.15,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,32,0,Flash Storage,Intel,HD Graphics 500,362.3
-HP,17-X047na (i3-6006U/8GB/1TB/W10),Notebook,17.3,8,Windows 10,2.65,Standard,1600,900,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,647.54
-Dell,Precision 7520,Workstation,15.6,16,Windows 10,2.8,4K Ultra HD,3840,2160,Intel,3.0,Xeon E3-1505M V6,256,1024,SSD,Nvidia,Quadro M1200,3635.45
-Toshiba,Satellite Pro,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.1,Core i3 6100U,128,0,SSD,Intel,HD Graphics 520,592.62
-HP,250 G6,Notebook,15.6,8,Windows 10,1.86,Full HD,1920,1080,Intel,2.0,Core i3 6006U,256,0,SSD,Intel,HD Graphics 520,641.41
-Dell,Inspiron 5567,Notebook,15.6,8,Linux,2.33,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,AMD,Radeon R7 M445,926.86
-HP,EliteBook 820,Ultrabook,12.5,4,Windows 10,1.26,Standard,1366,768,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1480.36
-HP,Probook 450,Notebook,15.6,8,Windows 10,2.04,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,959.14
-HP,250 G6,Notebook,15.6,4,No OS,1.86,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,468.74
-HP,Probook 440,Notebook,14.0,8,Windows 10,1.63,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Nvidia,GeForce 930MX,1226.89
-Asus,VivoBook S15,Ultrabook,15.6,8,Windows 10,1.7,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 940MX,1162.63
-HP,ProBook 440,Notebook,14.0,8,Windows 10,1.64,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 930MX,1248.62
-Toshiba,Tecra A50-D-11D,Notebook,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1651.72
-Asus,ZenBook Flip,2 in 1 Convertible,13.3,8,Windows 10,1.1,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,HD Graphics 620,1564.85
-HP,EliteBook x360,2 in 1 Convertible,13.3,4,Windows 10,1.28,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,2140.81
-Dell,Latitude 5480,Notebook,14.0,8,Windows 10,1.64,Full HD,1920,1080,Intel,2.6,Core i5 7300U,256,0,SSD,Intel,HD Graphics 620,1522.88
-Lenovo,Ideapad 320-15ISK,Notebook,15.6,4,Windows 10,2.2,Full HD,1920,1080,Intel,2.0,Core i3 6006U,1024,0,HDD,Nvidia,GeForce 920MX ,689.01
-Asus,Rog GL753VE-DS74,Gaming,17.3,16,Windows 10,2.99,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1050 Ti,2081.31
-HP,Elitebook Folio,Ultrabook,12.5,8,Windows 10,1.09,4K Ultra HD,3840,2160,Intel,1.2,Core M 6Y75,240,0,SSD,Intel,HD Graphics 515,3689.0
-Apple,MacBook Pro,Ultrabook,13.3,8,macOS,1.37,Standard,2560,1600,Intel,3.1,Core i5,256,0,SSD,Intel,Iris Plus Graphics 650,2146.28
-Apple,MacBook Pro,Ultrabook,13.3,8,macOS,1.37,Standard,2560,1600,Intel,2.0,Core i5,256,0,SSD,Intel,Iris Graphics 540,1688.61
-Dell,Inspiron 3567,Notebook,15.6,4,Linux,2.25,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,427.21
-Asus,ROG G703VI-E5062T,Gaming,17.3,32,Windows 10,4.7,Full HD,1920,1080,Intel,2.9,Core i7 7820HK,512,1024,SSD,Nvidia,GeForce GTX 1080,4629.1
-Dell,Vostro 5568,Notebook,15.6,8,Windows 10,1.98,Full HD,1920,1080,Intel,2.7,Core i7 7500U,1024,0,HDD,Nvidia,GeForce GT 940MX,1143.59
-Lenovo,Legion Y720-15IKB,Gaming,15.6,16,Windows 10,3.2,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,1783.81
-HP,255 G6,Notebook,15.6,4,Windows 10,1.86,Standard,1366,768,AMD,2.5,A6-Series 9220,256,0,SSD,AMD,Radeon R4 Graphics,439.11
-Dell,Precision M5520,Workstation,15.6,8,Windows 10,1.78,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,0,SSD,Nvidia,Quadro M1200,2865.52
-Lenovo,ThinkPad P51,Workstation,15.6,8,Windows 10,2.67,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,Quadro M1200,2290.75
-Lenovo,Thinkpad E470,Notebook,14.0,8,Windows 10,1.87,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 920MX,1019.91
-Asus,X705UV-BX074T (i3-6006U/4GB/1TB/GeForce,Notebook,17.3,4,Windows 10,2.0,Full HD,1920,1080,Intel,2.0,Core i3 6006U,1024,0,HDD,Nvidia,GeForce 920MX,671.16
-Mediacom,Smartbook 142,Notebook,14.0,4,Windows 10,1.4,Full HD,1920,1200,Intel,1.92,Atom Z8350,32,0,HDD,Intel,HD Graphics 400,315.35
-Toshiba,Tecra X40-D-10H,Ultrabook,14.0,16,Windows 10,1.24,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2219.35
-Dell,Vostro 3568,Notebook,15.6,4,Windows 10,2.18,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,664.73
-Microsoft,Surface Laptop,Ultrabook,13.5,4,Windows 10 S,1.252,Standard,2256,1504,Intel,2.2,Core M m3-7Y30,128,0,SSD,Intel,HD Graphics 615,1176.91
-HP,ProBook 450,Notebook,15.6,8,Windows 10,2.1,Full HD,1366,768,Intel,1.8,Core i7 8550U,1024,0,HDD,Intel,UHD Graphics 620,1073.38
-Lenovo,ThinkPad 13,Notebook,13.3,8,Windows 10,1.44,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1142.4
-Lenovo,IdeaPad Y700-15ISK,Gaming,15.6,16,Windows 10,3.31,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,512,0,SSD,Nvidia,GeForce GTX 960,1552.95
-Lenovo,Thinkpad 13,Notebook,13.3,4,Windows 10,1.44,Full HD,1920,1080,Intel,2.4,Core i3 7100U,180,0,SSD,Intel,HD Graphics 620,874.65
-Dell,Alienware 17,Gaming,17.3,32,Windows 10,4.42,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,3747.31
-HP,Elitebook 820,Netbook,12.5,8,Windows 10,1.26,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,1764.77
-HP,15-bw011nv (A6-9220/4GB/1TB/FHD/W10),Notebook,15.6,4,Windows 10,2.1,Full HD,1920,1080,AMD,2.5,A6-Series 9220,1024,0,HDD,AMD,Radeon R4,473.62
-Dell,Vostro 5468,Notebook,14.0,4,Windows 10,1.6,Full HD,1920,1080,Intel,2.0,Core i3 6006U,128,0,SSD,Intel,HD Graphics 520,875.69
-Lenovo,Yoga 720-15IKB,2 in 1 Convertible,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX 1050M,2021.81
-HP,Chromebook 13,Notebook,13.3,4,Chrome OS,1.29,Quad HD+,3200,1800,Intel,1.5,Pentium Dual Core 4405Y,32,0,Flash Storage,Intel,HD Graphics 515,731.85
-Lenovo,Thinkpad X1,Ultrabook,14.0,16,Windows 10,1.1,Quad HD+,2560,1440,Intel,2.6,Core i7 6600U,512,0,SSD,Intel,HD Graphics 520,2497.81
-MSI,GS73VR Stealth,Gaming,17.3,16,Windows 10,2.43,4K Ultra HD,3840,2160,Intel,2.6,Core i7 6700HQ,512,2048,SSD,Nvidia,GeForce GTX 1060,3152.31
-Asus,E402WA-GA010T (E2-6110/2GB/32GB/W10),Notebook,14.0,2,Windows 10,1.65,Standard,1366,768,AMD,1.5,E-Series E2-6110,32,0,Flash Storage,AMD,Radeon R2,236.81
-Asus,X751NV-TY001 (N4200/4GB/1TB/GeForce,Notebook,17.3,4,Windows 10,2.8,Standard,1366,768,Intel,1.1,Pentium Quad Core N4200,1024,0,HDD,Nvidia,GeForce 920MX,559.7
-Dell,Inspiron 5570,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,AMD,Radeon 530,1093.61
-HP,ProBook 650,Notebook,15.6,4,Windows 10,2.31,Standard,1366,768,Intel,2.3,Core i3 6100U,500,0,HDD,Intel,HD Graphics 520,839.13
-MSI,GP72MVR 7RFX,Gaming,17.3,8,Windows 10,2.7,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1060,1676.71
-Dell,Inspiron 5567,Notebook,15.6,8,Windows 10,2.36,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,AMD,Radeon R7 M445,1057.91
-HP,17-ak001nv (A6-9220/4GB/500GB/Radeon,Notebook,17.3,4,Windows 10,2.71,Full HD,1920,1080,AMD,2.5,A6-Series 9220,500,0,HDD,AMD,Radeon 530,522.41
-Lenovo,IdeaPad 320-15IAP,Notebook,15.6,4,No OS,2.2,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,1024,0,HDD,Intel,HD Graphics 500,383.17
-Dell,XPS 13,2 in 1 Convertible,13.3,8,Windows 10,1.24,Full HD,1920,1080,Intel,1.2,Core i5 7Y54,256,0,SSD,Intel,HD Graphics 615,2259.81
-Asus,R558UA-DM966T (i5-7200U/8GB/128GB/FHD/W10),Notebook,15.6,8,Windows 10,2.3,Full HD,1920,1080,Intel,2.5,Core i5 7200U,128,0,HDD,Intel,HD Graphics 620,702.1
-Lenovo,ThinkPad X270,Ultrabook,12.5,8,Windows 10,1.36,Full HD,1920,1080,Intel,2.6,Core i5 7300U,256,0,SSD,Intel,HD Graphics 620,2094.4
-HP,ProBook 450,Notebook,15.6,8,Windows 10,2.04,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1273.3
-Dell,Inspiron 5579,2 in 1 Convertible,15.6,8,Windows 10,2.67,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,950.81
-Lenovo,ThinkPad T470,Notebook,14.0,8,Windows 7,1.65,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1743.35
-Dell,Inspiron 5370,Ultrabook,13.3,8,Windows 10,1.4,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,AMD,Radeon 530,1136.45
-Dell,Inspiron 3567,Notebook,15.6,6,Windows 10,2.3,Standard,1366,768,Intel,2.4,Core i3 7100U,1024,0,HDD,Intel,HD Graphics 620,546.21
-Lenovo,IdeaPad 320-15ABR,Notebook,15.6,12,Windows 10,2.2,Full HD,1920,1080,AMD,3.6,A12-Series 9720P,2048,0,HDD,AMD,Radeon 530,1069.81
-Dell,Latitude 5480,Notebook,14.0,4,Windows 10,1.6,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,1041.25
-HP,15-cd005nv (A9-9420/6GB/256GB/Radeon,Notebook,15.6,6,Windows 10,1.95,Full HD,1920,1080,AMD,3.0,A9-Series A9-9420,256,0,SSD,AMD,Radeon 530,772.31
-Asus,Zenbook 3,Ultrabook,14.0,8,Windows 10,1.1,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1350.65
-Asus,UX430UQ-GV209R (i7-7500U/8GB/256GB/GeForce,Ultrabook,14.0,8,Windows 10,1.3,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Nvidia,GeForce 940MX,1419.67
-Dell,Alienware 17,Notebook,17.3,8,Windows 10,4.42,Full HD,1920,1080,Intel,2.7,Core i7 7700HQ,1024,0,HDD,Nvidia,GeForce GTX 1060,2434.74
-HP,Probook 650,Notebook,15.6,4,Windows 7,2.31,Full HD,1920,1080,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,1118.6
-Asus,VivoBook Flip,2 in 1 Convertible,11.6,4,Windows 10,1.5,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,32,0,Flash Storage,Intel,HD Graphics 500,446.25
-Asus,ZenBook Pro,Notebook,15.6,12,Windows 10,2.06,4K Ultra HD,3840,2160,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Intel,HD Graphics 530,1545.81
-HP,EliteBook x360,2 in 1 Convertible,13.3,4,Windows 10,1.28,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,2023.0
-Dell,Vostro 5370,Ultrabook,13.3,8,Windows 10,1.41,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,1129.31
-Xiaomi,Mi Notebook,Ultrabook,13.3,8,Windows 10,1.28,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Nvidia,GeForce 940MX,1112.65
-Acer,Aspire 3,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,AMD,3.0,A9-Series 9420,256,0,SSD,AMD,Radeon R5,536.69
-Acer,Aspire A515-51G,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,1.8,Core i7 8550U,1024,0,HDD,Nvidia,GeForce MX130,886.55
-HP,250 G6,Notebook,15.6,8,No OS,1.86,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,684.25
-Dell,Inspiron 7577,Gaming,15.6,8,Windows 10,2.62,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050 Ti,1379.21
-Lenovo,ThinkPad E470,Notebook,14.0,4,Windows 10,1.87,Full HD,1920,1080,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,934.15
-Dell,Vostro 5568,Notebook,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.0,Core i3 6006U,256,0,SSD,AMD,Radeon R5 M420X,879.41
-Lenovo,V110-15ISK (i5-6200U/4GB/128GB/W10),Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.3,Core i5 6200U,128,0,SSD,Intel,HD Graphics 520,586.67
-Lenovo,Legion Y720-15IKB,Gaming,15.6,8,Windows 10,3.2,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,1664.81
-Dell,Inspiron 3567,Notebook,15.6,8,Linux,2.3,Standard,1366,768,Intel,2.7,Core i7 7500U,1024,0,HDD,AMD,Radeon R5 M430,959.13
-Asus,ZenBook UX305CA-UBM1,Ultrabook,13.3,8,Windows 10,1.2,Full HD,1920,1080,Intel,0.9,Core M 6Y30,512,0,SSD,Intel,HD Graphics 515,867.51
-Lenovo,V330-15IKB (i5-8250U/8GB/256GB/FHD/W10),Notebook,15.6,8,Windows 10,2.05,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,879.41
-HP,Stream 14-AX040wm,Notebook,14.0,4,Windows 10,1.44,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,32,0,SSD,Intel,HD Graphics 400,272.51
-Toshiba,Tecra A40-C-1DF,Notebook,14.0,8,Windows 10,1.95,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1404.2
-Lenovo,Thinkpad T460p,Notebook,14.0,8,Windows 10,1.8,Full HD,1920,1080,Intel,2.3,Core i5 6300HQ,256,0,SSD,Intel,HD Graphics 520,1417.29
-HP,250 G6,Notebook,15.6,4,Windows 10,1.86,Full HD,1920,1080,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,558.11
-Dell,Latitude 3580,Notebook,15.6,8,Windows 10,2.06,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,1136.45
-HP,EliteBook 840,Notebook,14.0,4,Windows 7,1.54,Full HD,1920,1080,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,1226.88
-Dell,Inspiron 7577,Gaming,15.6,16,Windows 10,2.65,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,512,1024,SSD,Nvidia,GeForce GTX 1060,2195.55
-Asus,VivoBook Flip,2 in 1 Convertible,11.6,2,Windows 10,1.1,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,32,0,Flash Storage,Intel,HD Graphics 500,327.25
-HP,ProBook 470,Notebook,17.3,8,Windows 10,2.5,Full HD,1920,1080,Intel,1.6,Core i5 8250U,128,1024,SSD,Nvidia,GeForce 930MX,1162.63
-HP,EliteBook 840,Ultrabook,14.0,8,Windows 10,1.48,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2485.91
-Lenovo,Thinkpad X270,Ultrabook,12.5,16,Windows 10,1.36,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2139.62
-HP,15-bs002nv (i3-6006U/4GB/128GB/FHD/W10),Notebook,15.6,4,Windows 10,1.91,Full HD,1920,1080,Intel,2.0,Core i3 6006U,128,0,SSD,Intel,HD Graphics 520,522.41
-Acer,Predator G9-793,Gaming,17.3,16,Windows 10,4.2,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,2735.81
-Dell,Inspiron 5579,2 in 1 Convertible,15.6,16,Windows 10,2.0,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Intel,UHD Graphics 620,1529.15
-Dell,Inspiron 7559,Gaming,15.6,16,Windows 10,2.72,4K Ultra HD,3840,2160,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 960M,1307.81
-Dell,Inspiron 3552,Notebook,15.6,4,Windows 10,1.8,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,500,0,HDD,Intel,HD Graphics 400,367.71
-Dell,Latitude 3580,Notebook,15.6,8,Windows 10,1.95,Standard,1366,768,Intel,2.5,Core i5 7200U,128,0,SSD,Intel,HD Graphics 620,963.9
-Asus,Rog Strix,Gaming,15.6,16,Windows 10,2.2,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,2914.31
-Acer,E5 774G,Notebook,17.3,4,Windows 10,3.3,Standard,1600,900,Intel,2.0,Core i3 6006U,1024,0,HDD,Nvidia,GeForce 940MX,711.62
-HP,ProBook 640,Notebook,14.0,4,Windows 10,1.95,Standard,1366,768,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,1367.31
-HP,EliteBook 840,Notebook,14.0,4,Windows 10,1.48,Standard,1366,768,Intel,2.4,Core i5 6300U,256,0,SSD,Intel,HD Graphics 520,1308.99
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,16,Windows 10,2.4,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX 1050 Ti,1426.81
-Dell,Inspiron 3567,Notebook,15.6,12,Windows 10,2.25,Standard,1366,768,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,772.31
-Lenovo,IdeaPad 320-15IAP,Notebook,15.6,4,No OS,2.2,Standard,1366,768,Intel,1.1,Pentium Quad Core N4200,1024,0,HDD,Intel,HD Graphics 505,428.39
-HP,ProBook 450,Notebook,15.6,4,Windows 10,2.04,Full HD,1920,1080,Intel,2.4,Core i3 7100U,500,0,HDD,Intel,HD Graphics 620,815.15
-HP,Elitebook 820,Ultrabook,12.5,4,Windows 10,1.26,Standard,1366,768,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1855.21
-HP,EliteBook 820,Ultrabook,12.5,8,Windows 7,1.26,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,2733.37
-Dell,Latitude 5590,Ultrabook,15.6,8,Windows 10,1.88,Full HD,1920,1080,Intel,1.9,Core i7 8650U,256,256,SSD,Intel,UHD Graphics 620,1544.62
-HP,ProBook 640,Notebook,14.0,4,Windows 10,1.95,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1433.95
-Asus,Rog GL502VS,Gaming,15.6,16,Windows 10,2.34,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,2766.75
-Acer,Spin SP111-31,2 in 1 Convertible,11.6,4,Windows 10,1.25,Full HD,1920,1080,Intel,2.0,Celeron Dual Core N3350,32,0,Flash Storage,Intel,HD Graphics 500,415.31
-Acer,Chromebook 14,Notebook,14.0,4,Chrome OS,1.68,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,32,0,Flash Storage,Intel,HD Graphics 400,415.31
-Lenovo,Yoga 900-13ISK,2 in 1 Convertible,13.3,16,Windows 10,1.3,Quad HD+,3200,1800,Intel,2.2,Core i7 6560U,1024,0,SSD,Intel,Iris Graphics 540,2140.81
-Lenovo,ThinkPad T460s,Ultrabook,14.0,12,Windows 7,1.4,Full HD,1920,1080,Intel,2.6,Core i7 6600U,512,0,SSD,Intel,HD Graphics 520,2735.81
-Dell,Alienware 17,Gaming,17.3,32,Windows 10,4.42,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,1024,SSD,Nvidia,GeForce GTX 1070M,4270.67
-Huawei,MateBook X,Ultrabook,13.0,8,Windows 10,1.05,Full HD,2160,1440,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1605.31
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.23,Quad HD+,3200,1800,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,2224.11
-Lenovo,IdeaPad 110-17ACL,Notebook,17.3,4,Windows 10,2.6,Standard,1600,900,AMD,2.2,A8-Series 7410,128,0,SSD,AMD,Radeon R5,581.91
-Dell,Inspiron 3552,Notebook,15.6,2,Windows 10,2.2,Standard,1366,768,Intel,1.6,Celeron Dual Core N3050,500,0,HDD,Intel,HD Graphics,451.01
-Acer,Chromebook C910-C2ST,Notebook,15.6,2,Chrome OS,2.19,Standard,1366,768,Intel,1.5,Celeron Dual Core 3205U,16,0,SSD,Intel,HD Graphics,236.81
-Asus,X540SA-RBPDN09 (N3710/4GB/1TB/W10),Notebook,15.6,4,Windows 10,2.65,Standard,1366,768,Intel,1.6,Pentium Quad Core N3710,1024,0,HDD,Intel,HD Graphics 405,367.71
-Acer,Aspire 5,Notebook,17.3,4,Windows 10,3.0,Full HD,1920,1080,Intel,2.7,Core i3 7130U,256,0,SSD,Nvidia,GeForce MX130,835.38
-HP,EliteBook 840,Ultrabook,14.0,8,Windows 10,1.54,Full HD,1920,1080,Intel,2.5,Core i7 6500U,512,0,SSD,Intel,HD Graphics 520,1746.92
-Acer,Aspire ES1-523,Notebook,15.6,8,Windows 10,2.4,Standard,1366,768,AMD,2.2,A8-Series 7410,1024,0,HDD,AMD,Radeon R5,534.31
-Asus,Rog Strix,Gaming,17.3,8,Windows 10,3.2,Full HD,1920,1080,AMD,3.2,Ryzen 1600,256,1024,SSD,AMD,Radeon RX 580,2017.05
-MSI,GS73VR 7RG,Gaming,17.3,16,Windows 10,2.43,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,2048,SSD,Nvidia,GeForce GTX 1070,2914.31
-Samsung,Chromebook 3,Netbook,11.6,4,Chrome OS,1.15,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,16,0,Flash Storage,Intel,HD Graphics 400,320.11
-Lenovo,IdeaPad 320s-14IKB,Notebook,14.0,4,Windows 10,1.7,Full HD,1920,1080,Intel,2.7,Core i3 7130U,128,0,SSD,Intel,HD Graphics 620,712.81
-Lenovo,ThinkPad 13,Notebook,13.3,4,Chrome OS,1.45,Standard,1366,768,Intel,1.6,Celeron Dual Core 3855U,16,0,Flash Storage,Intel,HD Graphics 510,547.28
-Acer,Aspire E5-576G,Notebook,15.6,4,Windows 10,2.23,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 940MX,822.29
-Acer,TravelMate B,Notebook,11.6,4,Windows 10,1.4,Standard,1366,768,Intel,1.6,Pentium Quad Core N3710,128,0,Flash Storage,Intel,HD Graphics 405,577.15
-Lenovo,Thinkpad T470p,Ultrabook,14.0,8,Windows 10,1.7,Full HD,2560,1440,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GT 940MX,2312.17
-Lenovo,Yoga Book,2 in 1 Convertible,10.1,4,Windows 10,0.69,Standard,1920,1200,Intel,1.44,Atom x5-Z8550,64,0,Flash Storage,Intel,HD Graphics 400,769.06
-Lenovo,Ideapad 520-15IKBR,Notebook,15.6,8,Windows 10,2.17,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,UHD Graphics 620,1069.69
-Dell,Inspiron 3567,Notebook,15.6,8,Linux,2.2,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,AMD,Radeon R5 M430,891.32
-Asus,VivoBook S15,Notebook,15.6,8,Windows 10,1.7,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Nvidia,GeForce 940MX,1330.42
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,8,Windows 10,2.4,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,1024,0,HDD,Nvidia,GeForce GTX 1050,974.61
-Lenovo,ThinkPad T470s,Ultrabook,14.0,8,Windows 10,1.32,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1783.81
-Samsung,Notebook 9,Ultrabook,13.3,8,Windows 10,1.31,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1902.81
-Mediacom,SmartBook 141,Notebook,14.0,4,Windows 10,1.4,Full HD,1920,1080,Intel,1.44,Atom x5-Z8350,32,0,SSD,Intel,HD Graphics,296.31
-Lenovo,N42-20 Chromebook,Notebook,14.0,4,Chrome OS,1.5,Standard,1366,768,Intel,1.6,Celeron Quad Core N3160,16,0,Flash Storage,Intel,HD Graphics 400,386.75
-Asus,VivoBook Pro,Notebook,15.6,8,Windows 10,1.99,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,1024,0,HDD,Nvidia,GeForce GTX 1050,1078.88
-Acer,Aspire A315-31,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,1024,0,HDD,Intel,HD Graphics 500,414.12
-HP,Probook 640,Notebook,14.0,4,Windows 10,1.95,Full HD,1920,1080,Intel,2.5,Core i5 7200U,128,0,SSD,Intel,HD Graphics 620,1505.35
-Asus,X553SA-XX021T (N3050/4GB/500GB/W10),Notebook,15.6,4,Windows 10,2.2,Standard,1366,768,Intel,1.6,Celeron Dual Core N3050,500,0,HDD,Intel,HD Graphics,439.11
-HP,EliteBook x360,2 in 1 Convertible,13.3,8,Windows 10,1.28,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,2709.63
-HP,Envy 13-AD007nv,Notebook,13.3,4,Windows 10,1.32,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,831.81
-Dell,Inspiron 3576,Notebook,15.6,8,Windows 10,2.13,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,AMD,Radeon 520,866.32
-Lenovo,Yoga 910-13IKB,2 in 1 Convertible,13.9,8,Windows 10,1.38,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1284.01
-HP,Chromebook X360,2 in 1 Convertible,11.6,8,Chrome OS,1.4,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,64,0,Flash Storage,Intel,HD Graphics 500,589.05
-Asus,VivoBook Max,Notebook,15.6,4,Windows 10,2.0,Standard,1366,768,Intel,2.4,Core i3 7100U,1024,0,HDD,Intel,HD Graphics 620,517.65
-Acer,Aspire R7,2 in 1 Convertible,13.3,8,Windows 10,1.6,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,938.92
-Lenovo,Yoga 730,2 in 1 Convertible,13.3,8,Windows 10,1.19,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Intel,UHD Graphics 620,1783.81
-Asus,ROG Zephyrus,Gaming,15.6,24,Windows 10,2.24,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX1080,3531.92
-LG,Gram 15Z975,Ultrabook,15.6,8,Windows 10,1.09,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Intel,HD Graphics 620,2735.81
-Acer,Aspire 7,Notebook,15.6,8,Linux,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,0,SSD,Nvidia,GeForce GTX 1050,1046.01
-Lenovo,IdeaPad 320-15AST,Notebook,15.6,4,Windows 10,2.2,Standard,1366,768,AMD,2.2,E-Series E2-9000,128,0,SSD,AMD,Radeon R2 Graphics,415.31
-MSI,GS63VR 7RF,Gaming,15.6,16,Windows 10,1.8,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,2492.43
-HP,15-BW004nv (A9-9420/4GB/256GB/Radeon,Ultrabook,15.6,4,Windows 10,1.91,Full HD,1920,1080,AMD,3.0,A9-Series 9420,256,0,SSD,AMD,Radeon 520,593.81
-Asus,Vivobook X541UV-DM1217T,Notebook,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 920MX ,915.11
-Lenovo,ThinkPad E580,Notebook,15.6,8,Windows 10,2.1,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,1024,SSD,AMD,Radeon RX 550,1361.95
-Huawei,MateBook X,Ultrabook,13.0,8,Windows 10,1.05,Full HD,2160,1440,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,1783.81
-Lenovo,IdeaPad 510-15ISK,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.5,Core i7 6500U,1024,0,HDD,Nvidia,GeForce 940MX,796.11
-Google,Pixelbook (Core,Ultrabook,12.3,8,Chrome OS,1.1,Standard,2400,1600,Intel,1.2,Core i5 7Y57,128,0,SSD,Intel,HD Graphics 615,1517.25
-Lenovo,IdeaPad 320-15ISK,Notebook,15.6,8,No OS,2.2,Standard,1366,768,Intel,2.0,Core i3 6006U,2048,0,HDD,Nvidia,GeForce 920MX ,546.21
-HP,ProBook 450,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.4,Core i3 7100U,500,0,HDD,Intel,HD Graphics 620,795.49
-Asus,ROG G752VSK-GC493T,Gaming,17.3,16,Windows 10,4.3,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 980M,2140.81
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.21,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,UHD Graphics 620,1962.31
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,8,Windows 10,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050 Ti,1486.31
-Acer,ES1-523-84K7 (A8-7410/8GB/256GB/FHD/W10),Notebook,15.6,8,Windows 10,2.23,Full HD,1920,1080,AMD,2.2,A8-Series 7410,256,0,SSD,AMD,Radeon R5,558.11
-Toshiba,Tecra Z50-C-144,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1664.81
-Lenovo,Thinkpad X270,Ultrabook,12.5,8,Windows 10,1.36,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1884.96
-HP,Elitebook 850,Notebook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1551.76
-Acer,Predator 17,Gaming,17.3,16,Windows 10,4.2,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 1060,2302.65
-HP,17-AK091ND (A9-9420/8GB/1TB/W10),Notebook,17.0,8,Windows 10,2.6,Standard,1600,900,AMD,3.0,A9-Series 9420,1024,0,HDD,AMD,Radeon R5,619.87
-Lenovo,ThinkPad X1,Ultrabook,14.0,16,Windows 10,1.14,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2915.5
-Razer,Blade Stealth,Ultrabook,12.5,8,Windows 10,1.25,4K Ultra HD,3840,2160,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1224.51
-Asus,ROG GL703VD-GC028T,Gaming,17.3,16,Windows 10,2.9,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1050,1674.33
-HP,EliteBook 850,Notebook,15.6,8,Windows 7,1.88,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1879.01
-Lenovo,ThinkPad L470,Notebook,14.0,8,Windows 7,2.02,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1594.6
-HP,Spectre x360,2 in 1 Convertible,13.3,8,Windows 10,1.29,4K Ultra HD,3840,2160,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,1783.81
-Google,Pixelbook (Core,Ultrabook,12.3,16,Chrome OS,1.1,Standard,2400,1600,Intel,1.3,Core i7 7Y75,512,0,SSD,Intel,HD Graphics 615,2616.81
-Dell,Latitude E5270,Ultrabook,12.5,4,Windows 7,1.5,Standard,1366,768,Intel,2.3,Core i3 6100U,128,0,SSD,Intel,HD Graphics 520,1388.69
-Dell,Precision 3520,Workstation,15.6,8,Windows 10,2.23,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,HDD,Nvidia,Quadro M620,2115.82
-Asus,ZenBook UX430UN,Ultrabook,14.0,16,Windows 10,1.3,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Nvidia,GeForce MX150,1779.05
-Chuwi,"LapBook 15.6""",Notebook,15.6,4,Windows 10,1.89,Full HD,1920,1080,Intel,1.44,Atom x5-Z8300,64,0,Flash Storage,Intel,HD Graphics,291.54
-Asus,ROG Strix,Gaming,17.3,16,Windows 10,2.9,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,2319.31
-HP,EliteBook 850,Ultrabook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,AMD,Radeon R7 M365X,1543.42
-HP,ZBook 15u,Workstation,15.6,8,Windows 7,1.9,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,AMD,FirePro W4190M,1779.05
-HP,Probook 650,Notebook,15.6,8,Windows 10,2.31,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1386.35
-Asus,ZenBook UX430UA,Ultrabook,14.0,8,Windows 10,1.25,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,UHD Graphics 620,1307.81
-Lenovo,IdeaPad 120S-14IAP,Notebook,14.0,4,Windows 10,1.44,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,64,0,Flash Storage,Intel,HD Graphics 500,296.31
-Asus,FX502VM-DM560T (i7-7700HQ/8GB/1TB,Gaming,15.6,8,Windows 10,2.24,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX1060,1593.41
-MSI,GP62 7RDX,Gaming,15.6,16,Windows 10,2.4,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1050,1539.86
-Lenovo,IdeaPad 320-15IKBN,Notebook,15.6,8,No OS,2.2,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 940MX,748.51
-Dell,Latitude 5580,Notebook,15.6,8,Windows 10,1.9,Full HD,1920,1080,Intel,2.6,Core i5 7300U,256,0,SSD,Intel,HD Graphics 620,1403.01
-Dell,Latitude 3570,Notebook,15.6,4,Windows 10,2.06,Standard,1366,768,Intel,2.3,Core i3 6100U,500,0,HDD,Intel,HD Graphics 520,573.56
-Lenovo,IdeaPad 320-15ABR,Notebook,15.6,6,Windows 10,2.2,Full HD,1920,1080,AMD,3.6,A12-Series 9720P,256,0,SSD,AMD,Radeon 530,711.11
-Acer,Aspire 3,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,712.81
-Dell,XPS 15,Notebook,15.6,32,Windows 10,2.06,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,1024,0,SSD,Nvidia,GeForce GTX 1050,3140.41
-Asus,G752VY-GC162T (i7-6700HQ/16GB/1TB,Gaming,17.3,16,Windows 10,4.3,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 980M,2735.81
-Lenovo,Yoga 920-13IKB,2 in 1 Convertible,13.9,8,Windows 10,1.4,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,1902.81
-Lenovo,ThinkPad 13,Notebook,13.3,16,Windows 10,1.4,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,1783.81
-Asus,Rog Strix,Gaming,17.3,16,Windows 10,3.2,Full HD,1920,1080,AMD,3.0,Ryzen 1700,256,1024,SSD,AMD,Radeon RX 580,1843.31
-Asus,FX753VD-GC461T (i7-7700HQ/16GB/1TB,Gaming,17.3,16,Windows 10,2.9,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1050,1819.51
-Dell,Inspiron 5570,Notebook,15.6,16,Windows 10,2.2,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,2048,SSD,AMD,Radeon 530,1450.9
-HP,15-AY023na (N3710/8GB/2TB/W10),Notebook,15.6,8,Windows 10,2.04,Standard,1366,768,Intel,1.6,Pentium Quad Core N3710,2048,0,HDD,Intel,HD Graphics 405,462.91
-Asus,Rog G752VL-GC088D,Gaming,17.3,16,No OS,4.0,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,1024,0,HDD,Nvidia,GeForce GTX 965M,1187.62
-Asus,X751NV-TY001T (N4200/4GB/1TB/GeForce,Notebook,17.3,4,Windows 10,2.8,Standard,1366,768,Intel,1.1,Pentium Quad Core N4200,1024,0,HDD,Nvidia,GeForce 920MX,554.54
-Asus,Rog Strix,Gaming,17.3,16,Windows 10,2.73,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,2439.38
-HP,Probook 470,Notebook,17.3,8,Windows 10,2.63,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Nvidia,GeForce 930MX,1285.2
-Dell,Inspiron 3552,Notebook,15.6,4,Windows 10,2.2,Standard,1366,768,Intel,1.6,Pentium Quad Core N3710,500,0,HDD,Intel,HD Graphics,439.11
-Vero,V142 (X5-Z8350/2GB/32GB/W10),Notebook,14.0,2,Windows 10,1.45,Standard,1366,768,Intel,1.44,Atom X5-Z8350,32,0,Flash Storage,Intel,HD Graphics 400,250.85
-HP,15-bs015dx (i5-7200U/8GB/1TB/W10),Notebook,15.6,8,Windows 10,2.04,Standard,1366,768,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,665.21
-HP,Probook 430,Notebook,13.3,8,Windows 10,1.49,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1142.4
-Dell,Latitude 5580,Notebook,15.6,4,Linux,1.93,Standard,1366,768,Intel,2.6,Core i5 7300U,500,0,HDD,Intel,HD Graphics 620,1034.11
-Asus,FX753VD-GC071T (i7-7700HQ/8GB/1TB/GeForce,Gaming,17.3,8,Windows 10,3.0,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,HDD,Nvidia,GeForce GTX 1050,1412.53
-Dell,Latitude 7280,Ultrabook,12.5,8,Windows 10,1.6,Full HD,1920,1080,Intel,2.8,Core i7 7600U,256,0,SSD,Intel,HD Graphics 620,2011.1
-Dell,Inspiron 3552,Notebook,15.6,4,Linux,2.2,Standard,1366,768,Intel,1.6,Pentium Quad Core N3700,500,0,HDD,Intel,HD Graphics,468.25
-Lenovo,IdeaPad 310-15IKB,Ultrabook,15.6,6,Windows 10,1.54,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Nvidia,GeForce 920M,988.89
-Dell,Inspiron 5570,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,1.6,Core i5 8250U,128,1024,SSD,AMD,Radeon 530,855.61
-LG,Gram 14Z970,Ultrabook,14.0,8,Windows 10,0.98,Full HD,1920,1080,Intel,2.7,Core i7 7500U,512,0,SSD,Intel,HD Graphics 620,2259.81
-Dell,Precision M5520,Workstation,15.6,8,Windows 10,1.78,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,256,0,SSD,Nvidia,Quadro M1200,3227.28
-Acer,Aspire ES1-572,Notebook,15.6,4,Linux,2.4,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,525.74
-Lenovo,Ideapad 310-15ISK,Notebook,15.6,4,Windows 10,1.85,Full HD,1920,1080,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,493.73
-Toshiba,Satellite Pro,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Nvidia,GeForce 930M,1241.17
-Dell,XPS 13,Ultrabook,13.3,8,Linux,1.23,Quad HD+,3200,1800,Intel,2.4,Core i5 6300U,256,0,SSD,Intel,HD Graphics 520,1307.81
-MSI,GE63VR 7RF,Gaming,15.6,16,Windows 10,2.8,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,2497.81
-HP,Envy x360,2 in 1 Convertible,13.3,16,Windows 10,1.42,Quad HD+,3200,1800,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1664.81
-Dell,Latitude 3180,Netbook,11.6,4,Windows 10,1.63,Standard,1366,768,Intel,1.1,Pentium Quad Core N4200,128,0,SSD,Intel,HD Graphics 505,885.36
-Dell,Inspiron 5770,Notebook,17.3,8,Linux,2.8,Full HD,1920,1080,Intel,1.6,Core i5 8250U,128,1024,SSD,AMD,Radeon 530,1057.91
-Dell,Latitude 7480,Ultrabook,14.0,8,Windows 10,1.36,Full HD,1920,1080,Intel,2.8,Core i7 7600U,256,0,SSD,Intel,HD Graphics 620,2112.25
-Dell,Vostro 5568,Notebook,15.6,8,Linux,1.98,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Nvidia,GeForce GT 940MX,1065.06
-Dell,Inspiron 5379,2 in 1 Convertible,13.3,16,Windows 10,1.62,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Intel,UHD Graphics 620,1522.01
-HP,255 G6,Notebook,15.6,4,Windows 10,1.86,Standard,1366,768,AMD,2.5,A6-Series 9220,500,0,HDD,AMD,Radeon R4 Graphics,474.81
-Asus,X555BP-XX180T (A9-9420/4GB/1TB/Radeon,Notebook,15.6,4,Windows 10,2.03,Standard,1366,768,AMD,3.0,A9-Series 9420,1024,0,HDD,AMD,Radeon R5 M420,479.57
-Acer,Aspire 3,Notebook,15.6,4,Linux,2.1,Standard,1366,768,Intel,2.0,Celeron Dual Core N3350,1024,0,HDD,Intel,HD Graphics 500,323.68
-Lenovo,V110-15IAP (N3350/4GB/1TB/No,Notebook,15.6,4,No OS,1.9,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,1024,0,HDD,Intel,HD Graphics 500,300.31
-Dell,Inspiron 7570,Notebook,15.6,8,Windows 10,2.16,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,1024,SSD,Nvidia,GeForce 940MX,1345.09
-Asus,X555QG-DM242T (A10-9620P/4GB/1TB,Notebook,15.6,4,Windows 10,2.2,Full HD,1920,1080,AMD,2.5,A10-Series A10-9620P,128,1024,SSD,AMD,Radeon R5 M430,684.25
-Dell,Inspiron 5570,Notebook,15.6,8,Windows 10,2.02,Full HD,1920,1080,Intel,1.6,Core i5 8250U,2048,0,HDD,AMD,Radeon 530,903.21
-Dell,Inspiron 5368,2 in 1 Convertible,13.3,8,Windows 10,1.62,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,949.63
-Dell,XPS 15,Notebook,15.6,16,Windows 10,2.06,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,1024,0,SSD,Nvidia,GeForce GTX 1050,2854.81
-Dell,Inspiron 5567,Notebook,15.6,8,Windows 10,2.36,Standard,1366,768,Intel,2.5,Core i5 7200U,1024,0,HDD,AMD,Radeon R7 M445,760.4
-HP,EliteBook 850,Ultrabook,15.6,8,Windows 7,1.88,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,2584.35
-HP,Pavilion 15-cb003nv,Gaming,15.6,8,Windows 10,2.62,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,HDD,Nvidia,GeForce GTX 1050,1069.81
-Razer,Blade Pro,Gaming,17.3,32,Windows 10,3.49,4K Ultra HD,3840,2160,Intel,2.9,Core i7 7820HK,1024,0,SSD,Nvidia,GeForce GTX 1080,7257.81
-Dell,Vostro 5468,Notebook,14.0,8,Windows 10,1.6,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1022.21
-Dell,Inspiron 7559,Gaming,15.6,16,Windows 10,2.59,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,1024,0,HDD,Nvidia,GeForce GTX 960<U+039C>,1046.02
-Dell,Inspiron 5378,2 in 1 Convertible,13.3,4,Windows 10,1.71,Full HD,1920,1080,Intel,2.4,Core i3 7100U,1024,0,HDD,Intel,HD Graphics 620,772.31
-HP,ProBook 450,Notebook,15.6,4,Windows 10,2.04,Standard,1366,768,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1165.01
-HP,250 G6,Notebook,15.6,4,No OS,1.86,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,411.73
-Dell,Latitude 5580,Notebook,15.6,8,Windows 10,1.93,Full HD,1920,1080,Intel,2.8,Core i7 7600U,256,0,SSD,Nvidia,GeForce 930MX,1629.11
-Dell,Inspiron 3576,Notebook,15.6,8,Linux,2.2,Full HD,1920,1080,Intel,1.6,Core i5 8250U,1024,0,HDD,AMD,Radeon 520,769.93
-Acer,Aspire ES1-572,Notebook,15.6,4,Linux,2.4,Standard,1366,768,Intel,2.0,Core i3 6006U,500,0,HDD,Intel,HD Graphics 520,430.54
-Dell,Vostro 3568,Notebook,15.6,4,Windows 10,2.18,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,781.83
-Dell,Inspiron 5577,Gaming,15.6,8,Windows 10,2.56,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,1024,0,HDD,Nvidia,GeForce GTX 1050,974.61
-Lenovo,IdeaPad 320-15IKBN,Notebook,15.6,8,No OS,2.2,Standard,1366,768,Intel,2.5,Core i5 7200U,2048,0,HDD,Nvidia,GeForce 940MX,653.31
-HP,15-BA015wm (E2-7110/4GB/500GB/W10),Notebook,15.6,4,Windows 10,1.86,Standard,1366,768,AMD,1.8,E-Series 7110,500,0,HDD,AMD,Radeon R2 Graphics,353.43
-Dell,Latitude 5580,Notebook,15.6,16,Windows 10,1.93,Full HD,1920,1080,Intel,2.8,Core i7 7600U,256,0,SSD,Nvidia,GeForce 930MX,1829.49
-Asus,Rog G752VS-BA171T,Gaming,17.3,16,Windows 10,4.3,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,1024,SSD,Nvidia,GeForce GTX 1070,2796.5
-Asus,ZenBook UX310UA-FB485T,Notebook,13.3,8,Windows 10,1.4,Quad HD+,3200,1800,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1368.5
-HP,Probook 640,Notebook,14.0,8,Windows 7,1.95,Full HD,1920,1080,Intel,2.3,Core i5 6200U,256,0,SSD,Intel,HD Graphics 520,1422.05
-Lenovo,IdeaPad 320-17IKBR,Notebook,17.3,8,No OS,2.8,Standard,1600,900,Intel,1.6,Core i5 8250U,256,0,SSD,Nvidia,GeForce MX150,830.62
-HP,Probook 440,Notebook,14.0,8,Windows 10,1.63,Full HD,1920,1080,Intel,1.6,Core i5 8250U,1024,0,HDD,Intel,UHD Graphics 620,966.28
-Apple,"MacBook 12""",Ultrabook,12.0,8,Mac OS X,0.92,Standard,2304,1440,Intel,1.2,Core M,512,0,Flash Storage,Intel,HD Graphics 515,1522.01
-Asus,ROG GL553VE-FY022,Gaming,15.6,8,No OS,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,HDD,Nvidia,GeForce GTX 1050 Ti,1391.11
-Lenovo,IdeaPad 310-15ABR,Notebook,15.6,6,Windows 10,2.4,Full HD,1920,1080,AMD,2.4,A10-Series 9600P,1024,0,HDD,AMD,Radeon R5 430,593.81
-Acer,Aspire A315-51,Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.0,Core i3 6006U,1024,0,HDD,Intel,HD Graphics 520,531.93
-Razer,Blade Pro,Gaming,14.0,16,Windows 10,1.95,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,0,SSD,Nvidia,GeForce GTX 1060,3092.81
-Dell,Inspiron 5379,2 in 1 Convertible,13.3,8,Windows 10,1.55,Full HD,1920,1080,Intel,1.6,Core i5 8250U,1024,0,HDD,Intel,UHD Graphics 620,784.21
-Acer,Aspire 5,Notebook,15.6,12,Windows 10,2.2,Standard,1366,768,Intel,1.6,Core i5 8250U,1024,0,HDD,Nvidia,GeForce MX130,825.85
-Dell,Inspiron 3576,Notebook,15.6,8,Linux,2.14,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,AMD,Radeon 520,874.73
-HP,Zbook 17,Workstation,17.3,16,Windows 7,3.0,Full HD,1920,1080,Intel,2.9,Xeon E3-1535M v5,256,0,SSD,Nvidia,Quadro M2000M,5222.91
-Asus,Q304UA-BHI5T11 (i5-7200U/6GB/1TB/FHD/W10),2 in 1 Convertible,13.3,6,Windows 10,1.5,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,760.42
-Asus,VivoBook S14,Notebook,14.0,4,Windows 10,1.3,Standard,1366,768,Intel,2.4,Core i3 7100U,128,0,SSD,Intel,HD Graphics 620,605.71
-Asus,F756UX-T4201D (i7-7500U/8GB/128GB,Notebook,17.3,8,No OS,2.69,Full HD,1920,1080,Intel,2.7,Core i7 7500U,128,1024,SSD,Nvidia,GeForce GTX 950M,1057.91
-HP,EliteBook x360,2 in 1 Convertible,13.3,8,Windows 10,1.28,Full HD,1920,1080,Intel,2.8,Core i7 7600U,256,0,SSD,Intel,HD Graphics 620,3045.21
-HP,Elitebook 850,Notebook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1361.36
-Dell,Latitude 7480,Notebook,14.0,8,Windows 10,1.36,Full HD,1920,1080,Intel,2.6,Core i5 7300U,256,0,SSD,Intel,HD Graphics 620,1698.13
-Asus,VivoBook Max,Notebook,15.6,4,Linux,2.0,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,665.21
-Dell,Inspiron 5577,Gaming,15.6,8,Windows 10,2.56,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,256,0,SSD,Nvidia,GeForce GTX 1050,1046.01
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.2,Quad HD+,3200,1800,Intel,1.8,Core i7 8550U,256,0,SSD,Intel,UHD Graphics 620,1664.81
-Lenovo,ThinkPad Yoga,2 in 1 Convertible,13.3,8,Windows 10,1.37,Full HD,1920,1080,Intel,2.5,Core i5 7200U,512,0,SSD,Intel,HD Graphics 620,2171.75
-Asus,FX753VE-GC093 (i7-7700HQ/12GB/1TB/GeForce,Gaming,17.3,12,Linux,3.0,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,HDD,Nvidia,GeForce GTX 1050 Ti,1129.31
-HP,Spectre x360,2 in 1 Convertible,13.3,8,Windows 10,1.26,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,1664.8
-Dell,Inspiron 3567,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,AMD,Radeon R5 M430,886.55
-Dell,Inspiron 5577,Gaming,15.6,16,Windows 10,2.56,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX 1050,1486.62
-HP,EliteBook 840,Ultrabook,14.0,4,Windows 10,1.48,Full HD,1920,1080,Intel,2.7,Core i5 7500U,256,0,SSD,Intel,HD Graphics 620,1287.58
-Dell,Inspiron 5567,Notebook,15.6,8,Windows 10,2.33,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,AMD,Radeon R7 M445,1069.81
-Lenovo,IdeaPad 310-15IKB,Notebook,15.6,6,Windows 10,2.4,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,671.16
-Toshiba,Tecra Z40-C-136,Ultrabook,14.0,8,Windows 10,1.47,Full HD,1920,1080,Intel,2.6,Core i7 6600U,256,0,SSD,Intel,HD Graphics 520,2052.75
-Lenovo,ThinkPad T570,Notebook,15.6,8,Windows 10,1.95,Full HD,1920,1080,Intel,2.5,Core i5 7200U,512,0,SSD,Intel,HD Graphics 620,2335.96
-Lenovo,V330-15IKB (i5-8250U/4GB/500GB/FHD/W10),Notebook,15.6,4,Windows 10,2.05,Full HD,1920,1080,Intel,1.6,Core i5 8250U,500,0,HDD,Intel,HD Graphics 620,815.15
-Dell,Inspiron 3179,2 in 1 Convertible,11.6,4,Windows 10,1.39,Standard,1366,768,Intel,1.0,Core M 7Y30,128,0,SSD,Intel,HD Graphics 615,717.57
-HP,ProBook 470,Notebook,17.3,8,Windows 10,2.5,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Intel,UHD Graphics 620,1104.32
-Asus,Rog G752VT-GC073T,Gaming,17.3,16,Windows 10,4.0,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 970M,2261.0
-Lenovo,Thinkpad 13,Notebook,13.3,8,Windows 10,1.4,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1201.9
-Lenovo,Thinkpad T570,Notebook,15.6,8,Windows 10,1.95,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 630,1305.43
-Asus,Q534UX-BHI7T19 (i7-7500U/16GB/2TB,2 in 1 Convertible,15.6,16,Windows 10,2.3,4K Ultra HD,3840,2160,Intel,2.7,Core i7 7500U,512,2048,SSD,Nvidia,GeForce GTX 950M,2140.81
-MSI,GS63VR 6RF,Gaming,15.6,16,Windows 10,1.8,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,2295.51
-Dell,Inspiron 7567,Gaming,15.6,8,Windows 10,2.62,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,Hybrid,Nvidia,GeForce GTX 1050,1069.81
-Lenovo,V310-15ISK (i5-7200U/4GB/1TB/FHD/W10),Notebook,15.6,4,Windows 10,1.9,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,Intel,HD Graphics 620,653.31
-Acer,TravelMate B,Netbook,11.6,4,Windows 10,1.4,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,128,0,SSD,Intel,HD Graphics 400,517.65
-Razer,Blade Pro,Gaming,14.0,16,Windows 10,1.95,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,1024,0,SSD,Nvidia,GeForce GTX 1060,4163.81
-Asus,X541NA (N4200/4GB/1TB/W10),Notebook,15.6,4,Windows 10,2.0,Standard,1366,768,Intel,1.1,Pentium Quad Core N4200,1024,0,HDD,Intel,HD Graphics 505,534.31
-Dell,Inspiron 5378,2 in 1 Convertible,13.3,8,Windows 10,1.68,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1057.91
-HP,EliteBook 850,Notebook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1450.61
-Lenovo,V110-15ISK (i5-6200U/4GB/500GB/W10),Notebook,15.6,4,Windows 10,2.1,Standard,1366,768,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,642.6
-Dell,Inspiron 5570,Notebook,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,AMD,Radeon 530,1035.3
-Xiaomi,Mi Notebook,Notebook,15.6,8,No OS,1.95,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Nvidia,GeForce MX150,1426.81
-Dell,Latitude 7280,Ultrabook,12.5,16,Windows 10,1.18,Full HD,1920,1080,Intel,2.8,Core i7 7600U,256,0,SSD,Intel,HD Graphics 620,2212.21
-Samsung,Notebook 9,Ultrabook,13.3,8,Windows 10,0.81,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1783.81
-Lenovo,Yoga 720-15IKB,2 in 1 Convertible,15.6,8,Windows 10,2.0,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,0,SSD,Intel,HD Graphics 630,1545.81
-Asus,Rog GL552VW-CN470T,Gaming,15.6,16,Windows 10,2.59,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 960M,1593.41
-Asus,K756UX-T4340T (i5-7200U/8GB/500GB,Notebook,17.3,8,Windows 10,2.69,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,500,SSD,Nvidia,GeForce GTX 950M,1060.29
-Samsung,Notebook 9,Ultrabook,15.0,8,Windows 10,1.17,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,2021.81
-Dell,Alienware 15,Gaming,15.6,16,Windows 10,3.21,4K Ultra HD,3840,2160,Intel,2.6,Core i7 6700HQ,256,1024,SSD,Nvidia,GeForce GTX 970M,1581.51
-Acer,Aspire A517-51G,Notebook,17.3,8,Windows 10,3.0,Full HD,1920,1080,Intel,1.6,Core i5 8250U,256,0,SSD,Nvidia,GeForce MX150,1016.26
-Lenovo,ThinkPad P70,Notebook,17.3,16,Windows 7,2.4,4K Ultra HD,3840,2160,Intel,2.7,Core i7 6820HQ,512,0,SSD,Nvidia,Quadro 3000M,3531.92
-MSI,GL62M 7RDX,Gaming,15.6,8,Windows 10,2.2,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050,1367.31
-Lenovo,ThinkPad L570,Notebook,15.6,8,Windows 10,2.3,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1084.09
-Lenovo,ThinkPad Yoga,2 in 1 Convertible,14.0,8,Windows 10,1.8,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1986.11
-Dell,Latitude 5580,Notebook,15.6,4,Windows 10,1.9,Standard,1366,768,Intel,2.5,Core i5 7200U,500,0,HDD,Intel,HD Graphics 620,981.75
-Dell,XPS 13,Ultrabook,13.3,8,Windows 10,1.22,Full HD,1920,1080,Intel,1.6,Core i5 8250U,128,0,SSD,Intel,UHD Graphics 620,1165.01
-Asus,X541UA-DM1897 (i3-6006U/4GB/256GB/FHD/Linux),Notebook,15.6,4,Linux,2.0,Full HD,1920,1080,Intel,2.0,Core i3 6006U,256,0,SSD,Intel,HD Graphics 520,493.85
-HP,EliteBook 850,Notebook,15.6,8,Windows 10,1.84,Full HD,1920,1080,Intel,2.4,Core i5 6300U,256,0,SSD,Intel,HD Graphics 520,2261.0
-HP,EliteBook 840,Ultrabook,14.0,8,Windows 7,1.54,Standard,2560,1440,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,2615.85
-Dell,Inspiron 3567,Notebook,15.6,8,Windows 10,2.24,Full HD,1920,1080,Intel,2.5,Core i5 7200U,1024,0,HDD,AMD,Radeon R5 M430,672.35
-MSI,GE62 Apache,Gaming,15.6,8,Windows 10,2.4,Full HD,1920,1080,Intel,2.6,Core i7 6700HQ,128,1024,SSD,Nvidia,GeForce GTX 960M,1462.51
-Dell,Latitude 5580,Notebook,15.6,8,Windows 10,1.9,Full HD,1920,1080,Intel,2.8,Core i5 7440HQ,256,0,SSD,Intel,HD Graphics 620,1638.63
-Asus,X542UQ-GO005 (i5-7200U/8GB/1TB/GeForce,Notebook,15.6,8,Linux,2.3,Standard,1366,768,Intel,2.5,Core i5 7200U,1024,0,HDD,Nvidia,GeForce 940MX,622.36
-Acer,Nitro AN515-51,Gaming,15.6,8,Windows 10,2.5,Full HD,1920,1080,Intel,2.5,Core i5 7300HQ,256,0,SSD,Nvidia,GeForce GTX 1050,1006.74
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,8,Windows 10,2.5,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050M,1319.71
-Mediacom,SmartBook Edge,Notebook,14.0,4,Windows 10,1.45,Full HD,1920,1080,Intel,1.1,Celeron Quad Core N3450,32,0,SSD,Intel,HD Graphics 500,462.91
-Dell,Latitude E7470,Notebook,14.0,8,Windows 10,1.56,Full HD,1920,1080,Intel,2.4,Core i5 6300U,256,0,SSD,Intel,HD Graphics 520,1462.51
-Lenovo,ThinkPad X1,2 in 1 Convertible,14.0,8,Windows 10,1.42,Standard,2560,1440,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,3082.1
-Toshiba,Portege Z30-C-16H,Notebook,13.3,4,Windows 10,1.2,Full HD,1920,1080,Intel,2.3,Core i5 6200U,128,0,SSD,Intel,HD Graphics 520,1422.05
-HP,ProBook 430,Notebook,13.3,8,Windows 10,1.49,Full HD,1920,1080,Intel,2.7,Core i7 7500U,256,0,SSD,Intel,HD Graphics 620,1297.1
-Dell,Inspiron 5370,Ultrabook,13.3,8,Windows 10,1.4,Full HD,1920,1080,Intel,1.8,Core i7 8550U,256,0,SSD,AMD,Radeon 530,1108.94
-Lenovo,V310-15IKB (i5-7200U/8GB/1TB,Notebook,15.6,8,Windows 10,1.9,Full HD,1920,1080,Intel,2.5,Core i5 7200U,128,1024,SSD,AMD,R17M-M1-70,967.47
-Lenovo,IdeaPad 120S-14IAP,Notebook,14.0,4,Windows 10,1.44,Standard,1366,768,Intel,1.1,Celeron Dual Core N3350,32,0,Flash Storage,Intel,HD Graphics 500,347.48
-HP,EliteBook 1030,Ultrabook,13.3,16,Windows 10,1.16,Quad HD+,3200,1800,Intel,1.2,Core M 6Y75,512,0,SSD,Intel,HD Graphics 515,2338.35
-Lenovo,IdeaPad 320-15AST,Notebook,15.6,4,Windows 10,2.2,Standard,1366,768,AMD,2.2,E-Series 9000,500,0,HDD,AMD,Radeon R2 Graphics,355.81
-Toshiba,Portege Z30-C-16L,Ultrabook,13.3,8,Windows 10,1.2,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1621.97
-Apple,MacBook Pro,Ultrabook,15.4,16,macOS,1.83,Standard,2880,1800,Intel,2.7,Core i7,512,0,SSD,AMD,Radeon Pro 455,3019.57
-Dell,Inspiron 3567,Notebook,15.6,8,Windows 10,2.3,Standard,1366,768,Intel,2.4,Core i3 7100U,1024,0,HDD,Intel,HD Graphics 620,546.21
-HP,ProBook 640,Notebook,14.0,8,Windows 10,1.95,Full HD,1920,1080,Intel,2.5,Core i5 7200U,256,0,SSD,Intel,HD Graphics 620,1166.2
-Dell,Vostro 3559,Notebook,15.6,4,Windows 7,2.24,Standard,1366,768,Intel,2.3,Core i5 6200U,500,0,HDD,Intel,HD Graphics 520,877.03
-HP,EliteBook 1040,Ultrabook,14.0,8,Windows 10,1.43,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,1785.0
-HP,ProBook 430,Notebook,13.3,4,Windows 10,1.49,Full HD,1920,1080,Intel,1.6,Core i5 8250U,128,0,SSD,Intel,UHD Graphics 620,863.94
-Lenovo,Legion Y520-15IKBN,Gaming,15.6,16,No OS,2.4,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX 1060,1663.62
-Dell,Inspiron 7577,Gaming,15.6,16,Windows 10,2.65,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,256,1024,SSD,Nvidia,GeForce GTX 1060,1783.81
-Dell,Inspiron 7570,Notebook,15.6,8,Windows 10,2.16,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Nvidia,GeForce 940MX,1501.78
-HP,250 G6,Notebook,15.6,4,No OS,1.86,Standard,1366,768,Intel,1.6,Celeron Dual Core N3060,500,0,HDD,Intel,HD Graphics 400,308.21
-Apple,MacBook Pro,Ultrabook,13.3,8,macOS,1.37,Standard,2560,1600,Intel,3.1,Core i5,512,0,SSD,Intel,Iris Plus Graphics 650,2427.6
-Dell,Inspiron 7577,Gaming,15.6,16,Windows 10,2.65,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,128,1024,SSD,Nvidia,GeForce GTX 1050 Ti,1605.31
-Lenovo,ThinkPad Yoga,Ultrabook,12.5,8,Windows 10,1.3,Full HD,1920,1080,Intel,2.5,Core i7 6500U,256,0,SSD,Intel,HD Graphics 520,2039.05
-HP,Probook 430,Notebook,13.3,16,Windows 10,1.49,Full HD,1920,1080,Intel,1.8,Core i7 8550U,512,0,SSD,Intel,UHD Graphics 620,1424.43
-HP,Omen 17-W006na,Gaming,17.3,8,Windows 10,2.75,Full HD,1920,1080,Intel,2.3,Core i5 6300HQ,128,1024,SSD,Nvidia,GeForce GTX 965M,1664.81
-Lenovo,IdeaPad 320-15AST,Notebook,15.6,4,Windows 10,2.2,Full HD,1920,1080,AMD,2.9,A9-Series 9420,256,0,SSD,AMD,Radeon 530,474.81
-MSI,GE72MVR 7RG,Gaming,17.3,16,Windows 10,2.9,Full HD,1920,1080,Intel,2.8,Core i7 7700HQ,512,1024,SSD,Nvidia,GeForce GTX 1070,2873.85
-HP,15-BW037na (A9-9420/4GB/1TB/Radeon,Notebook,15.6,4,Windows 10,2.1,Full HD,1920,1080,AMD,3.0,A9-Series 9420,1024,0,HDD,AMD,Radeon 520,581.91
-Dell,Inspiron 7567,Gaming,15.6,16,Windows 10,2.62,4K Ultra HD,3840,2160,Intel,2.8,Core i7 7700HQ,512,0,SSD,Nvidia,GeForce GTX 1050 Ti,1998.01
-Asus,X542UQ-DM117 (i3-7100U/8GB/1TB/GeForce,Notebook,15.6,8,Linux,2.3,Full HD,1920,1080,Intel,2.4,Core i3 7100U,1024,0,HDD,Nvidia,GeForce 940MX,710.43
+4,117,3,15.6,8,4,2.5,3,1366,768,1,2.5,27,1024,0,1,0,72,932.96
+7,61,0,13.3,8,4,1.28,1,1920,1080,1,2.8,43,256,0,3,2,43,3045.21
+15,158,4,13.3,16,4,0.81,1,1920,1080,1,2.7,41,256,0,3,2,43,1962.31
+4,117,3,15.6,8,1,2.33,1,1920,1080,1,2.7,41,256,0,3,0,72,926.86
+10,232,0,14.0,16,4,1.42,3,2560,1440,1,2.7,41,512,0,3,2,43,2985.71
+7,10,3,15.6,4,4,1.91,1,1920,1080,0,3.0,6,256,0,3,0,65,581.9
+7,2,3,15.6,6,4,1.91,1,1920,1080,1,1.6,32,256,0,3,0,58,736.61
+4,119,3,15.6,8,4,2.02,1,1920,1080,1,1.8,48,128,2048,3,0,59,1155.37
+0,209,3,15.6,6,4,2.1,1,1920,1080,1,2.4,21,1024,0,1,2,43,570.01
+7,1,3,15.6,4,4,2.1,1,1920,1080,1,2.0,19,1024,0,1,0,58,558.11
+4,267,3,15.6,8,4,2.18,3,1366,768,1,2.5,27,128,0,3,2,43,849.65
+2,280,3,17.3,4,4,2.8,3,1366,768,1,1.1,59,1024,0,1,3,4,559.7
+10,226,3,17.3,16,6,2.4,0,3840,2160,1,2.7,39,512,0,3,3,50,3531.92
+0,67,3,15.6,4,4,2.4,3,1366,768,1,2.5,27,500,0,1,2,43,665.21
+1,151,4,13.3,8,7,1.37,3,2560,1600,1,2.3,23,128,0,3,2,46,1594.23
+7,19,3,17.3,4,4,2.5,1,1920,1080,1,2.0,19,256,0,3,0,67,831.81
+4,142,4,15.6,8,4,1.88,1,1920,1080,1,1.9,49,256,256,3,2,77,1544.62
+10,235,3,15.6,16,4,2.5,1,1920,1080,1,2.9,46,512,0,3,3,54,2914.31
+0,53,3,17.3,4,4,3.3,3,1600,900,1,2.0,19,1024,0,1,3,10,711.62
+4,111,3,15.6,4,4,2.3,1,1920,1080,1,2.5,27,500,0,1,0,71,696.15
+7,61,0,13.3,16,4,1.28,1,1920,1080,1,2.8,43,256,0,3,2,43,2350.25
+4,116,0,13.3,16,4,1.62,1,1920,1080,1,1.8,48,512,0,3,2,77,1522.01
+1,151,4,13.3,8,7,1.37,3,2560,1600,1,3.1,23,256,0,3,2,47,2146.28
+7,17,3,17.3,8,4,2.65,3,1600,900,1,2.0,19,1024,0,1,2,40,647.54
+2,258,2,11.6,4,5,1.2,3,1366,768,1,1.1,11,64,0,0,2,36,404.6
+4,282,4,13.3,8,4,1.21,0,3840,2160,1,1.8,48,256,0,3,2,77,2319.31
+2,199,1,15.6,16,4,2.34,1,1920,1080,1,2.6,37,256,1024,3,3,17,2766.75
+10,289,0,14.0,16,4,1.38,1,1920,1080,1,2.7,41,512,0,3,2,43,2081.31
+7,190,3,15.6,8,4,2.04,1,1920,1080,1,2.7,27,128,1024,3,3,7,1165.01
+10,100,3,15.6,4,3,2.2,1,1920,1080,1,2.5,27,1024,0,1,2,43,555.73
+7,206,4,13.3,8,4,1.11,1,1920,1080,1,2.7,41,256,0,3,2,43,1605.31
+10,97,3,15.6,4,4,2.2,1,1920,1080,0,2.5,3,128,0,3,0,57,474.81
+7,14,3,17.0,8,4,2.6,3,1600,900,0,3.0,6,1024,0,1,0,65,619.87
+4,138,3,15.6,8,4,2.06,1,1920,1080,1,2.5,27,1024,0,1,2,43,1136.45
+17,250,3,14.0,2,4,1.45,3,1366,768,1,1.44,7,32,0,0,2,34,250.85
+7,189,3,14.0,8,4,1.63,1,1920,1080,1,1.8,48,512,0,3,2,77,1289.96
+10,288,0,13.3,16,4,1.3,2,3200,1800,1,2.2,35,1024,0,3,2,45,2140.81
+2,180,3,15.6,8,4,2.37,1,1920,1080,1,2.5,27,256,0,3,2,43,1307.81
+7,160,1,17.3,12,4,2.62,1,1920,1080,1,2.8,44,1024,0,1,3,16,2140.81
+7,6,3,15.6,8,4,1.91,3,1366,768,1,2.5,27,128,0,3,2,43,700.91
+4,267,3,15.6,4,4,2.18,3,1366,768,1,2.5,27,1024,0,1,0,69,815.14
+11,77,1,17.3,8,4,2.7,1,1920,1080,1,2.8,44,128,1024,3,3,12,1418.24
+10,252,3,15.6,4,4,1.85,1,1920,1080,1,2.0,19,1024,0,1,2,40,534.31
+16,218,4,14.0,16,4,1.24,1,1920,1080,1,2.7,41,512,0,3,2,43,2219.35
+2,49,0,12.5,8,0,1.2,1,1920,1080,1,1.2,16,64,0,0,2,39,1379.21
+15,50,0,12.3,4,0,1.15,3,2400,1600,2,2.0,50,32,0,0,1,49,784.21
+8,153,4,13.0,8,4,1.05,1,2160,1440,1,2.5,27,256,0,3,2,43,1605.31
+7,169,0,14.0,4,4,1.63,1,1920,1080,1,2.4,21,128,0,3,3,10,831.81
+4,176,5,15.6,8,4,2.0,1,1920,1080,1,2.7,39,256,0,3,3,52,2540.65
+16,216,3,14.0,4,4,1.75,3,1366,768,1,2.3,24,128,0,3,2,40,1213.8
+17,131,3,14.0,4,4,1.22,3,1920,1080,1,1.1,11,32,0,0,2,36,241.45
+2,262,3,15.6,4,4,2.0,3,1366,768,0,1.8,52,500,0,1,0,62,415.31
+7,20,3,15.6,8,4,1.96,1,1920,1080,1,2.5,34,256,0,3,2,40,808.01
+0,25,3,15.6,4,4,2.1,3,1366,768,1,2.0,11,500,0,1,2,36,396.27
+16,215,3,14.0,8,4,1.95,1,1920,1080,1,2.3,24,256,0,3,2,40,1404.2
+2,73,1,15.6,8,4,2.5,1,1920,1080,1,2.8,44,128,1024,3,3,13,1505.35
+4,141,3,15.6,8,4,1.9,3,1366,768,1,2.6,29,500,0,1,2,43,1200.14
+4,177,5,15.6,16,4,2.8,0,3840,2160,1,3.0,62,256,1024,3,3,52,3635.45
+7,22,3,15.6,4,3,1.86,3,1366,768,0,1.5,55,500,0,1,0,61,307.02
+10,92,3,15.6,4,3,2.2,1,1920,1080,1,2.0,19,1024,0,1,0,71,570.01
+4,142,4,15.6,8,4,1.88,1,1920,1080,1,1.6,32,256,0,3,2,77,1304.43
+2,198,1,17.3,16,4,4.3,1,1920,1080,1,2.6,37,256,1024,3,3,17,2796.5
+16,204,3,15.6,4,4,2.1,3,1366,768,1,2.3,24,500,0,1,2,40,928.2
+4,129,0,17.3,16,4,2.77,1,1920,1080,1,2.7,41,512,0,3,3,10,2140.81
+4,24,1,17.3,32,4,4.42,1,1920,1080,1,2.8,44,1024,1024,3,3,18,4270.67
+11,84,1,15.6,16,4,2.94,1,1920,1080,1,2.6,37,256,1024,3,3,16,2164.61
+0,31,3,15.6,4,4,2.2,1,1920,1080,1,1.6,32,1024,0,1,3,32,729.47
+7,164,1,17.3,12,4,3.78,1,1920,1080,1,2.8,44,1024,0,1,3,16,2021.81
+9,90,4,15.6,8,4,1.09,1,1920,1080,1,1.8,48,512,0,3,2,43,2735.81
+10,94,3,15.6,4,4,2.4,1,1920,1080,1,2.5,27,1024,0,1,3,3,724.71
+1,152,4,13.3,8,7,1.34,3,1440,900,1,1.8,23,256,0,0,2,41,1378.85
+10,41,3,15.6,8,3,2.32,1,1920,1080,1,2.3,24,1024,0,1,0,68,712.81
+4,283,3,15.6,16,4,2.06,0,3840,2160,1,2.8,44,512,0,3,3,12,2412.63
+16,204,3,15.6,4,4,2.1,3,1366,768,1,2.1,20,128,0,3,2,40,592.62
+7,21,3,15.6,4,4,1.86,3,1366,768,1,2.0,19,500,0,1,0,58,522.04
+10,147,1,15.6,16,3,2.4,1,1920,1080,1,2.8,44,512,0,3,3,16,1663.62
+7,182,3,14.0,4,4,1.64,3,1366,768,1,2.5,27,256,0,3,2,43,1157.87
+11,74,1,15.6,8,4,2.3,1,1920,1080,1,2.6,37,128,1024,3,3,25,1391.11
+2,281,3,17.3,4,4,2.8,3,1600,900,1,1.6,58,1024,0,1,3,4,630.7
+4,140,3,14.0,4,4,1.6,3,1366,768,1,2.5,27,500,0,1,2,43,1041.25
+4,121,0,15.6,8,4,2.3,1,1920,1080,1,2.7,27,256,0,3,2,43,1301.86
+7,18,3,17.3,4,4,2.71,1,1920,1080,0,2.5,3,500,0,1,0,59,522.41
+4,267,3,15.6,4,4,2.18,3,1366,768,1,2.4,21,128,0,3,2,43,650.93
+2,70,1,15.6,8,4,2.45,1,1920,1080,0,3.0,56,1024,0,1,0,75,831.81
+4,270,3,15.6,8,4,2.0,1,1920,1080,1,2.0,19,256,0,3,0,70,879.41
+4,23,1,15.6,16,4,3.21,1,1920,1080,1,2.5,28,128,1024,3,3,16,2440.69
+10,42,3,15.6,4,6,2.32,1,1920,1080,1,2.5,34,1024,0,2,2,40,981.75
+0,27,1,15.6,8,1,2.4,1,1920,1080,1,2.5,28,1024,0,1,3,12,949.62
+16,219,3,14.0,4,4,1.47,1,1920,1080,1,2.3,24,128,0,3,2,40,1314.95
+4,175,5,15.6,8,4,2.23,1,1920,1080,1,2.8,44,1024,0,1,3,55,2115.82
+4,119,3,15.6,8,4,2.33,1,1920,1080,1,1.6,32,128,1024,3,0,59,1004.36
+0,214,3,14.0,8,4,1.5,1,1920,1080,1,2.4,21,128,0,3,2,43,736.61
+7,57,4,12.5,8,6,1.26,1,1920,1080,1,2.3,24,256,0,3,2,40,1426.81
+7,186,3,15.6,4,4,2.31,3,1366,768,1,2.3,24,500,0,1,2,40,1426.81
+4,111,3,15.6,4,1,2.25,3,1366,768,1,2.0,19,1024,0,1,0,71,554.09
+7,185,3,14.0,4,4,1.95,3,1366,768,1,2.5,27,500,0,1,2,43,1261.4
+0,48,0,11.6,4,0,1.25,3,1366,768,1,1.6,10,32,0,0,2,34,462.91
+7,58,4,14.0,8,4,1.54,1,1920,1080,1,2.5,34,512,0,3,2,40,1746.92
+4,282,4,13.3,8,4,1.23,2,3200,1800,1,1.6,32,256,0,3,2,77,2224.11
+2,299,4,15.6,16,4,1.63,1,1920,1080,1,2.7,41,512,0,3,3,10,1746.92
+4,125,1,15.6,16,4,2.59,1,1920,1080,1,2.6,37,1024,0,1,3,24,1046.02
+10,101,3,15.6,4,4,2.2,1,1920,1080,1,2.3,24,500,0,1,2,40,636.65
+2,297,4,13.3,8,4,1.45,1,1920,1080,1,2.3,24,512,0,3,3,9,1220.94
+7,57,4,12.5,8,6,1.26,3,1366,768,1,2.4,26,256,0,3,2,40,2255.05
+7,208,0,13.3,16,4,1.29,0,3840,2160,1,1.8,48,1024,0,3,2,77,2914.31
+10,233,4,12.5,8,4,1.36,1,1920,1080,1,2.5,27,256,0,3,2,43,1700.51
+7,60,4,12.5,8,4,0.97,0,3840,2160,1,1.2,15,512,0,3,2,39,2396.66
+4,120,1,15.6,8,4,2.56,1,1920,1080,1,2.5,28,1024,0,1,3,12,974.61
+7,55,4,13.3,16,4,1.16,2,3200,1800,1,1.2,15,512,0,3,2,39,2338.35
+7,21,3,15.6,4,3,1.86,3,1366,768,1,2.0,19,500,0,1,2,40,434.23
+7,210,3,14.0,2,4,1.44,3,1366,768,1,1.6,10,32,0,0,2,34,296.31
+4,146,4,14.0,8,4,1.5,3,2560,1440,1,2.6,36,256,0,3,2,40,2335.95
+7,59,3,15.6,8,4,1.84,1,1920,1080,1,2.4,26,256,500,3,2,40,2502.97
+11,72,1,15.6,16,4,2.4,1,1920,1080,1,2.8,44,256,1024,3,3,16,2140.81
+7,5,3,15.6,8,4,2.1,1,1920,1080,1,2.7,41,1024,0,1,0,59,886.55
+2,263,2,11.6,2,4,0.98,3,1366,768,1,1.44,8,32,0,0,2,34,228.36
+4,111,3,15.6,4,4,2.2,1,1920,1080,1,2.0,19,256,0,3,0,71,593.69
+4,283,3,15.6,16,4,2.06,0,3840,2160,1,2.8,44,1024,0,3,3,12,2854.81
+1,151,4,13.3,8,7,1.37,3,2560,1600,1,2.0,23,256,0,3,2,45,1688.61
+16,217,3,15.6,8,4,2.0,1,1920,1080,1,2.5,27,500,0,1,2,43,1266.16
+10,241,3,15.6,8,4,1.95,1,1920,1080,1,2.7,41,256,0,3,2,44,1305.43
+7,184,3,17.3,8,4,2.63,1,1920,1080,1,2.7,41,256,0,3,3,7,1428.0
+4,145,3,14.0,8,4,1.79,3,1366,768,1,2.3,20,128,0,3,2,40,880.6
+4,115,0,13.3,8,4,1.68,1,1920,1080,1,2.5,27,256,0,3,2,43,1057.91
+10,232,4,14.0,8,4,1.13,1,1920,1080,1,2.7,41,256,0,0,2,43,2438.31
+10,101,3,15.6,8,3,2.2,3,1366,768,1,2.0,19,256,0,3,3,5,593.81
+7,60,2,12.5,8,4,0.97,1,1920,1080,1,1.2,15,512,0,3,2,39,2270.52
+0,26,3,15.6,8,4,2.2,1,1920,1080,1,1.8,48,1024,0,1,3,32,819.91
+7,58,4,14.0,8,6,1.54,1,1920,1080,1,2.5,34,512,0,3,2,40,2225.3
+4,45,2,11.6,4,0,1.26,3,1366,768,1,1.6,10,16,0,0,2,34,351.05
+2,296,0,13.3,8,4,1.1,1,1920,1080,1,2.5,27,256,0,3,2,43,1616.02
+7,21,3,15.6,4,4,1.86,3,1366,768,1,2.5,27,500,0,1,2,43,577.15
+4,141,3,15.6,8,4,1.9,1,1920,1080,1,2.8,30,256,0,3,2,43,1638.63
+10,93,3,15.6,6,4,2.4,1,1920,1080,0,2.4,0,1024,0,1,0,66,593.81
+4,267,3,15.6,4,4,2.18,3,1366,768,1,2.5,27,1024,0,1,2,43,842.59
+10,147,1,15.6,8,4,2.5,1,1920,1080,1,2.8,44,128,1024,3,3,14,1319.71
+2,298,3,15.6,8,4,2.0,1,1920,1080,1,2.7,41,256,1024,3,2,43,1456.56
+4,111,3,15.6,4,1,2.3,1,1920,1080,1,2.5,27,256,0,3,0,71,712.69
+10,231,3,15.6,8,4,1.95,1,1920,1080,1,2.5,27,512,0,3,2,43,2335.96
+7,62,3,14.0,8,4,1.48,1,1920,1080,1,2.7,41,256,0,3,2,43,1537.48
+0,29,3,15.6,4,4,2.2,1,1920,1080,1,1.6,32,256,0,3,2,77,811.58
+13,213,4,13.5,4,5,1.252,3,2256,1504,1,2.2,17,128,0,3,2,42,1176.91
+7,59,3,15.6,8,6,1.88,1,1920,1080,1,2.3,24,256,0,3,2,40,1879.01
+0,25,3,15.6,4,4,2.1,3,1366,768,0,3.0,6,128,0,3,0,65,506.94
+10,227,3,14.0,4,6,1.7,3,1366,768,1,2.3,24,508,0,2,2,40,1192.38
+10,147,1,15.6,4,4,2.4,1,1920,1080,1,2.8,44,1024,0,1,3,12,1188.81
+4,267,3,15.6,4,1,2.18,3,1366,768,1,2.5,27,1024,0,1,2,40,621.01
+7,159,1,17.3,8,4,3.35,1,1920,1080,1,2.3,25,128,1024,3,3,16,1343.51
+10,234,0,13.3,8,4,1.37,1,1920,1080,1,2.7,41,256,0,3,2,43,2320.5
+7,189,3,14.0,8,4,1.63,1,1920,1080,1,1.8,48,256,0,3,2,77,1175.72
+7,12,3,15.6,4,4,2.1,3,1366,768,1,1.6,10,500,0,1,2,34,412.93
+7,182,3,14.0,8,4,1.64,1,1920,1080,1,2.5,27,256,0,3,3,7,1248.62
+18,154,4,13.3,8,4,1.28,1,1920,1080,1,2.3,24,256,0,3,3,10,1112.65
+10,241,5,15.6,16,4,2.3,0,3840,2160,1,2.8,43,512,0,3,3,10,2909.55
+2,279,3,15.6,4,4,2.2,3,1366,768,1,2.5,34,500,0,1,3,3,857.18
+7,4,3,15.6,4,4,1.91,1,1920,1080,1,2.0,19,128,0,3,2,40,522.41
+4,130,3,17.3,4,4,2.36,3,1600,900,1,2.0,19,1024,0,1,0,72,784.21
+10,234,0,13.3,8,4,1.37,1,1920,1080,1,2.7,41,512,0,3,2,43,2409.75
+6,170,4,12.3,8,0,1.1,3,2400,1600,1,1.2,31,128,0,3,2,42,1517.25
+4,270,3,15.6,4,4,2.18,1,1920,1080,1,2.5,27,128,1024,3,3,10,1085.88
+10,234,0,13.3,8,4,1.37,1,1920,1080,1,2.5,27,512,0,3,2,43,2171.75
+4,111,3,15.6,8,1,2.3,3,1366,768,1,2.7,41,1024,0,1,0,71,959.13
+7,186,3,14.0,8,4,2.31,3,1366,768,1,2.6,29,256,0,3,2,43,1337.56
+10,221,4,14.0,8,4,1.75,1,1920,1080,1,1.8,48,256,0,3,0,74,1446.3
+7,183,3,15.6,4,4,2.04,3,1366,768,1,2.5,27,500,0,1,2,43,882.98
+2,276,3,15.6,4,4,2.0,3,1366,768,1,1.1,59,500,0,1,2,36,361.76
+10,256,3,15.6,4,4,1.8,1,1920,1080,1,1.6,32,256,0,3,2,77,986.51
+4,113,0,13.3,8,4,1.62,1,1920,1080,1,2.5,34,256,0,3,2,40,949.63
+7,56,4,14.0,8,6,1.43,1,1920,1080,1,2.6,36,256,0,3,2,40,1724.31
+7,21,3,15.6,4,4,1.86,1,1920,1080,1,2.0,19,500,0,1,2,40,472.43
+4,127,1,15.6,16,4,2.62,1,1920,1080,1,2.8,44,256,1024,3,3,13,1760.01
+11,81,1,17.3,8,4,2.7,1,1920,1080,1,2.8,44,128,1024,3,3,16,1676.71
+7,15,3,17.3,8,4,2.54,3,1600,900,1,2.0,19,1024,0,1,2,40,581.91
+7,292,5,15.6,8,4,3.14,1,1920,1080,1,2.8,44,256,0,3,3,53,2457.23
+4,139,0,12.5,8,4,1.34,1,1920,1080,1,2.5,27,256,0,3,2,43,1987.3
+4,282,4,13.3,16,4,1.21,0,3840,2160,1,1.8,48,1024,0,3,2,77,2973.81
+4,112,3,15.6,8,4,2.2,1,1920,1080,1,1.6,32,1024,0,1,0,58,803.25
+4,270,3,15.6,8,4,1.98,1,1920,1080,1,2.7,41,1024,0,1,3,11,1143.59
+10,220,3,13.3,8,4,1.44,1,1920,1080,1,2.5,27,256,0,3,2,43,1129.31
+10,232,0,14.0,8,4,1.36,3,2560,1440,1,2.3,24,256,0,3,2,40,1948.03
+10,155,2,11.6,4,4,1.4,3,1366,768,1,1.6,10,128,0,3,2,34,565.25
+7,63,3,15.6,8,4,1.84,1,1920,1080,1,2.5,27,256,0,3,2,43,1361.36
+10,220,3,13.3,8,4,1.4,1,1920,1080,1,2.4,21,256,0,3,2,43,1129.31
+11,76,1,15.6,8,4,2.2,1,1920,1080,1,2.8,44,128,1024,3,3,13,1418.24
+2,301,4,12.5,16,4,0.91,1,1920,1080,1,2.7,41,512,0,3,2,43,2320.5
+10,220,3,13.3,4,0,1.45,3,1366,768,1,1.6,9,16,0,0,2,38,547.28
+7,21,3,15.6,8,4,1.86,1,1920,1080,1,2.5,27,256,0,3,2,43,821.1
+4,267,3,15.6,8,4,2.18,1,1920,1080,1,2.5,27,256,0,3,2,43,892.5
+4,267,3,15.6,4,1,2.18,1,1920,1080,1,2.5,27,128,0,3,0,69,677.11
+2,69,1,15.6,8,4,2.24,1,1920,1080,1,2.8,44,128,1024,3,3,29,1593.41
+10,253,3,15.6,4,3,1.9,3,1366,768,1,2.0,19,500,0,1,2,40,535.5
+4,143,4,12.5,16,4,1.18,1,1920,1080,1,2.8,43,256,0,3,2,43,2212.21
+7,292,5,17.3,8,4,3.14,1,1920,1080,1,2.8,44,500,0,1,3,52,2270.51
+7,167,3,14.0,6,4,1.58,1,1920,1080,1,2.5,27,256,0,3,3,10,784.21
+16,204,3,15.6,4,4,2.1,3,1366,768,1,2.3,24,500,0,1,2,40,716.38
+10,229,4,14.0,24,4,1.32,3,2560,1440,1,2.7,41,512,0,3,2,43,2834.58
+4,117,3,15.6,8,4,2.36,3,1366,768,1,2.7,41,1024,0,1,0,72,891.31
+18,154,3,15.6,16,3,1.95,1,1920,1080,1,1.8,48,256,0,3,3,32,1665.94
+1,149,4,12.0,8,2,0.92,3,2304,1440,1,1.2,13,512,0,0,2,39,1522.01
+10,249,3,15.6,4,4,2.1,3,1366,768,1,2.0,19,500,0,1,2,40,582.98
+4,117,3,15.6,16,1,2.36,1,1920,1080,1,2.7,41,256,0,3,0,72,1069.81
+4,178,5,15.6,8,4,1.78,0,3840,2160,1,2.8,44,256,0,3,3,52,3227.28
+7,64,4,12.5,8,4,1.09,0,3840,2160,1,1.2,15,240,0,3,2,39,3689.0
+4,24,1,17.3,16,4,4.36,0,3840,2160,1,2.8,44,512,1024,3,3,17,3753.26
+7,21,3,15.6,8,3,1.86,1,1920,1080,1,2.5,27,256,0,3,2,43,684.25
+10,221,3,14.0,8,4,1.75,1,1920,1080,1,1.6,32,256,0,3,2,77,1248.31
+2,273,3,15.6,4,4,2.0,3,1366,768,1,1.1,59,1024,0,1,2,37,534.31
+4,127,1,15.6,8,4,2.62,1,1920,1080,1,2.8,44,1024,0,1,3,12,1307.81
+1,150,4,13.3,8,2,1.35,3,1440,900,1,1.6,23,128,0,0,2,41,1307.81
+2,260,3,15.6,4,1,2.1,1,1920,1080,1,2.5,27,1024,0,1,3,2,617.61
+4,135,2,11.6,4,4,1.63,3,1366,768,1,1.1,59,128,0,3,2,37,885.36
+10,225,5,15.6,8,4,2.67,1,1920,1080,1,2.8,44,512,0,3,3,52,2290.75
+16,204,3,15.6,8,4,2.0,1,1920,1080,1,2.5,27,500,0,1,2,43,1023.4
+7,185,3,14.0,4,4,1.95,3,1366,768,1,2.3,24,500,0,1,2,40,1367.31
+2,277,3,15.6,8,1,2.3,1,1920,1080,1,2.4,21,1024,0,1,3,10,710.43
+4,128,3,15.6,8,4,2.0,1,1920,1080,1,1.6,32,256,0,3,3,10,1359.87
+11,87,1,18.4,32,4,4.4,1,1920,1080,1,2.9,40,512,1024,3,3,0,3330.81
+10,0,3,15.6,4,4,2.19,3,1366,768,0,2.0,2,500,0,1,0,63,354.62
+10,95,3,14.0,4,4,2.1,3,1366,768,1,1.1,11,500,0,1,2,36,355.81
+4,283,3,15.6,8,4,2.06,0,3840,2160,1,2.5,28,256,0,3,3,12,2081.31
+2,202,1,17.3,16,4,2.99,1,1920,1080,1,2.8,44,256,1024,3,3,13,2081.31
+10,231,3,15.6,8,4,1.95,1,1920,1080,1,2.5,27,256,0,3,2,43,1654.1
+4,122,0,15.6,16,4,2.0,1,1920,1080,1,1.8,48,512,0,3,2,77,1529.15
+10,232,0,14.0,8,4,1.42,3,2560,1440,1,2.5,27,256,0,3,2,43,2772.7
+10,238,4,14.0,12,4,1.4,2,2560,1440,1,2.6,36,256,0,3,2,40,2211.02
+10,224,3,15.6,8,4,2.3,1,1920,1080,1,2.5,27,256,0,3,2,43,1084.09
+10,91,3,14.0,2,4,1.42,3,1366,768,1,1.6,10,32,0,0,2,34,296.31
+10,284,0,15.6,4,4,1.8,1,1920,1080,1,2.5,34,256,0,3,2,40,1007.93
+10,102,3,17.3,6,4,2.8,3,1600,900,1,2.7,41,128,1024,3,3,10,1022.21
+4,116,0,13.3,8,4,1.62,1,1920,1080,1,1.8,48,1024,0,1,2,77,998.41
+7,161,1,15.6,12,4,2.62,1,1920,1080,1,2.8,44,128,1024,3,3,12,1486.31
+10,286,0,15.6,8,4,2.0,1,1920,1080,1,2.8,44,256,0,3,2,44,1545.81
+0,26,3,17.3,4,4,3.0,1,1920,1080,1,2.7,22,256,0,3,3,31,835.38
+4,141,3,15.6,8,4,1.9,1,1920,1080,1,2.6,29,256,0,3,2,43,1403.01
+12,205,3,14.0,2,4,1.4,1,1920,1080,1,1.44,8,32,0,0,2,33,284.41
+1,150,4,11.6,4,2,1.08,3,1366,768,1,1.6,23,256,0,0,2,41,1141.21
+0,25,3,15.6,4,4,2.1,3,1366,768,1,1.1,59,1024,0,1,2,37,432.58
+10,254,3,15.6,8,4,1.9,1,1920,1080,1,2.5,27,128,1024,3,0,71,973.36
+7,294,5,15.6,8,4,2.6,1,1920,1080,1,2.8,44,256,0,3,3,52,2068.54
+0,28,3,15.6,4,4,2.1,3,1366,768,1,2.0,19,1024,0,1,2,40,531.93
+4,282,4,13.3,8,4,1.29,2,3200,1800,1,2.7,41,256,0,3,2,43,1757.63
+4,269,3,14.0,8,4,1.6,1,1920,1080,1,2.5,27,256,0,3,2,43,1022.21
+15,158,4,13.3,8,4,0.81,1,1920,1080,1,2.5,27,256,0,3,2,43,1783.81
+5,148,3,15.6,8,4,2.2,3,1366,768,1,2.5,27,1024,0,1,2,43,879.41
+4,111,3,15.6,4,1,2.2,1,1920,1080,1,2.0,19,256,0,3,0,71,577.15
+11,85,1,15.6,16,4,2.94,1,1920,1080,1,2.8,44,256,1024,3,3,17,2698.75
+11,89,1,15.6,8,4,2.2,1,1920,1080,1,2.5,28,256,0,3,3,12,1187.5
+7,184,3,17.3,8,4,2.5,1,1920,1080,1,1.6,32,1024,0,1,3,7,1087.66
+4,125,1,15.6,16,4,2.72,0,3840,2160,1,2.6,37,128,1024,3,3,25,1307.81
+7,190,3,15.6,4,4,2.07,1,1920,1080,1,2.3,24,500,0,1,2,40,1082.9
+10,102,3,17.3,4,4,2.79,3,1600,900,1,2.5,27,1024,0,1,3,4,700.91
+7,162,1,17.3,8,4,2.75,1,1920,1080,1,2.3,25,128,1024,3,3,26,1664.81
+10,100,3,15.6,8,3,2.2,3,1366,768,1,2.5,27,2048,0,1,3,10,653.31
+4,144,4,12.5,4,6,1.5,3,1366,768,1,2.3,20,500,0,1,2,40,1350.83
+10,242,0,13.3,8,4,1.37,1,1920,1080,1,2.7,41,256,0,3,2,43,2091.33
+7,185,3,14.0,8,4,1.95,1,1920,1080,1,2.5,27,256,0,3,2,43,1166.2
+0,34,3,15.6,8,4,2.2,1,1920,1080,1,2.7,41,256,0,3,3,10,990.08
+2,52,3,14.0,4,5,1.65,3,1366,768,0,1.5,51,64,0,3,0,61,330.81
+4,111,3,15.6,4,1,2.25,3,1366,768,1,2.0,19,1024,0,1,2,40,427.21
+7,56,4,14.0,8,4,1.43,1,1920,1080,1,2.5,34,256,0,3,2,40,1785.0
+4,119,3,15.6,8,4,2.2,1,1920,1080,1,1.6,32,256,0,3,0,59,952.0
+4,119,3,15.6,8,4,2.02,1,1920,1080,1,1.8,48,256,2048,3,0,59,1359.46
+7,291,5,15.6,16,4,2.6,1,1920,1080,1,2.8,44,256,0,3,3,53,2878.61
+10,246,3,15.6,4,3,1.9,3,1366,768,1,1.1,11,128,0,3,2,36,322.04
+7,184,3,17.3,8,4,2.5,1,1920,1080,1,1.6,32,256,0,3,2,77,1104.32
+7,207,0,13.3,8,4,1.48,3,2560,1440,1,2.6,36,512,0,3,2,40,2428.79
+14,43,1,17.3,32,4,3.49,0,3840,2160,1,2.9,45,1024,0,3,3,19,7257.81
+7,186,3,14.0,4,4,2.31,3,1366,768,1,2.5,27,500,0,1,2,43,1414.91
+2,195,1,17.3,8,4,2.73,1,1920,1080,1,2.5,28,128,1024,3,3,16,2106.3
+0,46,3,14.0,4,0,1.68,3,1366,768,1,1.6,10,32,0,0,2,34,415.31
+2,295,4,14.0,16,4,1.1,1,1920,1080,1,2.7,41,512,0,3,2,43,2261.0
+16,174,4,13.3,8,4,1.2,3,1366,768,1,2.3,24,256,0,3,2,40,1303.05
+7,58,3,14.0,4,6,1.54,1,1920,1080,1,2.3,24,256,0,3,2,40,1308.99
+7,212,3,14.0,4,4,1.44,3,1366,768,1,1.6,10,32,0,3,2,34,272.51
+2,68,1,15.6,8,4,2.2,1,1920,1080,1,2.6,37,1024,0,1,3,16,1391.11
+10,92,3,15.6,4,3,2.2,1,1920,1080,1,2.0,19,1024,0,1,2,40,558.11
+10,220,3,13.3,8,4,1.44,1,1920,1080,1,2.5,27,256,0,3,2,43,1142.4
+10,92,3,15.6,8,4,2.29,3,1366,768,1,2.3,20,1024,0,1,2,40,546.21
+7,181,3,13.3,8,4,1.49,1,1920,1080,1,1.6,32,512,0,3,2,77,1141.21
+10,97,3,15.6,4,4,2.2,3,1366,768,0,2.2,54,128,0,3,0,62,415.31
+4,123,3,17.3,8,4,2.8,1,1920,1080,1,1.8,48,128,1024,3,0,59,1358.98
+4,127,1,15.6,8,4,2.62,1,1920,1080,1,2.5,28,256,0,3,3,12,1172.15
+7,183,3,15.6,4,4,2.1,3,1366,768,1,2.4,21,500,0,1,2,43,795.49
+7,58,4,14.0,8,6,1.54,3,2560,1440,1,2.5,34,256,0,3,2,40,2615.85
+4,110,3,15.6,4,1,2.2,3,1366,768,1,1.6,10,500,0,1,2,33,327.13
+7,163,1,17.3,16,4,3.35,1,1920,1080,1,2.8,44,256,1024,3,3,12,1641.01
+10,232,0,14.0,16,4,2.8,3,2560,1440,1,2.6,36,512,0,3,2,40,2903.6
+7,21,4,15.6,8,4,1.84,1,1920,1080,1,2.7,41,256,0,3,2,43,894.88
+2,200,1,17.3,8,4,2.7,1,1920,1080,1,2.8,44,256,1024,3,3,16,1902.81
+2,193,1,15.6,8,3,2.5,1,1920,1080,1,2.8,44,1024,0,1,3,13,1391.11
+10,251,3,15.6,4,3,1.9,3,1366,768,1,2.5,27,1024,0,1,2,43,582.98
+4,119,3,15.6,16,4,2.2,1,1920,1080,1,1.8,48,256,2048,3,0,59,1350.65
+2,195,1,15.6,8,4,2.3,1,1920,1080,1,2.5,28,128,1024,3,3,16,1962.31
+7,22,3,15.6,4,4,1.86,3,1366,768,0,2.5,3,256,0,3,0,64,439.11
+4,140,3,14.0,8,1,1.64,1,1920,1080,1,2.8,30,256,0,3,3,7,1295.91
+1,151,4,15.4,16,2,2.04,3,2880,1800,1,2.2,33,256,0,0,2,48,2546.56
+7,181,3,13.3,4,4,1.49,1,1920,1080,1,1.6,32,500,0,1,2,77,897.26
+7,58,3,14.0,4,6,1.54,1,1920,1080,1,2.3,24,500,0,1,2,40,1226.88
+15,47,2,11.6,4,0,1.15,3,1366,768,1,1.6,10,16,0,0,2,34,320.11
+7,182,3,14.0,8,4,1.63,1,1920,1080,1,1.6,32,256,0,3,2,43,1023.4
+4,127,1,15.6,8,4,2.62,0,3840,2160,1,2.8,44,128,1024,3,3,13,1782.62
+7,58,3,14.0,8,4,1.48,1,1920,1080,1,2.6,29,256,0,3,2,43,1508.92
+11,82,1,15.6,16,4,1.91,1,1920,1080,1,2.6,37,128,1024,3,3,27,2562.51
+4,24,1,17.3,32,4,4.42,1,1920,1080,1,2.6,37,256,1024,3,3,17,3332.0
+10,102,3,17.3,6,4,2.8,3,1600,900,1,2.5,27,128,1024,3,3,21,855.61
+10,105,1,15.6,8,4,3.31,1,1920,1080,1,2.6,37,128,1024,3,3,23,1423.24
+7,9,3,15.6,4,4,1.91,1,1920,1080,0,2.5,4,256,0,3,0,58,569.88
+10,234,0,14.0,8,4,1.8,1,1920,1080,1,2.5,34,256,0,3,2,40,1986.11
+10,230,3,15.6,8,4,2.3,1,1920,1080,1,2.3,24,256,0,3,2,40,1605.31
+7,293,5,15.6,8,6,2.0,1,1920,1080,1,2.6,37,256,0,3,3,51,2259.81
+7,192,3,14.0,4,4,1.95,1,1920,1080,1,2.5,27,128,0,3,2,43,1505.35
+7,66,3,13.3,4,4,1.32,1,1920,1080,1,2.5,27,256,0,3,2,43,831.81
+7,21,3,15.6,4,4,1.86,1,1920,1080,1,1.6,58,256,0,3,2,35,474.8
+2,259,3,14.0,4,4,1.5,3,1366,768,1,1.1,11,32,0,0,2,36,340.34
+16,204,3,15.6,8,4,2.2,1,1920,1080,1,2.5,34,256,0,3,3,6,1241.17
+7,56,3,14.0,8,6,1.43,1,1920,1080,1,2.3,24,256,0,3,2,40,1748.11
+10,257,3,15.6,8,4,2.05,1,1920,1080,1,1.8,48,256,0,3,2,77,1047.2
+7,54,3,13.3,8,4,1.34,1,1920,1080,1,2.5,27,256,0,3,2,43,1414.91
+0,39,1,15.6,16,4,2.5,1,1920,1080,1,2.5,28,256,0,3,3,13,1545.81
+11,134,1,17.3,16,4,4.14,1,1920,1080,1,2.7,38,128,1024,3,3,27,2616.81
+2,278,3,15.6,4,3,2.45,3,1366,768,1,2.3,25,1024,0,1,3,22,689.01
+4,124,0,13.3,8,4,1.6,1,1920,1080,1,2.5,27,256,0,3,2,43,1426.81
+4,111,3,15.6,6,4,2.3,3,1366,768,1,2.4,21,1024,0,1,2,43,522.41
+2,71,3,15.6,8,4,2.5,1,1920,1080,1,2.5,28,128,1024,3,3,12,998.41
+10,102,3,17.3,8,3,2.8,3,1600,900,1,2.5,27,1024,0,1,3,21,700.91
+4,111,3,15.6,12,4,2.25,3,1366,768,1,2.5,27,1024,0,1,2,43,772.31
+7,13,3,15.6,4,4,2.1,3,1366,768,0,1.5,53,500,0,1,0,61,392.7
+2,201,1,17.3,8,4,3.0,1,1920,1080,1,2.8,44,1024,0,1,3,12,1236.41
+0,33,3,15.6,6,4,2.23,3,1366,768,1,2.5,27,1024,0,1,2,43,653.31
+10,223,3,14.0,8,6,2.02,1,1920,1080,1,2.3,24,256,0,3,2,40,1594.6
+7,292,5,17.3,8,4,3.14,3,1600,900,1,2.8,30,500,0,1,3,52,2214.58
+10,101,3,15.6,8,4,2.2,3,1366,768,1,2.0,19,128,0,3,2,40,700.91
+10,105,1,15.6,8,4,2.6,1,1920,1080,1,2.6,37,128,1024,3,3,24,1513.68
+10,220,3,13.3,16,4,1.4,1,1920,1080,1,2.7,41,512,0,3,2,43,1783.81
+4,119,3,15.6,4,4,2.2,1,1920,1080,1,1.6,32,256,0,3,0,59,891.31
+2,300,4,14.0,8,4,1.1,1,1920,1080,1,2.5,27,256,0,3,2,43,1350.65
+4,136,3,13.3,4,4,1.65,3,1366,768,1,2.0,19,128,0,3,2,40,819.91
+7,181,3,13.3,4,4,1.49,1,1920,1080,1,2.4,21,128,0,3,2,43,855.61
+4,114,4,13.3,4,4,1.4,1,1920,1080,1,1.6,32,256,0,3,0,59,973.84
+10,229,4,14.0,8,4,1.32,1,1920,1080,1,2.5,27,256,0,3,2,43,1783.81
+2,264,3,15.6,8,4,2.0,3,1920,1080,1,1.1,57,128,0,3,2,37,692.46
+2,260,3,15.6,4,1,2.0,1,1920,1080,1,2.5,27,256,0,3,2,43,665.21
+10,103,3,17.3,8,3,2.8,1,1920,1080,1,1.8,48,2048,0,1,3,32,1010.31
+10,100,3,15.6,4,3,2.2,1,1920,1080,1,2.5,27,1024,0,1,3,4,593.81
+4,24,1,17.3,32,4,4.42,0,3840,2160,1,2.8,44,512,1024,3,3,17,3745.37
+10,255,3,15.6,4,4,2.05,1,1920,1080,1,2.7,22,128,0,3,2,43,749.7
+10,290,0,13.9,16,4,1.4,0,3840,2160,1,1.8,48,512,0,3,2,77,2200.31
+16,172,4,13.3,16,4,1.05,1,1920,1080,1,2.7,41,512,0,3,2,43,2648.94
+7,187,0,11.6,4,4,1.45,3,1366,768,1,1.1,59,256,0,3,2,37,922.25
+0,29,3,15.6,8,4,2.2,1,1920,1080,1,1.8,48,256,0,3,3,32,1000.79
+0,35,3,17.3,8,4,3.3,3,1600,900,1,2.0,19,1024,0,1,3,10,748.51
+10,285,0,11.3,8,4,1.1,1,1920,1080,1,1.2,18,256,0,3,2,39,1545.81
+11,75,1,15.6,8,4,2.2,1,1920,1080,1,2.5,28,128,1024,3,3,12,1295.91
+4,128,3,15.6,8,4,2.16,1,1920,1080,1,1.8,48,256,1024,3,3,10,1345.09
+10,236,3,17.3,8,4,3.4,1,1920,1080,1,2.8,44,256,0,3,3,56,3568.81
+3,133,3,15.6,4,4,1.89,1,1920,1080,1,1.44,8,64,0,0,2,33,296.19
+4,267,3,15.6,4,4,2.18,1,1920,1080,1,2.5,27,1024,0,1,2,43,781.83
+7,8,3,15.6,4,4,2.04,3,1366,768,1,1.6,32,1024,0,1,2,77,620.55
+0,33,3,15.6,4,4,2.4,1,1920,1080,1,2.4,21,1024,0,1,2,43,593.81
+4,112,3,15.6,8,4,2.13,1,1920,1080,1,1.6,32,256,0,3,0,58,866.32
+4,127,1,15.6,8,1,2.62,1,1920,1080,1,2.8,44,1024,0,1,3,15,1105.51
+10,286,0,15.6,8,4,2.0,1,1920,1080,1,2.8,44,512,0,3,3,14,2021.81
+4,283,3,15.6,16,4,2.06,1,1920,1080,1,2.8,44,512,0,3,3,12,2259.81
+7,182,3,15.6,4,4,1.63,3,1366,768,1,2.0,19,128,0,3,2,40,819.91
+2,197,1,17.3,24,4,4.33,1,1920,1080,1,2.6,37,256,1024,3,3,26,1510.11
+4,24,3,17.3,8,4,4.42,1,1920,1080,1,2.7,44,1024,0,1,3,16,2434.74
+10,222,3,15.6,4,4,2.3,3,1366,768,1,2.0,19,128,0,3,2,40,672.35
+10,247,3,15.6,4,4,1.9,3,1366,768,1,2.5,27,128,0,3,2,43,592.62
+10,98,3,15.6,4,4,2.2,3,1366,768,1,1.1,11,1024,0,1,2,36,364.14
+11,78,1,17.3,8,4,2.7,1,1920,1080,1,2.8,44,256,1024,3,3,13,1426.81
+10,234,0,13.3,8,4,1.37,1,1920,1080,1,2.7,41,512,0,3,2,43,2344.3
+7,165,1,17.3,12,4,3.35,1,1920,1080,1,2.8,44,256,1024,3,3,17,2378.81
+0,37,3,15.6,12,4,2.4,1,1920,1080,1,2.5,27,128,1024,3,3,22,1200.71
+2,274,3,15.6,4,4,2.0,3,1366,768,1,1.1,11,1024,0,1,2,36,403.41
+2,275,3,15.6,4,1,2.0,3,1366,768,1,1.1,59,1024,0,1,2,37,474.8
+16,171,3,13.3,8,4,1.5,3,1366,768,1,2.3,24,256,0,3,2,40,1439.9
+10,108,3,15.6,12,4,2.2,3,1366,768,1,1.8,48,1024,0,1,2,43,724.71
+4,270,3,15.6,8,1,1.98,1,1920,1080,1,2.5,27,1024,0,1,2,43,863.94
+4,111,3,15.6,6,4,2.3,3,1366,768,1,2.4,21,1024,0,1,2,43,546.21
+10,147,1,15.6,8,3,2.4,1,1920,1080,1,2.8,44,256,0,3,3,14,1034.11
+7,65,4,13.3,8,4,1.34,1,1920,1080,1,2.7,41,512,0,3,2,43,1574.37
+2,261,3,17.3,8,4,2.1,1,1920,1080,1,1.8,48,128,1024,3,3,1,1362.55
+4,111,3,15.6,8,4,2.36,3,1366,768,1,2.5,27,2048,0,1,2,43,663.27
+10,96,3,15.6,6,4,2.2,1,1920,1080,0,3.6,1,256,0,3,0,59,653.31
+10,240,4,14.0,8,4,1.32,1,1920,1080,1,2.7,41,256,0,3,2,43,2212.21
+0,32,3,14.0,8,4,2.1,3,1366,768,1,2.0,19,1024,0,1,2,40,462.91
+7,182,3,14.0,8,4,1.64,1,1920,1080,1,2.5,27,256,0,3,2,43,1202.51
+10,147,1,15.6,8,4,2.4,1,1920,1080,1,2.5,28,1024,0,1,3,12,974.61
+4,117,3,15.6,16,4,2.32,1,1920,1080,1,2.7,41,2048,0,1,0,72,1178.09
+7,183,3,15.6,4,4,2.07,3,1366,768,1,2.3,20,500,0,1,2,40,773.5
+7,59,3,15.6,8,4,1.84,1,1920,1080,1,2.6,29,256,0,3,0,73,1605.31
+0,38,0,13.3,8,4,1.6,1,1920,1080,1,2.3,24,256,0,3,2,40,819.91
+7,208,4,13.3,16,4,1.3,0,3840,2160,1,2.7,41,512,0,3,2,43,2438.31
+10,228,4,14.0,12,6,1.4,1,1920,1080,1,2.6,36,512,0,3,2,40,2735.81
+7,7,3,15.6,8,4,1.91,3,1366,768,1,2.5,27,256,0,3,2,43,689.01
+7,183,3,15.6,8,4,2.04,1,1920,1080,1,2.7,41,256,0,3,2,43,1273.3
+2,245,3,14.0,8,4,1.4,1,1920,1080,1,1.6,32,256,0,3,2,77,1119.79
+1,151,4,15.4,16,7,1.83,3,2880,1800,1,2.9,33,512,0,3,0,60,3401.02
+10,248,3,15.6,4,3,1.9,3,1366,768,1,2.0,19,1024,0,1,0,71,437.92
+10,102,3,17.3,6,4,2.8,3,1600,900,1,2.7,41,128,1024,3,3,10,1129.31
+10,287,0,13.3,8,4,1.19,1,1920,1080,1,1.8,48,512,0,3,2,77,1783.81
+7,168,3,15.6,6,4,2.18,1,1920,1080,1,2.6,37,1024,0,1,3,25,950.81
+7,21,3,15.6,4,3,1.86,1,1920,1080,1,2.0,19,500,0,1,2,40,410.54
+7,190,3,15.6,8,4,2.04,1,1920,1080,1,2.5,27,256,0,3,3,7,1057.91
+7,57,4,12.5,4,4,1.26,1,1920,1080,1,2.3,24,500,0,1,2,40,1879.01
+7,183,3,15.6,4,4,2.1,1,1920,1080,1,2.4,21,128,0,3,2,43,839.54
+4,126,3,15.6,8,4,2.0,1,1920,1080,1,2.7,41,128,1024,3,3,10,1436.33
+4,24,1,17.3,32,4,4.42,1,1920,1080,1,2.8,44,512,1024,3,3,17,3656.74
+7,166,1,17.3,8,4,3.35,1,1920,1080,1,2.8,44,128,1024,3,3,12,1417.29
+7,188,3,13.3,8,4,1.49,1,1920,1080,1,2.5,27,256,0,3,2,43,1142.4
+4,266,3,15.6,4,6,2.24,3,1366,768,1,2.3,24,500,0,1,2,40,877.03
+7,20,3,15.6,4,4,1.96,3,1366,768,1,1.6,58,1024,0,1,2,35,595.0
+0,36,3,15.6,8,4,2.4,3,1366,768,0,2.2,5,1024,0,1,0,65,534.31
+7,21,3,15.6,4,4,1.86,3,1366,768,1,2.5,27,500,0,1,0,58,729.01
+4,114,4,13.3,8,4,1.4,1,1920,1080,1,1.8,48,256,0,3,0,59,1136.45
+2,203,1,17.3,8,4,3.2,1,1920,1080,0,3.2,60,256,1024,3,0,76,2017.05
+7,211,3,14.0,2,4,1.44,3,1366,768,1,1.6,10,32,0,0,2,34,332.01
+10,40,3,15.6,8,4,2.5,1,1920,1080,1,2.3,24,1024,0,2,0,68,938.3
+7,21,3,15.6,4,4,1.86,1,1920,1080,1,2.0,19,1024,0,1,2,40,558.11
+7,183,3,15.6,8,4,2.04,1,1920,1080,1,2.7,41,1024,0,1,3,7,1071.0
+1,149,4,12.0,8,7,0.92,3,2304,1440,1,1.3,23,512,0,3,2,42,1796.9
+4,111,3,15.6,4,4,2.25,3,1366,768,1,2.5,27,500,0,1,0,71,712.81
+4,127,1,15.6,8,4,2.62,1,1920,1080,1,2.8,44,1024,0,2,3,12,1069.81
+11,80,1,15.6,8,4,2.2,1,1920,1080,1,2.6,37,128,1024,3,3,16,1756.57
+11,88,1,15.6,8,4,2.2,1,1920,1080,1,2.5,28,256,0,3,3,12,1223.01
+2,203,1,17.3,16,4,3.25,1,1920,1080,0,3.0,61,256,1024,3,0,76,2616.81
+7,157,3,15.6,8,4,1.91,1,1920,1080,1,2.7,41,1024,0,1,3,10,1165.01
+2,265,3,15.6,8,4,2.0,1,1920,1080,1,2.5,27,256,0,3,3,5,915.11
+0,25,3,15.6,6,4,2.1,3,1366,768,0,3.0,6,1024,0,1,0,65,486.71
+7,55,3,13.3,8,4,1.16,2,3200,1800,1,1.1,14,256,0,3,2,39,2021.81
+0,29,3,15.6,4,4,2.2,1,1920,1080,1,2.7,41,500,0,1,3,10,760.41
+10,98,3,15.6,4,4,2.2,1,1920,1080,1,1.1,59,500,0,1,2,37,409.36
+4,283,3,15.6,32,4,2.06,0,3840,2160,1,2.8,44,1024,0,3,3,12,3140.41
+4,141,3,15.6,8,4,1.9,1,1920,1080,1,2.5,27,256,0,3,2,43,1329.22
+4,118,0,15.6,4,4,2.08,1,1920,1080,1,2.3,20,1024,0,1,2,40,947.23
+4,121,0,15.6,16,4,2.09,1,1920,1080,1,2.7,41,512,0,3,2,43,1403.01
+10,107,3,15.6,4,4,1.85,1,1920,1080,1,2.0,19,1024,0,1,2,40,493.73
+4,117,3,15.6,8,4,2.36,3,1366,768,1,2.5,27,1024,0,1,0,72,760.4
+10,232,4,14.0,8,4,1.13,1,1920,1080,1,2.5,27,256,0,0,2,43,2231.25
+10,147,1,15.6,8,4,2.5,1,1920,1080,1,2.5,28,128,1024,3,3,12,1188.81
+16,173,3,13.3,8,6,1.2,1,1920,1080,1,2.3,24,256,0,3,2,40,1737.4
+10,104,3,17.3,4,4,2.8,3,1600,900,1,2.0,19,1024,0,1,2,40,581.91
+0,243,3,11.6,4,4,1.4,3,1366,768,1,1.6,58,128,0,0,2,35,577.15
+4,119,4,15.6,8,4,1.9,1,1920,1080,1,1.6,32,1024,0,1,0,59,788.97
+11,79,1,15.6,16,4,2.2,1,1920,1080,1,2.8,44,256,1024,3,3,13,1545.81
+4,141,3,15.6,8,4,1.93,1,1920,1080,1,2.8,43,256,0,3,3,7,1629.11
+10,156,3,14.0,4,0,1.5,3,1366,768,1,1.6,12,16,0,0,2,34,386.75
+10,99,3,15.6,8,4,2.3,1,1920,1080,1,2.5,27,128,1024,3,3,10,974.61
+7,11,3,15.6,6,4,2.1,1,1920,1080,0,2.7,1,1024,0,1,0,59,629.51
+11,86,1,17.3,16,4,3.78,1,1920,1080,1,2.7,39,256,1024,3,3,28,2854.81
+7,45,2,11.6,4,0,1.23,3,1366,768,1,1.6,10,16,0,0,2,34,458.15
+7,189,3,14.0,4,4,1.63,3,1366,768,1,1.6,32,500,0,1,2,77,859.18
+4,282,4,13.3,8,4,1.2,1,1920,1080,1,1.8,48,256,0,3,2,77,1724.31
+4,119,3,15.6,16,1,2.02,1,1920,1080,1,1.8,48,256,2048,3,0,59,1248.31
+16,204,3,15.6,8,4,2.0,3,1366,768,1,2.5,27,128,0,3,2,43,943.67
+4,141,3,15.6,4,4,1.9,3,1366,768,1,2.5,27,500,0,1,2,43,981.75
+16,204,3,15.6,4,4,2.0,3,1366,768,1,2.4,21,500,0,1,2,43,581.91
+4,24,1,17.3,16,4,4.36,3,2560,1440,1,2.7,38,512,1024,3,3,19,3282.02
+4,282,4,13.3,8,4,1.23,1,1920,1080,1,1.6,32,256,0,3,2,77,1664.81
+2,272,3,15.6,4,1,2.0,3,1366,768,1,1.1,11,1024,0,1,2,36,327.24
+4,267,3,15.6,4,1,2.18,3,1366,768,1,2.0,19,1024,0,1,2,40,528.24
+0,44,0,11.6,4,0,1.25,3,1366,768,1,1.6,12,32,0,0,2,34,451.01
+16,204,3,15.6,8,4,2.0,1,1920,1080,1,2.5,27,256,0,3,2,43,1122.17
+2,179,3,15.6,8,4,2.37,1,1920,1080,1,2.5,27,1024,0,1,2,43,891.31
+10,239,3,14.0,8,4,1.58,1,1920,1080,1,2.7,41,256,0,3,2,43,1761.2
+7,191,3,17.3,8,4,2.5,1,1920,1080,1,1.8,48,256,0,3,3,8,1243.55
+2,195,1,15.6,8,4,2.3,1,1920,1080,1,2.8,44,128,1024,3,3,16,1969.45
+10,237,3,14.0,8,4,1.7,1,1920,1080,1,2.3,24,256,0,3,2,40,1411.34
+4,140,3,14.0,8,4,1.64,1,1920,1080,1,2.8,30,256,0,3,3,7,1403.01
+10,105,3,15.6,8,4,2.6,1,1920,1080,1,2.6,37,1024,0,1,3,25,1069.81
+7,183,3,15.6,8,4,2.1,1,1920,1080,1,2.4,21,1024,0,1,3,8,852.04
+4,282,0,13.3,16,4,1.22,2,3200,1800,1,1.3,47,512,0,3,2,42,2259.81
+7,191,3,17.3,8,4,2.5,1,1920,1080,1,1.8,48,1024,0,1,3,8,1211.42
+4,119,3,15.6,4,4,2.2,1,1920,1080,1,1.6,32,1024,0,1,0,59,923.44
+2,194,1,17.3,16,4,2.9,1,1920,1080,1,2.8,44,256,1024,3,3,12,1674.33
+4,282,4,13.3,8,4,1.2,2,3200,1800,1,1.8,48,256,0,3,2,77,1664.81
+2,271,3,15.6,4,4,1.68,3,1366,768,0,3.0,6,1024,0,1,0,69,558.11
+4,109,0,11.6,4,4,1.47,3,1366,768,1,1.6,58,500,0,1,2,35,570.01
+7,3,3,15.6,4,4,2.1,1,1920,1080,0,3.0,6,1024,0,1,0,58,581.91
+2,196,1,15.6,24,4,2.24,1,1920,1080,1,2.8,44,512,0,3,3,30,3531.92
+4,137,3,14.0,4,4,1.76,3,1366,768,1,2.0,19,500,0,1,2,40,696.15
+4,268,4,13.3,8,4,1.41,1,1920,1080,1,1.6,32,256,0,3,2,77,1129.31
+4,282,4,13.3,8,4,1.2,1,1920,1080,1,1.8,48,256,0,3,2,77,1879.01
+4,282,4,13.3,8,4,1.23,1,1920,1080,1,2.4,42,256,0,3,2,46,1641.01
+10,229,4,14.0,16,4,1.7,1,1920,1080,1,2.7,41,512,0,3,2,43,2735.81
+4,267,3,15.6,4,4,2.18,3,1366,768,1,2.0,19,1024,0,1,0,69,735.3
+4,144,4,12.5,4,6,1.5,3,1366,768,1,2.3,20,128,0,3,2,40,1388.69
+2,132,3,15.6,8,4,2.3,1,1920,1080,1,2.7,41,256,0,3,3,20,936.53
+2,244,3,14.0,4,4,2.0,1,1920,1080,1,2.4,21,256,0,3,2,43,915.11
+10,147,1,15.6,8,3,2.4,1,1920,1080,1,2.8,44,256,1024,3,3,16,1367.31
+10,223,3,14.0,4,4,2.02,3,1366,768,1,2.5,27,500,0,1,2,43,1178.1
+7,183,3,15.6,8,4,2.1,1,1920,1080,1,1.6,32,1024,0,1,2,77,944.86
+7,51,0,11.6,4,0,1.4,3,1366,768,1,1.1,11,32,0,0,2,36,731.85
+7,16,3,17.3,8,4,2.5,3,1600,900,1,2.0,19,256,0,3,2,40,761.48
+10,229,3,14.0,8,4,1.32,1,1920,1080,1,2.6,29,256,0,3,2,43,1963.5
+0,30,3,15.6,4,4,2.2,1,1920,1080,1,2.7,22,256,0,3,3,31,680.68
+4,282,0,13.3,8,4,1.24,2,3200,1800,1,1.3,47,512,0,3,2,42,2395.59
+4,23,1,15.6,16,4,3.21,0,3840,2160,1,2.6,37,256,1024,3,3,27,1581.51
+10,106,1,17.3,32,4,4.6,1,1920,1080,1,2.7,38,512,1024,3,3,28,3855.6
+11,83,1,17.3,16,4,2.43,1,1920,1080,1,2.6,37,256,1024,3,3,16,2319.3

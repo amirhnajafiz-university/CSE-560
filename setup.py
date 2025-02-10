@@ -36,6 +36,23 @@ print("converting price euro to price in dollars ...")
 df['Price'] = df['Price_euros'].apply(lambda x: round(x * 1.19, 2))
 df.drop(columns=['Price_euros'], inplace=True)
 
+# dictionary to store mappings
+mappings = {}
+# convert non-numeric data columns to categorical data
+print("converting non-numeric data to categorical data ...")
+for col in df.columns:
+    if df[col].dtype == 'object' or df[col].dtype.name == 'category':
+        print(f"!converting {col} to categorical data ...")
+        df[col] = df[col].astype('category')
+        mappings[col] = dict(enumerate(df[col].cat.categories))
+        df[col] = df[col].cat.codes
+
 # export to new dataset file
 print(f"exporting {EXPORT} ...")
 df.to_csv(EXPORT, index=False)
+
+# export mappings to a JSON file
+print("exporting mappings ...")
+import json
+with open('data/mappings.json', 'w') as f:
+    json.dump(mappings, f)
