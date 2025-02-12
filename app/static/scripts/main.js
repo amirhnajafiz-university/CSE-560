@@ -1,3 +1,155 @@
+async function fetchMapping(variable) {
+    try {
+        const response = await fetch(`/data/mapping/${variable}`);
+        if (!response.ok) {
+            throw new Error(`response status: ${response.status}`);
+        }
+        const mapping = await response.json();
+        return mapping;
+    } catch (error) {
+        console.error('error fetching mapping:', error);
+        return null;
+    }
+}
+
+async function drawBarchartSideways(variable, data) {
+    const width = 1000, height = 600, margin = { top: 50, right: 70, bottom: 50, left: 150 };
+    const svg = d3.select('#chart');
+    svg.selectAll('*').remove();
+    svg.attr('width', width).attr('height', height);
+
+    // Fetch mapping data
+    const mapping = await fetchMapping(variable);
+    if (!mapping) {
+        return;
+    }
+
+    // Group data by value and count occurrences
+    const groupedData = d3.rollup(data, v => v.length, d => d);
+    const groupedArray = Array.from(groupedData, ([key, value]) => ({ key, value }));
+
+    // Replace keys with mapped values
+    groupedArray.forEach(d => {
+        d.key = mapping[d.key] || d.key;
+    });
+
+    // Sort the array by value in descending order
+    groupedArray.sort((a, b) => b.value - a.value);
+
+    // Get the top 10 values and group the rest as "Others"
+    const top10 = groupedArray.slice(0, 10);
+    const others = groupedArray.slice(10).reduce((acc, curr) => acc + curr.value, 0);
+    if (others > 0) {
+        top10.push({ key: 'Others', value: others });
+    }
+
+    // Create scales for x and y axes
+    const y = d3.scaleBand()
+        .domain(top10.map(d => d.key)) // Use mapped value as category
+        .range([margin.top, height - margin.bottom])
+        .padding(0.2); // Space between bars
+
+    const x = d3.scaleLinear()
+        .domain([0, d3.max(top10, d => d.value)]) // Set max width of bars
+        .range([margin.left, width - margin.right]);
+
+    // Append bars
+    svg.selectAll("rect")
+        .data(top10)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", d => x(0))
+        .attr("y", d => y(d.key))
+        .attr("width", d => x(d.value) - x(0)) // Bar width
+        .attr("height", y.bandwidth()); // Bar height
+
+    // Add y-axis
+    svg.append("g")
+        .attr("transform", `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y));
+
+    // Add x-axis
+    svg.append("g")
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x));
+
+     // Add x-axis label
+    svg.append("text")
+        .attr("transform", `translate(${width / 2},${height - margin.bottom + 40})`)
+        .style("text-anchor", "middle")
+        .text("Count");
+
+    // Add y-axis label
+    svg.append("text")
+        .attr("transform", `translate(${margin.left - 100},${height / 2}) rotate(-90)`)
+        .style("text-anchor", "middle")
+        .text(variable);
+}
+
+async function drawBarchart(variable, data) {
+    const width = 1000, height = 600, margin = { top: 50, right: 50, bottom: 70, left: 70 };
+    const svg = d3.select('#chart');
+    svg.selectAll('*').remove();
+    svg.attr('width', width).attr('height', height);
+
+    // Fetch mapping data
+    const mapping = await fetchMapping(variable);
+    if (!mapping) {
+        return;
+    }
+
+    // Group data by value and count occurrences
+    const groupedData = d3.rollup(data, v => v.length, d => d);
+    const groupedArray = Array.from(groupedData, ([key, value]) => ({ key, value }));
+
+    // Replace keys with mapped values
+    groupedArray.forEach(d => {
+        d.key = mapping[d.key] || d.key;
+    });
+
+    // Sort the array by value in descending order
+    groupedArray.sort((a, b) => b.value - a.value);
+
+    // Get the top 10 values and group the rest as "Others"
+    const top10 = groupedArray.slice(0, 10);
+    const others = groupedArray.slice(10).reduce((acc, curr) => acc + curr.value, 0);
+    if (others > 0) {
+        top10.push({ key: 'Others', value: others });
+    }
+
+    // Create scales for x and y axes
+    const x = d3.scaleBand()
+        .domain(top10.map(d => d.key)) // Use mapped value as category
+        .range([margin.left, width - margin.right])
+        .padding(0.2); // Space between bars
+
+    const y = d3.scaleLinear()
+        .domain([0, d3.max(top10, d => d.value)]) // Set max height of bars
+        .range([height - margin.bottom, margin.top]);
+
+    // Append bars
+    svg.selectAll("rect")
+        .data(top10)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", d => x(d.key))
+        .attr("y", d => y(d.value))
+        .attr("width", x.bandwidth()) // Bar width
+        .attr("height", d => height - margin.bottom - y(d.value));
+
+    // Add x-axis
+    svg.append("g")
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+        .style("text-anchor", "middle");
+
+    // Add y-axis
+    svg.append("g")
+        .attr("transform", `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y));
+}
+
 function drawHistogramSideways(variable, data) {
     const width = 600, height = 600, margin = { top: 50, right: 70, bottom: 50, left: 70 };
     const svg = d3.select('#chart');
@@ -131,9 +283,9 @@ async function fetchData(variable, isSideways = false) {
 
         // call drawHistogram with the fetched data
         if (isSideways) {
-            drawHistogramSideways(variable, data);
+            drawBarchartSideways(variable, data);
         } else {
-            drawHistogram(variable, data);
+            drawBarchart(variable, data);
         }
     } catch (error) {
         console.error('error fetching data:', error);
