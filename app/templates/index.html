@@ -3,29 +3,116 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        Vislab - Lab 1
-    </title>
+    <title>Vislab - Lab 1</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center my-4">Laptop Prices</h1>
-        <div class="form-group">
-            <label for="laptopSelect">Choose X variable:</label>
-            <select class="form-control" id="variables">
-            </select>
-            <label for="laptopSelect">Choose Y variable:</label>
-            <select class="form-control" id="variables-y">
-                <option value="none" selected>None</option>
-            </select>
+    <div class="container mt-4">
+        <h1 class="text-center">Laptop Prices</h1>
+
+        <!-- Section for Details -->
+        <div class="mt-4 pb-2">
+            <p>This dataset is a postprocessed version of the famous Laptop Price dataset, providing a comprehensive collection of information on various laptops, enabling detailed analysis of their specifications and pricing.</p>
+            <p>Source: <a href="https://www.kaggle.com/datasets/owm4096/laptop-prices" target="_blank">Laptop Prices Dataset on Kaggle</a></p>
+            <h2 class="mt-4">Dataset Columns</h2>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Column Name</th>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Company</td>
+                        <td>String</td>
+                        <td>Laptop Manufacturer</td>
+                    </tr>
+                    <tr>
+                        <td>Product</td>
+                        <td>String</td>
+                        <td>Brand and Model</td>
+                    </tr>
+                    <tr>
+                        <td>TypeName</td>
+                        <td>String</td>
+                        <td>Type (e.g., Notebook, Ultrabook, Gaming)</td>
+                    </tr>
+                    <tr>
+                        <td>Inches</td>
+                        <td>Float</td>
+                        <td>Screen Size in Inches</td>
+                    </tr>
+                    <tr>
+                        <td>ScreenResolution</td>
+                        <td>String</td>
+                        <td>Screen Resolution</td>
+                    </tr>
+                    <tr>
+                        <td>Cpu</td>
+                        <td>String</td>
+                        <td>CPU Model</td>
+                    </tr>
+                    <tr>
+                        <td>Ram</td>
+                        <td>String</td>
+                        <td>RAM Size (e.g., 8GB)</td>
+                    </tr>
+                    <tr>
+                        <td>Memory</td>
+                        <td>String</td>
+                        <td>Storage Capacity and Type</td>
+                    </tr>
+                    <tr>
+                        <td>Gpu</td>
+                        <td>String</td>
+                        <td>GPU Model</td>
+                    </tr>
+                    <tr>
+                        <td>OpSys</td>
+                        <td>String</td>
+                        <td>Operating System</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>String</td>
+                        <td>Weight of the Laptop</td>
+                    </tr>
+                    <tr>
+                        <td>Price_euros</td>
+                        <td>Float</td>
+                        <td>Price in Euros</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="form-group">
+        
+        <!-- Form Group for Variable Selection -->
+        <div class="form-row mt-4 border-top pt-4" style="border-top-width: 4px !important;">
+            <div class="form-group col-md-6">
+                <label for="variables" class="text-primary">Choose X variable:</label>
+                <select class="form-control" id="variables"></select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="variables-y" class="text-success">Choose Y variable:</label>
+                <select class="form-control" id="variables-y">
+                    <option value="none" selected>None</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Button Group -->
+        <div class="form-group mb-5">
             <button id="sideway" class="btn btn-primary">Toggle Sideway</button>
         </div>
+        
+        <!-- SVG for Chart -->
         <svg id="chart"></svg>
     </div>
+    
+    <!-- Scripts -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
 </body>
