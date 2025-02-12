@@ -4,3 +4,13 @@ body {
     font-size: 14px;
     margin: 20px;
 }
+
+.bar {
+    fill: steelblue;
+}
+.bar:hover {
+    fill: orange;
+}
+.axis-label {
+    font-size: 14px;
+}
