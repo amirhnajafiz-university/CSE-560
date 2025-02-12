@@ -1,29 +1,39 @@
-// init function to fetch the data and populate the select element
-async function init() {
+// function to fetch variables and populate the select element
+async function fetchAndPopulateVariables() {
     try {
-        // fetch the JSON data from the server
+        // make a GET request to /headers to get the list of variables
         const response = await fetch('/headers');
-        const data = await response.json();
 
-        // set the data items as options of a select element named 'variables'
-        const variablesElement = document.getElementById('variables');
-        data.forEach((item) => {
+        // check if the response is OK
+        if (!response.ok) {
+            throw new Error(`response status: ${response.status}`);
+        }
+
+        // assuming the response is JSON
+        const variables = await response.json();
+
+        // get the select element by its ID
+        const selectElement = document.getElementById('variables');
+
+        // clear any existing options in the select element
+        selectElement.innerHTML = '';
+
+        // populate the select element with the variables
+        variables.forEach(variable => {
             const option = document.createElement('option');
-            option.value = item;
-            option.text = item;
-            variablesElement.appendChild(option);
+            option.value = variable;
+            option.text = variable;
+            selectElement.appendChild(option);
         });
-
-        // fetch the default data
-        const defaultSelectedVariable = data[0];
-        const defaultResponse = await fetch(`/data/${defaultSelectedVariable}`);
-        const defaultData = await defaultResponse.json();
-        const chartElement = document.getElementById('chart');
-        chartElement.innerHTML = JSON.stringify(defaultData, null, 2);
     } catch (error) {
-        console.error('error fetching or displaying data:', error);
+        console.error('error fetching or populating variables:', error);
     }
 }
 
-// call the init function when the page loads
+// initialize the script
+function init() {
+    fetchAndPopulateVariables();
+}
+
+// call the init function to start the process
 init();
