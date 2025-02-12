@@ -337,6 +337,12 @@ async function fetchAndPopulateVariables() {
             option.text = variable;
             selectElement.appendChild(option);
         });
+
+        // set default variable to the first one in the list
+        if (variables.length > 0) {
+            selectElement.value = variables[0];
+            fetchData(variables[0], false); // Fetch data for the first variable
+        }
     } catch (error) {
         console.error('error fetching or populating variables:', error);
     }
