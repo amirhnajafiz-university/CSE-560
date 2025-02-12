@@ -3,6 +3,7 @@ const WIDTH = 1000;
 const HEIGHT = 600;
 const MARGIN = { top: 50, right: 70, bottom: 50, left: 150 };
 let isSideways = false;
+let isTwoSelected = false;
 
 // --- Utility Functions ---
 /**
@@ -50,6 +51,8 @@ async function fetchMapping(variable) {
  * @param {boolean} isSideways - Whether to draw the chart sideways.
  */
 async function fetchDataAndDrawChart(variable, isSideways = false) {
+  isTwoSelected = false;
+
   try {
     const data = await fetchDataFromAPI(`/data/${variable}`);
     if (!data) return;
@@ -123,6 +126,14 @@ async function drawScatterplot(variableX, variableY, data) {
     .attr("transform", `translate(${MARGIN.left - 100},${HEIGHT / 2}) rotate(-90)`)
     .style("text-anchor", "middle")
     .text(variableY);
+
+  // Add title
+  svg.append("text")
+    .attr("x", WIDTH / 2)
+    .attr("y", MARGIN.top / 2)
+    .attr("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text(`Scatterplot of ${variableX} vs ${variableY}`);
 }
 
 /**
@@ -199,6 +210,14 @@ async function drawBarchartSideways(variable, data) {
     .attr("transform", `translate(${MARGIN.left - 100},${HEIGHT / 2}) rotate(-90)`)
     .style("text-anchor", "middle")
     .text(variable);
+
+  // Add title
+  svg.append("text")
+    .attr("x", WIDTH / 2)
+    .attr("y", MARGIN.top / 2)
+    .attr("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text(`Barchart of ${variable}`);
 }
 
 /**
@@ -265,6 +284,26 @@ async function drawBarchart(variable, data) {
   svg.append("g")
     .attr("transform", `translate(${MARGIN.left},0)`)
     .call(d3.axisLeft(y));
+  
+  // Add x-axis label
+  svg.append("text")
+    .attr("transform", `translate(${WIDTH / 2},${HEIGHT - MARGIN.bottom + 40})`)
+    .style("text-anchor", "middle")
+    .text(variable);
+
+  // Add y-axis label
+  svg.append("text")
+    .attr("transform", `translate(${MARGIN.left - 100},${HEIGHT / 2}) rotate(-90)`)
+    .style("text-anchor", "middle")
+    .text("Count");
+
+  // Add title
+  svg.append("text")
+    .attr("x", WIDTH / 2)
+    .attr("y", MARGIN.top / 2)
+    .attr("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text(`Barchart of ${variable}`);
 }
 
 /**
@@ -326,6 +365,14 @@ function drawHistogramSideways(variable, data) {
     .attr("transform", `translate(${WIDTH / 2},${HEIGHT - MARGIN.bottom + 40})`)
     .style("text-anchor", "middle")
     .text("Count");
+  
+  // Add title
+  svg.append("text")
+    .attr("x", WIDTH / 2)
+    .attr("y", MARGIN.top / 2)
+    .attr("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text(`Histogram of ${variable}`);
 }
 
 /**
@@ -387,6 +434,14 @@ function drawHistogram(variable, data) {
     .attr("transform", `translate(${MARGIN.left - 40},${HEIGHT / 2}) rotate(-90)`)
     .style("text-anchor", "middle")
     .text("Count");
+  
+  // Add title
+  svg.append("text")
+    .attr("x", WIDTH / 2)
+    .attr("y", MARGIN.top / 2)
+    .attr("text-anchor", "middle")
+    .style("font-size", "24px")
+    .text(`Histogram of ${variable}`);
 }
 
 // --- UI Population Functions ---
@@ -398,10 +453,10 @@ async function fetchAndPopulateVariables() {
     const variables = await fetchDataFromAPI('/headers');
     if (!variables) return;
 
-    populateSelectElement('variables', variables, (selectedVariable) => {
+    populateSelectElement('variables', variables, false, (selectedVariable) => {
       fetchDataAndDrawChart(selectedVariable, false);
     });
-    populateSelectElement('variables-y', variables);
+    populateSelectElement('variables-y', variables, true);
 
     // Initial data fetch
     if (variables.length > 0) {
@@ -418,10 +473,18 @@ async function fetchAndPopulateVariables() {
  * @param {string} selectElementId - The ID of the select element.
  * @param {Array<string>} variables - The variables to populate the select element with.
  * @param {function} onChange - An optional callback function to be called when the select element changes.
+ * @param {boolean} empty - Whether to include an empty option.
  */
-function populateSelectElement(selectElementId, variables, onChange) {
+function populateSelectElement(selectElementId, variables, empty, onChange) {
   const selectElement = document.getElementById(selectElementId);
   selectElement.innerHTML = '';
+
+  if (empty) {
+    const emptyOption = document.createElement('option');
+    emptyOption.value = 'none';
+    emptyOption.text = 'None';
+    selectElement.appendChild(emptyOption);
+  }
 
   variables.forEach(variable => {
     const option = document.createElement('option');
@@ -445,6 +508,14 @@ document.getElementById('variables-y').addEventListener('change', function () {
   const selectedVariableX = document.getElementById('variables').value;
   const selectedVariableY = this.value;
 
+  // if value of selectedVariableY is 'none', do not fetch data run fetch data for selectedVariableX
+  if (selectedVariableY === 'none') {
+    fetchDataAndDrawChart(selectedVariableX, isSideways);
+    return;
+  }
+
+  isTwoSelected = true;
+
   if (selectedVariableX && selectedVariableY) {
     Promise.all([
       fetchDataFromAPI(`/data/${selectedVariableX}`),
@@ -466,6 +537,10 @@ document.getElementById('variables-y').addEventListener('change', function () {
  * Event listener for the sideway button.
  */
 document.getElementById('sideway').addEventListener('click', function () {
+  if (isTwoSelected) {
+    return;
+  }
+
   isSideways = !isSideways;
   const selectedVariable = document.getElementById('variables').value;
   if (selectedVariable) {
