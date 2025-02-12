@@ -281,11 +281,29 @@ async function fetchData(variable, isSideways = false) {
         // assuming the response is JSON
         const data = await response.json();
 
-        // call drawHistogram with the fetched data
-        if (isSideways) {
-            drawBarchartSideways(variable, data);
+        // make a call to /data/type/variable to get the type of the variable
+        const typeResponse = await fetch(`/data/type/${variable}`);
+        if (!typeResponse.ok) {
+            throw new Error(`response status: ${typeResponse.status}`);
+        }
+        const typeData = await typeResponse.json();
+
+        if (typeData.type === "categorical") {
+            // call drawHistogram with the fetched data
+            if (isSideways) {
+                drawBarchartSideways(variable, data);
+            } else {
+                drawBarchart(variable, data);
+            }
+        } else if (typeData.type === "numerical") {
+            // call drawHistogram with the fetched data
+            if (isSideways) {
+                drawHistogramSideways(variable, data);
+            } else {
+                drawHistogram(variable, data);
+            }
         } else {
-            drawBarchart(variable, data);
+            console.error('Unknown variable type:', typeData.type);
         }
     } catch (error) {
         console.error('error fetching data:', error);
