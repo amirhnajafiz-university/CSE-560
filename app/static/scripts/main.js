@@ -1,3 +1,50 @@
+async function drawScatterplot(variableX, variableY, data) {
+    const width = 1000, height = 600, margin = { top: 50, right: 70, bottom: 50, left: 150 };
+    const svg = d3.select('#chart');
+    svg.selectAll('*').remove();
+    svg.attr('width', width).attr('height', height);
+
+    // Create scales for x and y axes
+    const x = d3.scaleLinear()
+        .domain([d3.min(data, d => d.x), d3.max(data, d => d.x)]) // Set max x value
+        .range([margin.left, width - margin.right]);
+
+    const y = d3.scaleLinear()
+        .domain([d3.min(data, d => d.y), d3.max(data, d => d.y)]) // Set max y value
+        .range([height - margin.bottom, margin.top]);
+
+    // Append circles for each data point
+    svg.selectAll("circle")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("cx", d => x(d.x))
+        .attr("cy", d => y(d.y))
+        .attr("r", 5); // Set dot radius
+
+    // Add x-axis
+    svg.append("g")
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x));
+
+    // Add y-axis
+    svg.append("g")
+        .attr("transform", `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y));
+
+    // Add x-axis label
+    svg.append("text")
+        .attr("transform", `translate(${width / 2},${height - margin.bottom + 40})`)
+        .style("text-anchor", "middle")
+        .text(variableX);
+    
+    // Add y-axis label
+    svg.append("text")
+        .attr("transform", `translate(${margin.left - 100},${height / 2}) rotate(-90)`)
+        .style("text-anchor", "middle")
+        .text(variableY);
+}
+
 async function fetchMapping(variable) {
     try {
         const response = await fetch(`/data/mapping/${variable}`);
@@ -151,7 +198,7 @@ async function drawBarchart(variable, data) {
 }
 
 function drawHistogramSideways(variable, data) {
-    const width = 600, height = 600, margin = { top: 50, right: 70, bottom: 50, left: 70 };
+    const width = 1000, height = 600, margin = { top: 50, right: 70, bottom: 50, left: 70 };
     const svg = d3.select('#chart');
 
     svg.selectAll('*').remove();
@@ -210,7 +257,7 @@ function drawHistogramSideways(variable, data) {
 
 // drawHistogram function to fetch data and draw the histogram
 function drawHistogram(variable, data) {
-    const width = 600, height = 600, margin = { top: 50, right: 50, bottom: 70, left: 70 };
+    const width = 1000, height = 600, margin = { top: 50, right: 50, bottom: 70, left: 70 };
     const svg = d3.select('#chart');
 
     svg.selectAll('*').remove();
@@ -338,6 +385,15 @@ async function fetchAndPopulateVariables() {
             selectElement.appendChild(option);
         });
 
+        // add the same data to the select element of variables-y
+        const selectElementY = document.getElementById('variables-y');
+        variables.forEach(variable => {
+            const option = document.createElement('option');
+            option.value = variable;
+            option.text = variable;
+            selectElementY.appendChild(option);
+        });
+
         // set default variable to the first one in the list
         if (variables.length > 0) {
             selectElement.value = variables[0];
@@ -353,6 +409,39 @@ document.getElementById('variables').addEventListener('change', function() {
     const selectedVariable = this.value;
     if (selectedVariable) {
         fetchData(selectedVariable, false);
+    }
+});
+
+// event listener to call drawScatterplot when two variables are selected
+document.getElementById('variables-y').addEventListener('change', function() {
+    const selectedVariableX = document.getElementById('variables').value;
+    const selectedVariableY = this.value;
+    if (selectedVariableX && selectedVariableY) {
+        // make http call to get the data for both variables, separatly
+        fetch(`/data/${selectedVariableX}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`response status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(dataX => {
+                fetch(`/data/${selectedVariableY}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`response status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(dataY => {
+                        // combine dataX and dataY into an array of objects
+                        const combinedData = dataX.map((x, index) => ({ x, y: dataY[index] }));
+                        drawScatterplot(selectedVariableX, selectedVariableY, combinedData);
+                    });
+            })
+            .catch(error => {
+                console.error('error fetching data:', error);
+            });
     }
 });
 
