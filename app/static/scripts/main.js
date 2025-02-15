@@ -103,7 +103,21 @@ async function drawScatterplot(variableX, variableY, data) {
     .attr("class", "dot")
     .attr("cx", d => x(d.x))
     .attr("cy", d => y(d.y))
-    .attr("r", 5);
+    .attr("r", 5)
+    .on("mouseover", function(event, d) {
+      svg.append("text")
+        .attr("class", "popup")
+        .attr("x", x(d.x))
+        .attr("y", y(d.y) - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("background", "#fff")
+        .attr("border", "1px solid #ccc")
+        .text(`(${d.x}, ${d.y})`);
+    })
+    .on("mouseout", function() {
+      svg.selectAll(".popup").remove();
+    });
 
   // Add x-axis
   const xAxis = svg.append("g")
