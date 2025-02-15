@@ -6,41 +6,48 @@
     <title>Vislab - Lab 1</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        .form-check-inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-4">
         <h1 class="text-center">Laptop Prices</h1>
-
-        <!-- Section for Details -->
-        <div class="mt-4 pb-2">
-            <p>This dataset is a postprocessed version of the famous Laptop Price dataset, providing a comprehensive collection of information on various laptops, enabling detailed analysis of their specifications and pricing.</p>
-            <p>Source: <a href="https://www.kaggle.com/datasets/owm4096/laptop-prices" target="_blank">Laptop Prices Dataset on Kaggle</a></p>
-        </div>
         
         <!-- Form Group for Variable Selection -->
-        <div class="form-row mt-4 border-top pt-4" style="border-top-width: 4px !important;">
+        <div class="form-row my-5 bg-light p-3 rounded shadow">
+            <!-- Section for Details -->
+            <div class="form-group col-md-12 pb-2">
+                <p style="text-align: justify;">This dataset is a postprocessed version of the famous Laptop Price dataset, providing a comprehensive collection of information on various laptops, enabling detailed analysis of their specifications and pricing.</p>
+                <p>Source: <a href="https://www.kaggle.com/datasets/owm4096/laptop-prices" target="_blank">Laptop Prices Dataset on Kaggle</a></p>
+            </div>
             <div class="form-group col-md-6">
                 <label for="variables" class="text-primary">Choose X variable:</label>
                 <select class="form-control" id="variables"></select>
             </div>
             <div class="form-group col-md-6">
                 <label for="variables-y" class="text-success">Choose Y variable:</label>
-                <div id="variables-y">
-                    <div class="form-check">
+                <div id="variables-y" class="px-3">
+                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="variables-y" id="variable-y1" value="none" checked>
                         <label class="form-check-label" for="variable-y1">None</label>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Button Group -->
-        <div class="form-group mb-5">
-            <button id="sideway" class="btn btn-primary">Toggle Sideway</button>
+            <!-- Button Group -->
+            <div class="form-group col-md-12 my-4 d-flex justify-content-center">
+                <button id="sideway" class="btn btn-primary shadow mx-1">Toggle Sideway</button>
+                <button id="reset" class="btn btn-danger shadow mx-1">Reset</button>
+            </div>
         </div>
         
         <!-- SVG for Chart -->
-        <svg id="chart"></svg>
+        <div class="d-flex justify-content-center mb-5">
+            <svg id="chart"></svg>
+        </div>
     </div>
     
     <!-- Scripts -->

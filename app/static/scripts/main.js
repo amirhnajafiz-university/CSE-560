@@ -514,6 +514,7 @@ function populateRadioGroup(radioGroupId, variables, empty, onChange) {
   if (empty) {
     const emptyDiv = document.createElement('div');
     emptyDiv.className = 'form-check';
+    emptyDiv.classList.add('form-check-inline');
     const emptyInput = document.createElement('input');
     emptyInput.className = 'form-check-input';
     emptyInput.type = 'radio';
@@ -533,6 +534,7 @@ function populateRadioGroup(radioGroupId, variables, empty, onChange) {
   variables.forEach(variable => {
     const div = document.createElement('div');
     div.className = 'form-check';
+    div.classList.add('form-check-inline');
     const input = document.createElement('input');
     input.className = 'form-check-input';
     input.type = 'radio';
@@ -605,6 +607,9 @@ document.getElementById('sideway').addEventListener('click', function () {
   if (selectedVariable) {
     fetchDataAndDrawChart(selectedVariable, isSideways);
   }
+});
+document.getElementById('reset').addEventListener('click', function () {
+  location.reload();
 });
 
 // --- Initialization ---
