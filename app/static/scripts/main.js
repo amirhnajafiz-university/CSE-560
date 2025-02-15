@@ -456,7 +456,7 @@ async function fetchAndPopulateVariables() {
     populateSelectElement('variables', variables, false, (selectedVariable) => {
       fetchDataAndDrawChart(selectedVariable, false);
     });
-    populateSelectElement('variables-y', variables, true);
+    populateRadioGroup('variables-y', variables, true);
 
     // Initial data fetch
     if (variables.length > 0) {
@@ -500,13 +500,72 @@ function populateSelectElement(selectElementId, variables, empty, onChange) {
   }
 }
 
+/**
+ * Populates a radio button group with the given variables.
+ * @param {string} radioGroupId - The ID of the radio button group container.
+ * @param {Array<string>} variables - The variables to populate the radio button group with.
+ * @param {function} onChange - An optional callback function to be called when a radio button changes.
+ * @param {boolean} empty - Whether to include an empty option.
+ */
+function populateRadioGroup(radioGroupId, variables, empty, onChange) {
+  const radioGroup = document.getElementById(radioGroupId);
+  radioGroup.innerHTML = '';
+
+  if (empty) {
+    const emptyDiv = document.createElement('div');
+    emptyDiv.className = 'form-check';
+    const emptyInput = document.createElement('input');
+    emptyInput.className = 'form-check-input';
+    emptyInput.type = 'radio';
+    emptyInput.name = 'variables-y';
+    emptyInput.id = 'variable-y-none';
+    emptyInput.value = 'none';
+    emptyInput.checked = true;
+    const emptyLabel = document.createElement('label');
+    emptyLabel.className = 'form-check-label';
+    emptyLabel.htmlFor = 'variable-y-none';
+    emptyLabel.textContent = 'None';
+    emptyDiv.appendChild(emptyInput);
+    emptyDiv.appendChild(emptyLabel);
+    radioGroup.appendChild(emptyDiv);
+  }
+
+  variables.forEach(variable => {
+    const div = document.createElement('div');
+    div.className = 'form-check';
+    const input = document.createElement('input');
+    input.className = 'form-check-input';
+    input.type = 'radio';
+    input.name = 'variables-y';
+    input.id = `variable-y-${variable}`;
+    input.value = variable;
+    const label = document.createElement('label');
+    label.className = 'form-check-label';
+    label.htmlFor = `variable-y-${variable}`;
+    label.textContent = variable;
+    div.appendChild(input);
+    div.appendChild(label);
+    radioGroup.appendChild(div);
+  });
+
+  if (onChange) {
+    radioGroup.addEventListener('change', (event) => {
+      if (event.target.name === 'variables-y') {
+        onChange(event.target.value);
+      }
+    });
+  }
+}
+
 // --- Event Listeners ---
 /**
  * Event listener for the variables-y select element.
  */
-document.getElementById('variables-y').addEventListener('change', function () {
+document.getElementById('variables-y').addEventListener('change', function (event) {
+  if (event.target.name !== 'variables-y') return;
+
   const selectedVariableX = document.getElementById('variables').value;
-  const selectedVariableY = this.value;
+  const selectedVariableY = event.target.value;
 
   // if value of selectedVariableY is 'none', do not fetch data run fetch data for selectedVariableX
   if (selectedVariableY === 'none') {
