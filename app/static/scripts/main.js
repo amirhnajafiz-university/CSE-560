@@ -508,7 +508,27 @@ async function fetchAndPopulateVariables() {
     if (!variables) return;
 
     populateSelectElement('variables', variables, false, (selectedVariable) => {
-      fetchDataAndDrawChart(selectedVariable, false);
+      if (isTwoSelected) {
+        const selectedVariableY = document.querySelector('input[name="variables-y"]:checked').value;
+        if (selectedVariableY && selectedVariableY !== 'none') {
+          Promise.all([
+            fetchDataFromAPI(`/data/${selectedVariable}`),
+            fetchDataFromAPI(`/data/${selectedVariableY}`)
+          ])
+            .then(([dataX, dataY]) => {
+              if (dataX && dataY) {
+                const combinedData = dataX.map((x, index) => ({ x, y: dataY[index] }));
+                drawScatterplot(selectedVariable, selectedVariableY, combinedData);
+              }
+            })
+            .catch(error => {
+              console.error('Error fetching data:', error);
+            });
+          return;
+        }
+      } else {
+        fetchDataAndDrawChart(selectedVariable, false);
+      }
     });
     populateRadioGroup('variables-y', variables, true);
 
