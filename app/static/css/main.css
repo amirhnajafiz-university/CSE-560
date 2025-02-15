@@ -5,12 +5,14 @@ body {
     margin: 20px;
 }
 
-.bar {
+.bar, .dot {
     fill: steelblue;
 }
-.bar:hover {
+
+.bar:hover, .dot:hover {
     fill: orange;
 }
+
 .axis-label {
     font-size: 14px;
 }

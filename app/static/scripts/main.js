@@ -106,14 +106,32 @@ async function drawScatterplot(variableX, variableY, data) {
     .attr("r", 5);
 
   // Add x-axis
-  svg.append("g")
+  const xAxis = svg.append("g")
     .attr("transform", `translate(0,${HEIGHT - MARGIN.bottom})`)
     .call(d3.axisBottom(x));
 
   // Add y-axis
-  svg.append("g")
+  const yAxis = svg.append("g")
     .attr("transform", `translate(${MARGIN.left},0)`)
     .call(d3.axisLeft(y));
+
+  // Add x-axis grid lines
+  xAxis.selectAll("g.tick")
+    .append("line")
+    .attr("class", "grid-line")
+    .attr("y1", -HEIGHT + MARGIN.top + MARGIN.bottom)
+    .attr("y2", 0)
+    .attr("stroke", "#ccc")
+    .attr("stroke-dasharray", "2,2");
+  
+  // Add y-axis grid lines
+  yAxis.selectAll("g.tick")
+    .append("line")
+    .attr("class", "grid-line")
+    .attr("x1", WIDTH - MARGIN.left - MARGIN.right)
+    .attr("x2", 0)
+    .attr("stroke", "#ccc")
+    .attr("stroke-dasharray", "2,2");
 
   // Add x-axis label
   svg.append("text")
@@ -195,9 +213,18 @@ async function drawBarchartSideways(variable, data) {
     .call(d3.axisLeft(y));
 
   // Add x-axis
-  svg.append("g")
+  const xAxis = svg.append("g")
     .attr("transform", `translate(0,${HEIGHT - MARGIN.bottom})`)
     .call(d3.axisBottom(x));
+  
+  // Add x-axis grid lines
+  xAxis.selectAll("g.tick")
+    .append("line")
+    .attr("class", "grid-line")
+    .attr("y1", -HEIGHT + MARGIN.top + MARGIN.bottom)
+    .attr("y2", 0)
+    .attr("stroke", "#ccc")
+    .attr("stroke-dasharray", "2,2");
 
   // Add x-axis label
   svg.append("text")
@@ -281,9 +308,18 @@ async function drawBarchart(variable, data) {
     .style("text-anchor", "middle");
 
   // Add y-axis
-  svg.append("g")
+  const yAxis = svg.append("g")
     .attr("transform", `translate(${MARGIN.left},0)`)
     .call(d3.axisLeft(y));
+  
+  // Add y-axis grid lines
+  yAxis.selectAll("g.tick")
+    .append("line")
+    .attr("class", "grid-line")
+    .attr("x1", WIDTH - MARGIN.left - MARGIN.right)
+    .attr("x2", 0)
+    .attr("stroke", "#ccc")
+    .attr("stroke-dasharray", "2,2");
   
   // Add x-axis label
   svg.append("text")
@@ -350,9 +386,18 @@ function drawHistogramSideways(variable, data) {
     .call(d3.axisLeft(y));
 
   // Add x-axis (originally y-axis)
-  svg.append("g")
+  const xAxis = svg.append("g")
     .attr("transform", `translate(0,${HEIGHT - MARGIN.bottom})`)
     .call(d3.axisBottom(x));
+  
+  // Add x-axis grid lines
+  xAxis.selectAll("g.tick")
+    .append("line")
+    .attr("class", "grid-line")
+    .attr("y1", -HEIGHT + MARGIN.top + MARGIN.bottom)
+    .attr("y2", 0)
+    .attr("stroke", "#ccc")
+    .attr("stroke-dasharray", "2,2");
 
   // Add y-axis label (originally x-axis label)
   svg.append("text")
@@ -419,9 +464,18 @@ function drawHistogram(variable, data) {
     .call(d3.axisBottom(x));
 
   // Add y-axis
-  svg.append("g")
+  const yAxis = svg.append("g")
     .attr("transform", `translate(${MARGIN.left},0)`)
     .call(d3.axisLeft(y));
+  
+  // Add y-axis grid lines
+  yAxis.selectAll("g.tick")
+    .append("line")
+    .attr("class", "grid-line")
+    .attr("x1", WIDTH - MARGIN.left - MARGIN.right)
+    .attr("x2", 0)
+    .attr("stroke", "#ccc")
+    .attr("stroke-dasharray", "2,2");
 
   // Add x-axis label
   svg.append("text")
