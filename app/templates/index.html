@@ -21,7 +21,11 @@
         <div class="form-row my-5 bg-light p-3 rounded shadow">
             <!-- Section for Details -->
             <div class="form-group col-md-12 pb-2">
-                <p style="text-align: justify;">This dataset is a postprocessed version of the famous Laptop Price dataset, providing a comprehensive collection of information on various laptops, enabling detailed analysis of their specifications and pricing.</p>
+                <p style="text-align: justify;">
+                    This dataset is a refined version of the well-known Laptop Price dataset, designed to offer a comprehensive collection of information on various laptops, facilitating detailed analysis of their specifications and pricing. It consists of 23 columns containing both numerical and categorical values.  
+                    The original dataset was highly compact, with extensive details embedded within each column. While this format was human-readable and concise, it was not optimal for Machine Learning algorithms, which perform better when distinct attributes are stored in separate columns. To enhance efficiency, the dataset was restructured by extracting individual details into separate fields. As a result, 28 duplicate rows were identified and removed, leading to the finalized version presented here.
+                    The original dataset has 1270 rows but what we have here is 500 random samples from it. Moreover, from the 23 columns, the categorical columns with only Yes or No values were dropped. The dataset is available in CSV format and can be downloaded from the link below.
+                </p>
                 <p>Source: <a href="https://www.kaggle.com/datasets/owm4096/laptop-prices" target="_blank">Laptop Prices Dataset on Kaggle</a></p>
             </div>
             <div class="form-group col-md-6">
@@ -39,8 +43,19 @@
             </div>
             <!-- Button Group -->
             <div class="form-group col-md-12 my-4 d-flex justify-content-center">
-                <button id="sideway" class="btn btn-primary shadow mx-1">Toggle Sideway</button>
-                <button id="reset" class="btn btn-danger shadow mx-1">Reset</button>
+                <button id="sideway" class="btn btn-primary shadow mx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+                    </svg>
+                    Toggle Sideway
+                </button>
+                <button id="reset" class="btn btn-danger shadow mx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                    </svg>
+                    Reset
+                </button>
             </div>
         </div>
         
