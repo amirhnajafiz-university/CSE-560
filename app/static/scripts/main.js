@@ -96,13 +96,25 @@ async function drawScatterplot(variableX, variableY, data) {
     .domain([d3.min(data, d => d.y), d3.max(data, d => d.y)])
     .range([HEIGHT - MARGIN.bottom, MARGIN.top]);
 
-  // Append circles for each data point
+  // Function to add jitter
+  const jitter = (value, range) => value + (Math.random() - 0.5) * range;
+
+  // Fetch types of variables
+  const [typeX, typeY] = await Promise.all([
+    fetchDataFromAPI(`/data/type/${variableX}`),
+    fetchDataFromAPI(`/data/type/${variableY}`)
+  ]);
+
+  // Determine if jitter should be applied
+  const applyJitter = !(typeX.type === 'numerical' && typeY.type === 'numerical');
+
+  // Append circles for each data point with or without jitter
   svg.selectAll("circle")
     .data(data)
     .enter().append("circle")
     .attr("class", "dot")
-    .attr("cx", d => x(d.x))
-    .attr("cy", d => y(d.y))
+    .attr("cx", d => applyJitter ? jitter(x(d.x), 10) : x(d.x)) // Conditionally add jitter to x-coordinate
+    .attr("cy", d => applyJitter ? jitter(y(d.y), 10) : y(d.y)) // Conditionally add jitter to y-coordinate
     .attr("r", 5)
     .on("mouseover", function(event, d) {
       // Append a group to hold the tooltip elements
