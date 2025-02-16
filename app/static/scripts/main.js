@@ -105,14 +105,29 @@ async function drawScatterplot(variableX, variableY, data) {
     .attr("cy", d => y(d.y))
     .attr("r", 5)
     .on("mouseover", function(event, d) {
-      svg.append("text")
-        .attr("class", "popup")
+      // Append a group to hold the tooltip elements
+      let tooltip = svg.append("g")
+        .attr("class", "popup");
+
+      // Append a rectangle for background
+      tooltip.append("rect")
+        .attr("x", x(d.x) - 30)
+        .attr("y", y(d.y) - 30)
+        .attr("width", 60)
+        .attr("height", 20)
+        .attr("fill", "#222")
+        .attr("stroke", "#ccc")
+        .attr("rx", 5) // Rounded corners
+        .attr("ry", 5)
+        .style("pointer-events", "none"); // Prevent blocking mouse events
+
+      // Append text inside the rectangle
+      tooltip.append("text")
         .attr("x", x(d.x))
-        .attr("y", y(d.y) - 10)
+        .attr("y", y(d.y) - 15)
         .attr("text-anchor", "middle")
         .attr("font-size", "12px")
-        .attr("background", "#fff")
-        .attr("border", "1px solid #ccc")
+        .attr("fill", "#fff")
         .text(`(${d.x}, ${d.y})`);
     })
     .on("mouseout", function() {

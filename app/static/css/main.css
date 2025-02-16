@@ -16,3 +16,7 @@ body {
 .axis-label {
     font-size: 14px;
 }
+
+.popup {
+    background: black !important;
+}
