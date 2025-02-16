@@ -20,3 +20,8 @@ body {
 .popup {
     background: black !important;
 }
+
+.form-check-inline {
+    display: inline-block;
+    margin-right: 10px;
+}
