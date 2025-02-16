@@ -219,7 +219,21 @@ async function drawBarchartSideways(variable, data) {
     .attr("x", d => x(0))
     .attr("y", d => y(d.key))
     .attr("width", d => x(d.value) - x(0))
-    .attr("height", y.bandwidth());
+    .attr("height", y.bandwidth())
+    .on("mouseover", function(event, d) {
+      svg.append("text")
+        .attr("class", "popup")
+        .attr("x", x(d.value) + 10)
+        .attr("y", y(d.key) + y.bandwidth() / 2)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("background", "#fff")
+        .attr("border", "1px solid #ccc")
+        .text(d.value);
+    })
+    .on("mouseout", function() {
+      svg.selectAll(".popup").remove();
+    });
 
   // Add y-axis
   svg.append("g")
@@ -312,7 +326,21 @@ async function drawBarchart(variable, data) {
     .attr("x", d => x(d.key))
     .attr("y", d => y(d.value))
     .attr("width", x.bandwidth())
-    .attr("height", d => HEIGHT - MARGIN.bottom - y(d.value));
+    .attr("height", d => HEIGHT - MARGIN.bottom - y(d.value))
+    .on("mouseover", function(event, d) {
+      svg.append("text")
+        .attr("class", "popup")
+        .attr("x", x(d.key) + x.bandwidth() / 2)
+        .attr("y", y(d.value) - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("background", "#fff")
+        .attr("border", "1px solid #ccc")
+        .text(d.value);
+    })
+    .on("mouseout", function() {
+      svg.selectAll(".popup").remove();
+    });
 
   // Add x-axis
   svg.append("g")
@@ -392,7 +420,21 @@ function drawHistogramSideways(variable, data) {
     .attr("x", d => MARGIN.left)
     .attr("y", d => y(d.x1))
     .attr("width", d => x(d.length) - MARGIN.left)
-    .attr("height", d => Math.abs(y(d.x1) - y(d.x0)));
+    .attr("height", d => Math.abs(y(d.x1) - y(d.x0)))
+    .on("mouseover", function(event, d) {
+      svg.append("text")
+        .attr("class", "popup")
+        .attr("x", x(d.length) + 10)
+        .attr("y", y(d.x1) - (y(d.x1) - y(d.x0)) / 2)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("background", "#fff")
+        .attr("border", "1px solid #ccc")
+        .text(d.length);
+    })
+    .on("mouseout", function() {
+      svg.selectAll(".popup").remove();
+    });
 
   // Add y-axis (originally x-axis)
   svg.append("g")
@@ -470,7 +512,21 @@ function drawHistogram(variable, data) {
     .attr("x", d => x(d.x0))
     .attr("y", d => y(d.length))
     .attr("width", d => x(d.x1) - x(d.x0) - 1)
-    .attr("height", d => HEIGHT - MARGIN.bottom - y(d.length));
+    .attr("height", d => HEIGHT - MARGIN.bottom - y(d.length))
+    .on("mouseover", function(event, d) {
+      svg.append("text")
+        .attr("class", "popup")
+        .attr("x", x(d.x0) + (x(d.x1) - x(d.x0)) / 2)
+        .attr("y", y(d.length) - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("background", "#fff")
+        .attr("border", "1px solid #ccc")
+        .text(d.length);
+    })
+    .on("mouseout", function() {
+      svg.selectAll(".popup").remove();
+    });
 
   // Add x-axis
   svg.append("g")
