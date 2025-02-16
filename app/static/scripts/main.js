@@ -178,13 +178,13 @@ async function drawScatterplot(variableX, variableY, data) {
   svg.append("text")
     .attr("transform", `translate(${WIDTH / 2},${HEIGHT - MARGIN.bottom + 40})`)
     .style("text-anchor", "middle")
-    .text(variableX);
+    .text(`${variableX} (${typeX.type})`);
 
   // Add y-axis label
   svg.append("text")
     .attr("transform", `translate(${MARGIN.left - 100},${HEIGHT / 2}) rotate(-90)`)
     .style("text-anchor", "middle")
-    .text(variableY);
+    .text(`${variableY} (${typeY.type})`);
 
   // Add title
   svg.append("text")
