@@ -1,27 +1,12 @@
 /* basic css settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     font-size: 14px;
     margin: 20px;
-}
-
-.bar, .dot {
-    fill: steelblue;
-}
-
-.bar:hover, .dot:hover {
-    fill: orange;
-}
-
-.axis-label {
-    font-size: 14px;
-}
-
-.popup {
-    background: black !important;
-}
-
-.form-check-inline {
-    display: inline-block;
-    margin-right: 10px;
 }
