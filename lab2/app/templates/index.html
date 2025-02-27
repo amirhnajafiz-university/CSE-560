@@ -3,60 +3,42 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vislab - Lab 1</title>
+    <title>Vislab - Lab 2(a)</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        .btn-secondary {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+        }
+        .range-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        .range-container {
+            position: relative;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-4">
-        <h1 class="text-center">Laptop Prices</h1>
-        
-        <!-- Form Group for Variable Selection -->
-        <div class="form-row my-5 bg-light p-3 rounded shadow">
-            <!-- Section for Details -->
-            <div class="form-group col-md-12 pb-2">
-                <p style="text-align: justify;">
-                    This dataset is a refined version of the well-known Laptop Price dataset, designed to offer a comprehensive collection of information on various laptops, facilitating detailed analysis of their specifications and pricing. It consists of 23 columns containing both numerical and categorical values.  
-                    The original dataset was highly compact, with extensive details embedded within each column. While this format was human-readable and concise, it was not optimal for Machine Learning algorithms, which perform better when distinct attributes are stored in separate columns. To enhance efficiency, the dataset was restructured by extracting individual details into separate fields. As a result, 28 duplicate rows were identified and removed, leading to the finalized version presented here.
-                    The original dataset has 1270 rows but what we have here is 500 random samples from it. Moreover, from the 23 columns, the categorical columns with only Yes or No values were dropped. The dataset is available in CSV format and can be downloaded from the link below.
-                </p>
-                <p>Source: <a href="https://www.kaggle.com/datasets/owm4096/laptop-prices" target="_blank">Laptop Prices Dataset on Kaggle</a></p>
-                <p style="text-align: justify;">
-                    In here we have histogram for numerical variables, bar chart for categorical variables, and scatter plot for numerical variables. You can choose the X and Y variables from the dropdowns below. The plots can be toggled to be sideway and reset to its original position.
-                    For categories more than 10 items, we only show the first 10 items. For scatter plot, we are using jitter when having a categorical variable. But for the numerical values we are using the actual values.
-                </p>
+        <label for="sample-number" class="form-range">Number of samples:</label>
+        <div class="d-flex align-items-center">
+            <span id="min-value">1</span>
+            <button class="btn btn-secondary mx-2" onclick="changeValue(-1)">-</button>
+            <div class="range-container">
+                <input type="range" class="form-range" min="1" max="1275" step="1" id="sample-number" oninput="updateRangeValue()">
+                <span id="range-value" class="range-value">1</span>
             </div>
-            <div class="form-group col-md-6">
-                <label for="variables" class="text-primary">Choose X variable:</label>
-                <select class="form-control" id="variables"></select>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="variables-y" class="text-success">Choose Y variable:</label>
-                <div id="variables-y" class="px-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="variables-y" id="variable-y1" value="none" checked>
-                        <label class="form-check-label" for="variable-y1">None</label>
-                    </div>
-                </div>
-            </div>
-            <!-- Button Group -->
-            <div class="form-group col-md-12 my-4 d-flex justify-content-center">
-                <button id="sideway" class="btn btn-primary shadow mx-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
-                    </svg>
-                    Toggle Sideway
-                </button>
-                <button id="reset" class="btn btn-danger shadow mx-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-                    </svg>
-                    Reset
-                </button>
-            </div>
+            <button class="btn btn-secondary mx-2" onclick="changeValue(1)">+</button>
+            <span id="max-value">1275</span>
         </div>
-        
+        <button class="btn btn-success mt-3" onclick="sampleData()">Update</button>
         <!-- SVG for Chart -->
         <div class="d-flex justify-content-center mb-5">
             <svg id="chart"></svg>
@@ -66,5 +48,24 @@
     <!-- Scripts -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <script>
+        function changeValue(delta) {
+            const rangeInput = document.getElementById('sample-number');
+            let newValue = parseInt(rangeInput.value) + delta;
+            if (newValue >= parseInt(rangeInput.min) && newValue <= parseInt(rangeInput.max)) {
+                rangeInput.value = newValue;
+                updateRangeValue();
+            }
+        }
+
+        function updateRangeValue() {
+            const rangeInput = document.getElementById('sample-number');
+            const rangeValue = document.getElementById('range-value');
+            rangeValue.textContent = rangeInput.value;
+        }
+
+        // Initialize the range value display
+        updateRangeValue();
+    </script>
 </body>
 </html>

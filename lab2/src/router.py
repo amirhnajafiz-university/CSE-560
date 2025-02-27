@@ -20,7 +20,7 @@ def configure_routes(app: Flask):
     app.add_url_rule('/api/sample/<int:number_of_samples>', 'sample_data', controller.sample_data)
 
     # define a route that returns the data from the csv file for a specific column
-    app.add_url_rule('/api/data/<str:column_name>', 'data_column', controller.data_column)
+    app.add_url_rule('/api/data/<column_name>', 'data_column', controller.data_column)
 
     # define a route that returns the data headers from the csv file
     app.add_url_rule('/api/headers', 'headers', controller.headers)
