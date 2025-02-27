@@ -24,7 +24,7 @@ def sample_data(number_of_samples: int):
         return jsonify({"error": "Number of samples exceeds the size of the dataset"}), 400
     else:
         sample_df = df.sample(n=number_of_samples)
-        sample_df.to_csv(config.SAMPLED_DATASET)
+        sample_df.to_csv(config.SAMPLED_DATASET, index=False)
     return jsonify({"message": f"Sampled {number_of_samples} rows from the original dataset"}), 200
 
 def data_column(column_name: str):
