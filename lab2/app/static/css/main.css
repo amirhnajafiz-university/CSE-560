@@ -9,6 +9,9 @@ body {
     font-family: 'Arial', sans-serif;
     font-size: 14px;
     margin: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(to bottom right, #fff, #99ceff);
 }
 
 /* Global classes */
