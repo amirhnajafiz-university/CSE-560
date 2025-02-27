@@ -44,14 +44,6 @@ def data_column_mapping(column_name):
     else:
         return jsonify({"error": "Column not found"}), 404
 
-def data():
-    """
-    Return the data from the csv file.
-    :return: The data from the csv file.
-    """
-    df = pd.read_csv('./data/500_laptop_prices.csv')
-    return df.to_json(orient='records')
-
 def headers():
     """
     Return the data headers from the csv file.

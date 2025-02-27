@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, jsonify
 
 
 
@@ -8,3 +8,12 @@ def home():
     :return: The rendered index.html file.
     """
     return render_template('index.html')
+
+def get_data():
+    """
+    Get data from data/dataset.csv into a JSON format.
+    :return: The data in JSON format.
+    """
+    import pandas as pd
+    data = pd.read_csv('data/dataset.csv').to_dict(orient='records')
+    return jsonify(data)

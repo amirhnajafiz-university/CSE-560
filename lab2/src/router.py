@@ -12,6 +12,9 @@ def configure_routes(app: Flask):
     # define a route that returns the index.html file
     app.add_url_rule('/', 'home', views.home)
 
+    # define a route that returns the data from the csv file
+    app.add_url_rule('/data', 'data', views.data)
+
     # define a route that returns the data from the csv file for a specific column
     app.add_url_rule('/data/<column_name>', 'data_column', controller.data_column)
 
@@ -20,9 +23,6 @@ def configure_routes(app: Flask):
 
     # define a route that returns the mapping list for a specific column by reading mappings.json file
     app.add_url_rule('/data/mapping/<column_name>', 'data_column_mapping', controller.data_column_mapping)
-
-    # define a route that returns the data from the csv file
-    app.add_url_rule('/data', 'data', controller.data)
 
     # define a route that returns the data headers from the csv file
     app.add_url_rule('/headers', 'headers', controller.headers)
