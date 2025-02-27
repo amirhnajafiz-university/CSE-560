@@ -39,6 +39,14 @@ async function sampleData() {
   }
 }
 
+// --- Event Handlers ---
+/**
+ * Change the value of the range input by a given delta.
+ */
+async function updateData() {
+  sampleData();
+}
+
 /**
  * Set the default value of the sample number input.
  */

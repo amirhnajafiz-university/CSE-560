@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
+    <!-- Toolbar -->
     <div class="toolbar rounded shadow" onclick="toggleToolbarContent()">
         Toolbar Menu <span id="toolbar-icon" class="icon-arrow-down"></span>
     </div>
+    <!-- Toolbar Content -->
     <div class="toolbar-content rounded shadow" id="toolbar-content">
         <div class="container">
             <label for="sample-number" class="form-range">Number of Samples: <span id="range-value" class="range-value">1</span></label>
@@ -24,15 +26,18 @@
                 <button class="btn btn-sm btn-circle rounded-circle btn-primary mx-2" onclick="changeValue(1)">+</button>
             </div>
             <div class="d-flex justify-content-center mt-4">
-                <button class="btn btn-sm btn-success mx-2" onclick="sampleData()">Update</button>
+                <button class="btn btn-sm btn-success mx-2" onclick="updateData()">Update</button>
                 <button class="btn btn-sm btn-danger mx-2" onclick="resetData()">Reset</button>
             </div>
         </div>
     </div>
 
+    <!-- Main Content -->
     <div class="container mt-4">
+        <!-- Title -->
         <h1 class="text-center">Laptop Prices</h1>
 
+        <!-- Holders -->
         <div class="my-5 bg-light p-3 rounded shadow">
             Hello world!
         </div>
