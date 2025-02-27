@@ -33,7 +33,10 @@ async function fetchDataFromAPI(endpoint) {
  */
 async function sampleData() {
   const numberOfSamples = document.getElementById("sample-number").value;
-  await fetchDataFromAPI(`/api/sample/${numberOfSamples}`);
+  const response = await fetchDataFromAPI(`/api/sample/${numberOfSamples}`);
+  if (response) {
+    alert("Sampled data successfully!");
+  }
 }
 
 /**
