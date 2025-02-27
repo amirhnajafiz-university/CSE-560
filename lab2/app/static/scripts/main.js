@@ -35,3 +35,11 @@ async function sampleData() {
   const numberOfSamples = document.getElementById("sample-number").value;
   await fetchDataFromAPI(`/api/sample/${numberOfSamples}`);
 }
+
+/**
+ * Set the default value of the sample number input.
+ */
+function resetData() {
+  document.getElementById("sample-number").value = 500;
+  updateRangeValue();
+}

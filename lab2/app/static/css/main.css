@@ -10,3 +10,51 @@ body {
     font-size: 14px;
     margin: 20px;
 }
+
+.range-container {
+    text-align: center;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.toolbar:hover {
+    background-color: #006de1;
+}
+
+.toolbar-content {
+    position: absolute;
+    top: 55px; /* Adjust this value to match the height of the .toolbar element */
+    left: 20px;
+    width: 300px;
+    overflow: hidden;
+    height: 0;
+    transition: all 1s ease;
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+.toolbar-content.show {
+    padding: 5px;
+    height: 600px;
+}
+
+.icon-arrow-down::before {
+    content: '▼';
+    float: right;
+}
+
+.icon-arrow-up::before {
+    content: '▲';
+    float: right;
+}
