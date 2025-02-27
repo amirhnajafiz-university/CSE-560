@@ -50,7 +50,7 @@ body {
 
 .toolbar-content.show {
     padding: 5px;
-    height: 120px;
+    height: 180px;
 }
 
 .icon-arrow-down::before {

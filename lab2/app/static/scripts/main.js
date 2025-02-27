@@ -33,7 +33,9 @@ async function fetchDataFromAPI(endpoint) {
  */
 async function sampleData() {
   const numberOfSamples = document.getElementById("sample-number").value;
-  const response = await fetchDataFromAPI(`/api/sample/${numberOfSamples}`);
+  const dropNone = document.getElementById("drop-none").checked;
+  const dropCategorical = document.getElementById("drop-categorical").checked;
+  const response = await fetchDataFromAPI(`/api/sample/${numberOfSamples}?drop_none=${dropNone}&drop_categorical=${dropCategorical}`);
   if (response) {
     alert("Sampled data successfully!");
   }
@@ -52,5 +54,7 @@ async function updateData() {
  */
 function resetData() {
   document.getElementById("sample-number").value = 500;
+  document.getElementById("drop-none").checked = true;
+  document.getElementById("drop-categorical").checked = true;
   updateRangeValue();
 }
