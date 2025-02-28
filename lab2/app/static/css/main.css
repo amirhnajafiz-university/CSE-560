@@ -90,3 +90,27 @@ body {
     color: white;
     background-color: #007bff !important;
 }
+
+#alert-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+}
+
+.alert {
+    transition: opacity 3s ease, transform 3s ease;
+}
+
+.alert.show {
+    opacity: 1;
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+}

@@ -29,6 +29,33 @@ async function fetchDataFromAPI(endpoint) {
 }
 
 /**
+ * Displays a custom alert div at the top of the page.
+ * @param {string} message - The message to display in the alert.
+ * @param {string} type - The type of alert (e.g., "success", "error").
+ */
+function showAlert(message, type) {
+  const alertContainer = document.getElementById("alert-container");
+  const alertDiv = document.createElement("div");
+  alertDiv.className = `alert alert-${type} alert-dismissible fade show d-flex align-items-center`;
+  alertDiv.role = "alert";
+  alertDiv.style.marginBottom = "10px"; // Add margin to create space between alerts
+  alertDiv.innerHTML = `
+    <span>${message}</span>
+  `;
+  alertContainer.appendChild(alertDiv);
+
+  // Trigger reflow to ensure the transition starts
+  alertDiv.offsetHeight;
+  alertDiv.classList.add("show");
+
+  setTimeout(() => {
+    alertDiv.classList.remove("show");
+    alertDiv.classList.add("hide");
+    setTimeout(() => alertDiv.remove(), 500); // Wait for transition to complete
+  }, 2000);
+}
+
+/**
  * Call /api/sample in order to generate dataset. 
  */
 async function sampleData() {
@@ -37,7 +64,9 @@ async function sampleData() {
   const dropCategorical = document.getElementById("drop-categorical").checked;
   const response = await fetchDataFromAPI(`/api/sample/${numberOfSamples}?drop_none=${dropNone}&drop_categorical=${dropCategorical}`);
   if (response) {
-    alert("Sampled data successfully!");
+    showAlert("Sampled data successfully!", "success");
+  } else {
+    showAlert("Failed to sample data.", "error");
   }
 }
 
@@ -65,9 +94,9 @@ async function displayHeaders() {
 async function performPCA() {
   const response = await fetchDataFromAPI("/api/eigendecomposition");
   if (response) {
-    alert("Performed PCA successfully!");
+    showAlert("Performed PCA successfully!", "success");
   } else {
-    alert("Failed to perform PCA.");
+    showAlert("Failed to perform PCA.", "error");
   }
 }
 
