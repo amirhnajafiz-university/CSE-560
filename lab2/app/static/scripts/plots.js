@@ -98,6 +98,7 @@ async function plotEigenvalues() {
     chartGroup.append("path")
       .datum(eigenvalues)
       .attr("fill", "none")
+      .attr("class", "line")
       .attr("stroke", "#006de1")
       .attr("stroke-width", 2)
       .attr("d", line);
@@ -107,6 +108,7 @@ async function plotEigenvalues() {
       .data(eigenvalues)
       .enter()
       .append("circle")
+      .attr("class", "circle")
       .attr("cx", (_, i) => xScale(i))
       .attr("cy", d => yScale(d))
       .attr("r", 8)

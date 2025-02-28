@@ -19,6 +19,31 @@ body {
     text-align: center;
 }
 
+.options {
+    position: relative;
+    bottom: 0px;
+    left: 0;
+    width: 450px;
+    padding: 5px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* vertically centers the items */
+    justify-content: space-between; /* horizontally centers the items */
+    gap: 15px; /* adds spacing between elements */
+}
+
+.options input {
+    height: 20px; /* normalizes height */
+    vertical-align: middle;
+}
+
+.options-small input,
+.options-small label {
+    font-size: 0.8rem;
+}
+
 .toolbar {
     position: fixed;
     top: 0;
@@ -87,7 +112,7 @@ body {
     transition: all 0.5s ease;
 }
 
-.operation-btn:hover {
+.operation-btn:hover, .operation-btn-selected {
     color: white;
     background-color: #007bff !important;
 }

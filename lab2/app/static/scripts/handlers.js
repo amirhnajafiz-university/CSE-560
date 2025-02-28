@@ -36,5 +36,33 @@ function toggleToolbarContent() {
     }
 }
 
+// Event listeners
+document.getElementById('toggle-grids').addEventListener('change', function() {
+    if (this.checked) {
+        // get class grid and set visibility to visible
+        document.querySelectorAll('.grid').forEach(grid => grid.style.visibility = 'visible');
+    } else {
+        // get class grid and set visibility to hidden
+        document.querySelectorAll('.grid').forEach(grid => grid.style.visibility = 'hidden');
+    }
+});
+document.getElementById('toggle-labels').addEventListener('change', function() {
+    if (this.checked) {
+        // get class axis-label and set visibility to visible
+        document.querySelectorAll('.axis-label').forEach(label => label.style.visibility = 'visible');
+    } else {
+        // get class axis-label and set visibility to hidden
+        document.querySelectorAll('.axis-label').forEach(label => label.style.visibility = 'hidden');
+    }
+});
+document.getElementById('line-color-picker').addEventListener('input', function() {
+    // get class line and set color to the value of the color picker
+    document.querySelectorAll('.line').forEach(line => line.style.stroke = this.value);
+});
+document.getElementById('plot-color-picker').addEventListener('input', function() {
+    // get class plot and set color to the value of the color picker
+    document.querySelectorAll('.circle').forEach(plot => plot.style.fill = this.value);
+});
+
 // initialize the range value display
 updateRangeValue();
