@@ -74,10 +74,12 @@ document.getElementById('toggle-labels').addEventListener('change', function() {
 document.getElementById('line-color-picker').addEventListener('input', function() {
     // get class line and set color to the value of the color picker
     document.querySelectorAll('.line').forEach(line => line.style.stroke = this.value);
+    document.querySelectorAll('.arrow').forEach(line => line.style.stroke = this.value);
 });
 document.getElementById('plot-color-picker').addEventListener('input', function() {
     // get class plot and set color to the value of the color picker
     document.querySelectorAll('.circle').forEach(plot => plot.style.fill = this.value);
+    document.querySelectorAll('.point').forEach(plot => plot.style.fill = this.value);
 });
 
 // initialize the range value display

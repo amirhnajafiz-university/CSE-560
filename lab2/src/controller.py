@@ -56,22 +56,29 @@ def eigendecomposition():
     scaler = StandardScaler()
     pca = PCA()
 
+    # standardize the data
+    scaled_data = scaler.fit_transform(df)
+
     # fit the PCA model to the data
-    principal_components = pca.fit_transform(scaler.fit_transform(df))
+    principal_components = pca.fit_transform(scaled_data)
+    columns=[f'PC{i+1}' for i in range(principal_components.shape[1])]
+    principal_components = pd.DataFrame(principal_components, columns=columns)
+    principal_components["id"] = df.index
+
+    # save loadings
+    loadings = pd.DataFrame(pca.components_.T, columns=columns)
+    loadings["feature"] = df.columns
 
     # get the eigenvalues and eigenvectors
     eigenvalues = pca.explained_variance_
     eigenvectors = pca.components_
 
-    print("Eigenvalues:", eigenvalues)
-    print("Eigenvectors:", eigenvectors)
-    print("Principal Components:", principal_components)
-
     # save the eigenvalues and eigenvectors to a npz file
     np.savez(config.EIGENDECOMPOSITION, eigenvalues=eigenvalues, eigenvectors=eigenvectors)
 
-    # save the principal components to a csv file
+    # save the principal components and loadings to a csv file
     pd.DataFrame(principal_components).to_csv(config.PRINCIPAL_COMPONENTS, index=False)
+    pd.DataFrame(loadings).to_csv(config.LOADINGS, index=False)
 
     return jsonify({"message": "Eigendecomposition completed"}), 200
 
@@ -100,8 +107,21 @@ def principal_components():
 
     # read the principal components from the csv file and return them tolist
     df = pd.read_csv(config.PRINCIPAL_COMPONENTS)
-    principal_components = df.values.tolist()
+    principal_components = df[['id', 'PC1', 'PC2']].values.tolist()
     return jsonify({"principal_components": principal_components})
+
+def loadings():
+    """
+    Return the loadings of the sampled dataset.
+    :return: The loadings of the sampled dataset.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # read the loadings from the csv file and return them tolist
+    df = pd.read_csv(config.LOADINGS)
+    loadings = df[['feature', 'PC1', 'PC2']].values.tolist()
+    return jsonify({"loadings": loadings})
 
 def data_column(column_name: str):
     """

@@ -66,7 +66,7 @@ async function sampleData() {
   if (response) {
     showAlert("Sampled data successfully!", "success");
   } else {
-    showAlert("Failed to sample data.", "error");
+    showAlert("Failed to sample data.", "danger");
   }
 }
 
@@ -96,7 +96,7 @@ async function performPCA() {
   if (response) {
     showAlert("Performed PCA successfully!", "success");
   } else {
-    showAlert("Failed to perform PCA.", "error");
+    showAlert("Failed to perform PCA.", "danger");
   }
 }
 

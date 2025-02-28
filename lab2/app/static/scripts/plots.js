@@ -153,108 +153,159 @@ async function plotEigenvalues() {
  */
 async function plotPCA() {
   Promise.all([
-    d3.json('/api/principalcomponents'),
-    d3.json('/api/eigenvectors'),
-    d3.json('/api/headers')
-  ]).then(([pc, eigenvectorData, headers]) => {
-    const pc1 = pc.principal_components.map(d => d[0]);
-    const pc2 = pc.principal_components.map(d => d[1]);
-    const loadings = eigenvectorData.eigenvectors.slice(0, 2);
-    const features = headers;
+    d3.json('/api/loadings'),
+    d3.json('/api/principalcomponents')
+  ]).then(([ev, dp]) => {
+    const eigenvectors = ev.loadings;
+    const dataPoints = dp.principal_components;
 
-    const margin = {top: 40, right: 40, bottom: 60, left: 60};
-    const width = 800 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
-
+    // get the SVG element and set its dimensions
     const svg = d3.select('#chart');
     svg.selectAll('*').remove();
-    svg.attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+    svg.attr("width", width).attr("height", height);
 
-    // Scales for principal components
-    const xScale = d3.scaleLinear()
-      .domain([d3.min(pc1), d3.max(pc1)])
-      .range([0, width]);
+    // calculate the domain based on the data points
+    const xExtent = d3.extent(dataPoints, d => d[1]);
+    const yExtent = d3.extent(dataPoints, d => d[2]);
 
-    const yScale = d3.scaleLinear()
-      .domain([d3.min(pc2), d3.max(pc2)])
-      .range([height, 0]);
+    // ensure the center is at (0, 0)
+    const xDomain = [Math.min(xExtent[0], -xExtent[1]), Math.max(xExtent[1], -xExtent[0])];
+    const yDomain = [Math.min(yExtent[0], -yExtent[1]), Math.max(yExtent[1], -yExtent[0])];
 
-    // Draw data points
+    const xScale = d3.scaleLinear().domain(xDomain).range([margin.left, width - margin.right]).nice();
+    const yScale = d3.scaleLinear().domain(yDomain).range([height - margin.bottom, margin.top]).nice();
+
+    // axes
+    svg.append("g")
+      .attr("transform", `translate(0,${height - margin.bottom})`)
+      .call(d3.axisBottom(xScale));
+    svg.append("g")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(yScale));
+
+    // add grid lines
+    svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(yScale)
+        .tickSize(-width + margin.left + margin.right)
+        .tickFormat("")
+        .ticks(20)
+      );
+    
+    svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", `translate(0,${height - margin.bottom})`)
+      .call(d3.axisBottom(xScale)
+        .tickSize(-height + margin.top + margin.bottom)
+        .tickFormat("")
+        .ticks(20)
+      );
+
+    // add title
+    svg.append("text")
+      .attr("x", (width / 2))
+      .attr("y", margin.top / 2)
+      .attr("text-anchor", "middle")
+      .attr("class", "title")
+      .text("PCA Biplot of the Sampled Dataset");
+
+    // add axis labels
+    svg.append("text")
+      .attr("x", width / 2)
+      .attr("y", height - margin.bottom / 4)
+      .attr("text-anchor", "middle")
+      .attr("class", "axis-label")
+      .text("Principal Component 1");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2)
+      .attr("y", margin.left / 4)
+      .attr("text-anchor", "middle")
+      .attr("class", "axis-label")
+      .text("Principal Component 2");
+
+    // plot data points
     svg.selectAll(".point")
-      .data(pc.principal_components)
+      .data(dataPoints)
       .enter()
       .append("circle")
       .attr("class", "point")
-      .attr("cx", d => xScale(d[0]))
-      .attr("cy", d => yScale(d[1]))
-      .attr("r", 2)
-      .attr("fill", "#999");
-
-    // Scaling factor for loadings
-    const loadingScale = d3.scaleLinear()
-      .domain([-1, 1])
-      .range([-100, 100]);
-
-    // Draw variable loadings
-    features.forEach((feature, i) => {
-      const x = loadingScale(loadings[0][i]);
-      const y = loadingScale(loadings[1][i]);
-        
-      svg.append("line")
-        .attr("class", "arrow")
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("x2", x)
-        .attr("y2", -y)
-        .attr("transform", `translate(${width/2},${height/2})`)
-        .attr("marker-end", "url(#arrowhead)");
-
-      svg.append("text")
-        .attr("class", "label")
-        .attr("x", width/2 + x*1.1)
-        .attr("y", height/2 - y*1.1)
-        .text(feature);
-    });
-
-    // Add arrowhead marker
+      .attr("cx", d => xScale(d[1]))
+      .attr("cy", d => yScale(d[2]))
+      .attr("r", 4)
+      .style("fill", "steelblue")
+      .style("opacity", 0.6)
+      .on("mouseover", function(_, d) {
+        // Append a group to hold the tooltip elements
+        let tooltip = svg.append("g")
+          .attr("class", "popup");
+  
+        // Append a rectangle for background
+        tooltip.append("rect")
+          .attr("x", xScale(d[1]) - 15)
+          .attr("y", yScale(d[2]) - 15)
+          .attr("width", 60)
+          .attr("height", 15)
+          .attr("fill", "#222")
+          .attr("stroke", "#ccc")
+          .attr("rx", 5) // Rounded corners
+          .attr("ry", 5)
+          .style("pointer-events", "none"); // Prevent blocking mouse events
+  
+        // Append text inside the rectangle
+        tooltip.append("text")
+          .attr("x", xScale(d[1]) + 15)
+          .attr("y", yScale(d[2]) - 5)
+          .attr("text-anchor", "middle")
+          .attr("font-size", "8px")
+          .attr("fill", "#fff")
+          .text(`(${d[1].toFixed(2)}, ${d[2].toFixed(2)})`);
+      })
+      .on("mouseout", function() {
+        svg.selectAll(".popup").remove();
+      });
+    
+    // define arrowhead marker
     svg.append("defs").append("marker")
       .attr("id", "arrowhead")
       .attr("viewBox", "-0 -5 10 10")
-      .attr("refX", 8)
+      .attr("class", "arrowheads")
+      .attr("refX", 5)
+      .attr("refY", 0)
+      .attr("orient", "auto")
       .attr("markerWidth", 6)
       .attr("markerHeight", 6)
-      .attr("orient", "auto")
-      .append("path")
-      .attr("d", "M0,-5L10,0L0,5")
-      .attr("fill", "#e41a1c");
+      .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .style('fill', 'red');
 
-    // Calculate total variance
-    const totalVariance = eigenvectorData.eigenvalues.reduce((a,b) => a+b, 0);
+    // plot eigenvector arrows
+    svg.selectAll(".arrow")
+      .data(eigenvectors)
+      .enter().append("line")
+      .attr("class", "arrow")
+      .attr("x1", xScale(0))
+      .attr("y1", yScale(0))
+      .attr("x2", d => xScale(d[1] * 10))
+      .attr("y2", d => yScale(d[2] * 10))
+      .style("stroke", "red")
+      .style("stroke-width", 2)
+      .attr("marker-end", "url(#arrowhead)");
 
-    // Add axes
-    svg.append("g")
-      .attr("transform", `translate(0,${height/2})`)
-      .call(d3.axisBottom(xScale)
-          .tickSizeOuter(0))
-      .append("text")
-      .attr("y", 40)
-      .attr("x", width/2)
-      .text(`PC1 (${(eigenvectorData.eigenvalues[0]/totalVariance*100).toFixed(1)}%)`);
-
-    svg.append("g")
-      .attr("transform", `translate(${width/2},0)`)
-      .call(d3.axisLeft(yScale)
-          .tickSizeOuter(0))
-      .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", -40)
-      .attr("x", -height/2)
-      .text(`PC2 (${(eigenvectorData.eigenvalues[1]/totalVariance*100).toFixed(1)}%)`);
+    // add feature labels
+    svg.selectAll(".label")
+      .data(eigenvectors)
+      .enter().append("text")
+      .attr("class", "label")
+      .attr("x", d => xScale(d[1] * 10) + 10)
+      .attr("y", d => yScale(d[2] * 10) - 10)
+      .text(d => `${d[0]} (${(d[1] * 10).toFixed(2)}, ${(d[2] * 10).toFixed(2)})`)
+      .style("font-size", "8px")
+      .style("text-anchor", "middle");
   }).catch(error => {
     console.error("Error fetching PCA data:", error);
-    showAlert("Failed to fetch PCA data.", "danger")}
-  );
+    showAlert("Failed to fetch PCA data.", "danger");
+  });
 }
