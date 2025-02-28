@@ -37,6 +37,22 @@ function toggleToolbarContent() {
 }
 
 // Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.operation-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // remove col-md-4 from all buttons
+            buttons.forEach(btn => {
+                btn.classList.remove('col-md-4');
+                btn.classList.add('col-md-2');
+                btn.classList.remove('operation-btn-selected')
+            });
+            this.classList.remove('col-md-2');
+            this.classList.add('col-md-4');
+            this.classList.add('operation-btn-selected');
+        });
+    });
+});
 document.getElementById('toggle-grids').addEventListener('change', function() {
     if (this.checked) {
         // get class grid and set visibility to visible
