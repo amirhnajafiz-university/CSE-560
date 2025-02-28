@@ -30,6 +30,7 @@ body {
     font-size: 14px;
     cursor: pointer;
     margin: 20px;
+    z-index: 1000;
 }
 
 .toolbar:hover {
@@ -82,7 +83,7 @@ body {
 }
 
 .operation-btn {
-    background-color: #c5c5c5;
+    background-color: #f3f3f3;
     transition: all 0.5s ease;
 }
 
@@ -103,14 +104,23 @@ body {
 }
 
 .alert {
-    transition: opacity 3s ease, transform 3s ease;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .alert.show {
     opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }
 
 .alert.hide {
     opacity: 0;
     transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+.grid {
+    color: rgb(177, 177, 177);
 }

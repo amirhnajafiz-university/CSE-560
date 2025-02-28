@@ -63,24 +63,21 @@
                 Here you can see the dataset numerical attributes related to laptop specifications.
             </p>
 
-            <!-- Variables Holder -->
-            <div id="variables-holder" style="text-align: center;"></div>
-
             <!-- Operations -->
-            <div class="row mt-4">
-                <div class="col-md-4 border-right operation-btn py-2" style="text-align: center;">
-                    Plot Eigenvalues
+            <div class="row mt-5">
+                <div id="plot-btn" class="col-md-2 border-right operation-btn py-2" style="text-align: center;" onclick="plotEigenvalues()">
+                    Plot
                 </div>
-                <div class="col-md-4 border-right operation-btn py-2" style="text-align: center;">
-                    PCA-based Biplot
+                <div id="biplot-btn" class="col-md-2 border-right operation-btn py-2" style="text-align: center;" onclick="plotPCA()">
+                    Biplot
                 </div>
-                <div class="col-md-4 operation-btn py-2" style="text-align: center;">
-                    Top 4 Attributes
+                <div id="top4-btn" class="col-md-4 border-right operation-btn py-2" style="text-align: center;">
+                    Top 4
                 </div>
-                <div class="col-md-6 border-top border-right operation-btn py-2" style="text-align: center;">
-                    Scatter Plot Matrix
+                <div id="scatterplot-btn" class="col-md-2 border-right operation-btn py-2" style="text-align: center;">
+                    Scatter-Plot
                 </div>
-                <div class="col-md-6 border-top operation-btn py-2" style="text-align: center;">
+                <div id="clustering-btn" class="col-md-2 operation-btn py-2" style="text-align: center;">
                     Clustering
                 </div>
             </div>
@@ -96,5 +93,22 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/handlers.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/plots.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.operation-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // remove col-md-4 from all buttons
+                    buttons.forEach(btn => {
+                        btn.classList.remove('col-md-4');
+                        btn.classList.add('col-md-2');
+                    });
+                    this.classList.remove('col-md-2');
+                    this.classList.add('col-md-4');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

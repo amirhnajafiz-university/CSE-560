@@ -46,24 +46,32 @@ def eigendecomposition():
     from flask import jsonify
     import pandas as pd
     import numpy as np
+    from sklearn.decomposition import PCA
+    from sklearn.preprocessing import StandardScaler
 
     # read the sampled dataset
     df = pd.read_csv(config.SAMPLED_DATASET)
-    # standardize the data
-    standardized_data = (df - df.mean()) / df.std()
-    # calculate the covariance matrix
-    covariance_matrix = np.cov(standardized_data.T)
-    # perform eigendecomposition
-    eigenvalues, eigenvectors = np.linalg.eig(covariance_matrix)
+    
+    # create Standardize
+    scaler = StandardScaler()
+    pca = PCA()
 
-    # save eigenvalues and eigenvectors
+    # fit the PCA model to the data
+    principal_components = pca.fit_transform(scaler.fit_transform(df))
+
+    # get the eigenvalues and eigenvectors
+    eigenvalues = pca.explained_variance_
+    eigenvectors = pca.components_
+
+    print("Eigenvalues:", eigenvalues)
+    print("Eigenvectors:", eigenvectors)
+    print("Principal Components:", principal_components)
+
+    # save the eigenvalues and eigenvectors to a npz file
     np.savez(config.EIGENDECOMPOSITION, eigenvalues=eigenvalues, eigenvectors=eigenvectors)
 
-    # save the eigenvalues and eigenvectors to a single csv file with matching index of dataset
-    # also add the variables names for each row
-    eigen_df = pd.DataFrame(eigenvectors, columns=df.columns)
-    eigen_df['Eigenvalues'] = eigenvalues
-    eigen_df.to_csv(config.EIGENDECOMPOSITION_CSV, index=False)
+    # save the principal components to a csv file
+    pd.DataFrame(principal_components).to_csv(config.PRINCIPAL_COMPONENTS, index=False)
 
     return jsonify({"message": "Eigendecomposition completed"}), 200
 
@@ -81,6 +89,19 @@ def eigenvectors_and_values():
     eigenvectors = data['eigenvectors'].tolist()
 
     return jsonify({"eigenvalues": eigenvalues, "eigenvectors": eigenvectors})
+
+def principal_components():
+    """
+    Return the principal components of the sampled dataset.
+    :return: The principal components of the sampled dataset.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # read the principal components from the csv file and return them tolist
+    df = pd.read_csv(config.PRINCIPAL_COMPONENTS)
+    principal_components = df.values.tolist()
+    return jsonify({"principal_components": principal_components})
 
 def data_column(column_name: str):
     """

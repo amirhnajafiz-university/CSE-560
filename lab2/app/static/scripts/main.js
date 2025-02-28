@@ -52,7 +52,7 @@ function showAlert(message, type) {
     alertDiv.classList.remove("show");
     alertDiv.classList.add("hide");
     setTimeout(() => alertDiv.remove(), 500); // Wait for transition to complete
-  }, 2000);
+  }, 4000);
 }
 
 /**
@@ -121,4 +121,4 @@ function resetData() {
 }
 
 // --- Initialization ---
-displayHeaders();
+// displayHeaders();

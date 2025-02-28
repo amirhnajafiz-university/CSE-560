@@ -22,6 +22,9 @@ def configure_routes(app: Flask):
     # define a route that performs eigendecomposition on the sampled data
     app.add_url_rule('/api/eigendecomposition', 'eigendecomposition', controller.eigendecomposition)
 
+    # define a route that returns the principal components of the sampled data
+    app.add_url_rule('/api/principalcomponents', 'principal_components', controller.principal_components)
+
     # define a route that returns the eigenvalues and eigenvectors of the sampled data
     app.add_url_rule('/api/eigenvectors', 'eigenvectors', controller.eigenvectors_and_values)
 
