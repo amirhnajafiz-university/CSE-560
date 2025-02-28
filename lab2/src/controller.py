@@ -38,6 +38,50 @@ def sample_data(number_of_samples: int):
         sample_df.to_csv(config.SAMPLED_DATASET, index=False)
     return jsonify({"message": f"Sampled {number_of_samples} rows from the original dataset"}), 200
 
+def eigendecomposition():
+    """
+    Perform eigendecomposition on the sampled dataset.
+    :return: The eigenvalues and eigenvectors of the sampled dataset.
+    """
+    from flask import jsonify
+    import pandas as pd
+    import numpy as np
+
+    # read the sampled dataset
+    df = pd.read_csv(config.SAMPLED_DATASET)
+    # standardize the data
+    standardized_data = (df - df.mean()) / df.std()
+    # calculate the covariance matrix
+    covariance_matrix = np.cov(standardized_data.T)
+    # perform eigendecomposition
+    eigenvalues, eigenvectors = np.linalg.eig(covariance_matrix)
+
+    # save eigenvalues and eigenvectors
+    np.savez(config.EIGENDECOMPOSITION, eigenvalues=eigenvalues, eigenvectors=eigenvectors)
+
+    # save the eigenvalues and eigenvectors to a single csv file with matching index of dataset
+    # also add the variables names for each row
+    eigen_df = pd.DataFrame(eigenvectors, columns=df.columns)
+    eigen_df['Eigenvalues'] = eigenvalues
+    eigen_df.to_csv(config.EIGENDECOMPOSITION_CSV, index=False)
+
+    return jsonify({"message": "Eigendecomposition completed"}), 200
+
+def eigenvectors_and_values():
+    """
+    Return the eigenvalues and eigenvectors of the sampled dataset.
+    :return: The eigenvalues and eigenvectors of the sampled dataset.
+    """
+    from flask import jsonify
+    import numpy as np
+
+    # load the eigenvalues and eigenvectors from the npz file
+    data = np.load(config.EIGENDECOMPOSITION)
+    eigenvalues = data['eigenvalues'].tolist()
+    eigenvectors = data['eigenvectors'].tolist()
+
+    return jsonify({"eigenvalues": eigenvalues, "eigenvectors": eigenvectors})
+
 def data_column(column_name: str):
     """
     Return the data from the csv file for a specific column.

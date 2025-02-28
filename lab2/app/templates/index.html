@@ -54,21 +54,37 @@
 
         <!-- Holders -->
         <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px;">
+            <!-- Description -->
             <p style="text-align: justify;">
                 Hello, and welcome to the Laptop Prices Dataset Analysis.
                 In this task, we will apply dimensionality reduction techniques to our dataset to identify the most relevant features for analysis. This will help us focus on the key attributes that have the most impact on laptop pricing.
+                Here you can see the dataset numerical attributes related to laptop specifications.
             </p>
-            <div class="d-flex justify-content-center mt-4">
-                <button class="btn btn-sm operation-btn mx-2" onclick="displayHeaders()">Show Variables</button>
-                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('median')">Plot Eigenvectors</button>
+
+            <!-- Variables Holder -->
+            <div id="variables-holder" style="text-align: center;"></div>
+
+            <!-- Operations -->
+            <div class="row mt-4">
+                <div class="col-md-4 border-right operation-btn py-2" style="text-align: center;">
+                    Plot Eigenvalues
+                </div>
+                <div class="col-md-4 border-right operation-btn py-2" style="text-align: center;">
+                    PCA-based Biplot
+                </div>
+                <div class="col-md-4 operation-btn py-2" style="text-align: center;">
+                    Top 4 Attributes
+                </div>
+                <div class="col-md-6 border-top border-right operation-btn py-2" style="text-align: center;">
+                    Scatter Plot Matrix
+                </div>
+                <div class="col-md-6 border-top operation-btn py-2" style="text-align: center;">
+                    Clustering
+                </div>
             </div>
 
             <!-- SVG for Chart -->
-            <div class="d-flex border-top justify-content-center mb-4 mt-4 pt-4" id="chart-holder">
-                <!-- Details -->
-                <div id="details">
-                </div>
-                <!-- Chart -->
+            <div class="d-flex justify-content-center mb-4 mt-4 pt-4" id="chart-holder">
                 <svg id="chart"></svg>
             </div>
         </div>

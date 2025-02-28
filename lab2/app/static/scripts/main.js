@@ -41,16 +41,33 @@ async function sampleData() {
   }
 }
 
+/**
+ * Call /api/headers in order to get headers and display them.
+ */
 async function displayHeaders() {
   const response = await fetchDataFromAPI("/api/headers");
   if (response) {
-    const headersList = document.getElementById("details");
+    const headersList = document.getElementById("variables-holder");
     headersList.innerHTML = ""; // clear previous headers
     response.forEach(header => {
-      const listItem = document.createElement("li");
-      listItem.textContent = header;
-      headersList.appendChild(listItem);
+      // display each header item as a badge
+      const badge = document.createElement("span");
+      badge.className = "badge bg-primary text-white m-1 p-1";
+      badge.textContent = header;
+      headersList.appendChild(badge);
     });
+  }
+}
+
+/**
+ * Call /api/eigendecomposition in order to perform PCA.
+ */
+async function performPCA() {
+  const response = await fetchDataFromAPI("/api/eigendecomposition");
+  if (response) {
+    alert("Performed PCA successfully!");
+  } else {
+    alert("Failed to perform PCA.");
   }
 }
 
@@ -60,6 +77,8 @@ async function displayHeaders() {
  */
 async function updateData() {
   sampleData();
+  displayHeaders();
+  performPCA();
 }
 
 /**
@@ -71,3 +90,6 @@ function resetData() {
   document.getElementById("drop-categorical").checked = true;
   updateRangeValue();
 }
+
+// --- Initialization ---
+displayHeaders();
