@@ -6,25 +6,13 @@
     <title>Vislab - Lab 2(a)</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <style>
-        .operation-btn {
-            padding: 10px 20px;
-            font-weight: bold;
-            background-color: #f8f9fa;
-            border: 2px solid #f8f9fa;
-            transition: all 0.5s ease;
-        }
-        .operation-btn:hover {
-            background-color: #e5e5e5;
-            border-bottom: 2px solid #007bff;
-        }
-    </style>
 </head>
 <body>
     <!-- Toolbar -->
     <div class="toolbar rounded shadow" onclick="toggleToolbarContent()">
         Toolbar Menu <span id="toolbar-icon" class="icon-arrow-down"></span>
     </div>
+
     <!-- Toolbar Content -->
     <div class="toolbar-content rounded shadow" id="toolbar-content">
         <div class="container">
@@ -65,24 +53,24 @@
         <h1 class="text-center">Laptop Prices</h1>
 
         <!-- Holders -->
-        <div class="my-5 bg-light p-3 rounded shadow">
+        <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px;">
             <p style="text-align: justify;">
                 Hello, and welcome to the Laptop Prices Dataset Analysis.
-                In this task, we will apply dimensionality reduction techniques to our dataset to identify the most relevant features for analysis. This will help us focus on the key attributes that have the most impact on laptop pricing. <br /><br />
-                Please select the operation you would like to perform on the data:
+                In this task, we will apply dimensionality reduction techniques to our dataset to identify the most relevant features for analysis. This will help us focus on the key attributes that have the most impact on laptop pricing.
             </p>
-            <div class="d-flex justify-content-center mt-3">
-                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('mean')">Display Headers</button>
-                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('median')">Median</button>
-                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('mode')">Mode</button>
-                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('stddev')">Standard Deviation</button>
-                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('variance')">Variance</button>
+            <div class="d-flex justify-content-center mt-4">
+                <button class="btn btn-sm operation-btn mx-2" onclick="displayHeaders()">Show Variables</button>
+                <button class="btn btn-sm operation-btn mx-2" onclick="performOperation('median')">Plot Eigenvectors</button>
             </div>
-        </div>
 
-        <!-- SVG for Chart -->
-        <div class="d-flex justify-content-center mb-5">
-            <svg id="chart"></svg>
+            <!-- SVG for Chart -->
+            <div class="d-flex border-top justify-content-center mb-4 mt-4 pt-4" id="chart-holder">
+                <!-- Details -->
+                <div id="details">
+                </div>
+                <!-- Chart -->
+                <svg id="chart"></svg>
+            </div>
         </div>
     </div>
 

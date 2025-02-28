@@ -41,6 +41,19 @@ async function sampleData() {
   }
 }
 
+async function displayHeaders() {
+  const response = await fetchDataFromAPI("/api/headers");
+  if (response) {
+    const headersList = document.getElementById("details");
+    headersList.innerHTML = ""; // clear previous headers
+    response.forEach(header => {
+      const listItem = document.createElement("li");
+      listItem.textContent = header;
+      headersList.appendChild(listItem);
+    });
+  }
+}
+
 // --- Event Handlers ---
 /**
  * Change the value of the range input by a given delta.
