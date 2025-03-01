@@ -4,6 +4,19 @@ const height = 600;
 const margin = { top: 40, right: 40, bottom: 60, left: 60 };
 
 /**
+ * Return the SVG element by Id.
+ * @param {String} id 
+ * @returns svg element
+ */
+function getSVG(id) {
+  const svg = d3.select(id);
+  svg.selectAll("*").remove();
+  svg.attr("width", width).attr("height", height);
+
+  return svg
+}
+
+/**
  * Plots the eigenvalues of our sampled dataset.
  */
 async function plotEigenvalues() {
@@ -14,9 +27,7 @@ async function plotEigenvalues() {
     const eigenvalues = eigenvectors.eigenvalues;
     
     // get the SVG element and set its dimensions
-    const svg = d3.select('#plot');
-    svg.selectAll('*').remove();
-    svg.attr("width", width).attr("height", height);
+    const svg = getSVG("#plot");
     
     // create a group element for the chart content and apply margin transformation
     const chartGroup = svg.append("g")
@@ -123,7 +134,7 @@ async function plotEigenvalues() {
       .append("text")
       .attr("class", "data-label")
       .attr("x", (_, i) => xScale(i))
-      .attr("y", d => yScale(d) + 2)  // Position below points
+      .attr("y", d => yScale(d) + 2)  // position below points
       .attr("fill", "#fff")
       .attr("text-anchor", "middle")
       .attr("font-size", "6px")
@@ -160,9 +171,7 @@ async function plotPCA() {
     const dataPoints = dp.principal_components;
 
     // get the SVG element and set its dimensions
-    const svg = d3.select('#biplot');
-    svg.selectAll('*').remove();
-    svg.attr("width", width).attr("height", height);
+    const svg = getSVG("#biplot");
 
     // calculate the domain based on the data points
     const xExtent = d3.extent(dataPoints, d => d[1]);
@@ -238,11 +247,11 @@ async function plotPCA() {
       .style("fill", "steelblue")
       .style("opacity", 0.6)
       .on("mouseover", function(_, d) {
-        // Append a group to hold the tooltip elements
+        // append a group to hold the tooltip elements
         let tooltip = svg.append("g")
           .attr("class", "popup");
   
-        // Append a rectangle for background
+        // append a rectangle for background
         tooltip.append("rect")
           .attr("x", xScale(d[1]) - 15)
           .attr("y", yScale(d[2]) - 15)
@@ -250,11 +259,11 @@ async function plotPCA() {
           .attr("height", 15)
           .attr("fill", "#222")
           .attr("stroke", "#ccc")
-          .attr("rx", 5) // Rounded corners
+          .attr("rx", 5) // rounded corners
           .attr("ry", 5)
-          .style("pointer-events", "none"); // Prevent blocking mouse events
+          .style("pointer-events", "none"); // prevent blocking mouse events
   
-        // Append text inside the rectangle
+        // append text inside the rectangle
         tooltip.append("text")
           .attr("x", xScale(d[1]) + 15)
           .attr("y", yScale(d[2]) - 5)
@@ -268,18 +277,19 @@ async function plotPCA() {
       });
     
     // define arrowhead marker
-    svg.append("defs").append("marker")
+    svg.append("defs")
+      .append("marker")
       .attr("id", "arrowhead")
       .attr("viewBox", "-0 -5 10 10")
-      .attr("class", "arrowheads")
       .attr("refX", 5)
       .attr("refY", 0)
       .attr("orient", "auto")
       .attr("markerWidth", 6)
       .attr("markerHeight", 6)
-      .append('path')
-      .attr('d', 'M0,-5L10,0L0,5')
-      .style('fill', 'red');
+      .append("path")
+      .attr("id", "arrowhead-path")
+      .attr("d", "M0,-5L10,0L0,5")
+      .style("fill", "red");
 
     // plot eigenvector arrows
     svg.selectAll(".arrow")

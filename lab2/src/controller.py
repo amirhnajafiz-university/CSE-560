@@ -128,27 +128,3 @@ def loadings():
     df = pd.read_csv(config.LOADINGS)
     loadings = df[['feature', 'PC1', 'PC2']].values.tolist()
     return jsonify({"loadings": loadings})
-
-def data_column(column_name: str):
-    """
-    Return the data from the csv file for a specific column.
-    :param column_name: The name of the column to return.
-    :return: The data from the csv file for the specified column.
-    """
-    from flask import jsonify
-    import pandas as pd
-    df = pd.read_csv(config.SAMPLED_DATASET)
-    if column_name in df.columns:
-        return df[column_name].to_json(orient='records')
-    else:
-        return jsonify({"error": "Column not found"}), 404
-
-def headers():
-    """
-    Return the data headers from the csv file.
-    :return: The data headers from the csv file.
-    """
-    from flask import jsonify
-    import pandas as pd
-    df = pd.read_csv(config.SAMPLED_DATASET)
-    return jsonify(df.columns.tolist())

@@ -62,6 +62,7 @@ async function sampleData() {
   const numberOfSamples = document.getElementById("sample-number").value;
   const dropNone = document.getElementById("drop-none").checked;
   const dropCategorical = document.getElementById("drop-categorical").checked;
+
   const response = await fetchDataFromAPI(`/api/sample/${numberOfSamples}?drop_none=${dropNone}&drop_categorical=${dropCategorical}`);
   if (response) {
     showAlert("Sampled data successfully!", "success");
@@ -71,28 +72,11 @@ async function sampleData() {
 }
 
 /**
- * Call /api/headers in order to get headers and display them.
- */
-async function displayHeaders() {
-  const response = await fetchDataFromAPI("/api/headers");
-  if (response) {
-    const headersList = document.getElementById("variables-holder");
-    headersList.innerHTML = ""; // clear previous headers
-    response.forEach(header => {
-      // display each header item as a badge
-      const badge = document.createElement("span");
-      badge.className = "badge bg-primary text-white m-1 p-1";
-      badge.textContent = header;
-      headersList.appendChild(badge);
-    });
-  }
-}
-
-/**
  * Call /api/eigendecomposition in order to perform PCA.
  */
 async function performPCA() {
   const standardize = document.getElementById("standardize").checked;
+  
   const response = await fetchDataFromAPI(`/api/eigendecomposition?standardize=${standardize}`);
   if (response) {
     showAlert("Performed PCA successfully!", "success");
@@ -101,7 +85,6 @@ async function performPCA() {
   }
 }
 
-// --- Event Handlers ---
 /**
  * Change the value of the range input by a given delta.
  */
@@ -127,6 +110,3 @@ function resetData() {
   document.getElementById("resample").checked = false;
   updateRangeValue();
 }
-
-// --- Initialization ---
-// displayHeaders();

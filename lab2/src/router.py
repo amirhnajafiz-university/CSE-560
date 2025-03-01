@@ -30,9 +30,3 @@ def configure_routes(app: Flask):
 
     # define a route that returns the eigenvalues and eigenvectors of the sampled data
     app.add_url_rule('/api/eigenvectors', 'eigenvectors', controller.eigenvectors_and_values)
-
-    # define a route that returns the data from the csv file for a specific column
-    app.add_url_rule('/api/data/<column_name>', 'data_column', controller.data_column)
-
-    # define a route that returns the data headers from the csv file
-    app.add_url_rule('/api/headers', 'headers', controller.headers)
