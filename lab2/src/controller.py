@@ -88,6 +88,23 @@ def eigendecomposition():
 
     return jsonify({"message": "Eigendecomposition completed"}), 200
 
+def get_elbow_index():
+    """
+    Return the elbow index of the sampled dataset.
+    :return: The elbow index of the sampled dataset.
+    """
+    from flask import jsonify
+    import numpy as np
+
+    # load the eigenvalues from the npz file
+    data = np.load(config.EIGENDECOMPOSITION)
+    eigenvalues = data['eigenvalues']
+
+    # calculate the elbow index
+    elbow_index = int(np.argmax(np.diff(eigenvalues)))
+
+    return jsonify({"elbow_index": elbow_index})
+
 def eigenvectors_and_values():
     """
     Return the eigenvalues and eigenvectors of the sampled dataset.
@@ -108,12 +125,18 @@ def principal_components():
     Return the principal components of the sampled dataset.
     :return: The principal components of the sampled dataset.
     """
-    from flask import jsonify
+    from flask import jsonify, request
     import pandas as pd
+
+    # get PCA selected components from the request query parameters
+    components = request.args.get('components', 'PC1,PC2').split(',')
+
+    # add id to the beginning of the list
+    components.insert(0, 'id')
 
     # read the principal components from the csv file and return them tolist
     df = pd.read_csv(config.PRINCIPAL_COMPONENTS)
-    principal_components = df[['id', 'PC1', 'PC2']].values.tolist()
+    principal_components = df[components].values.tolist()
     return jsonify({"principal_components": principal_components})
 
 def loadings():
@@ -121,10 +144,16 @@ def loadings():
     Return the loadings of the sampled dataset.
     :return: The loadings of the sampled dataset.
     """
-    from flask import jsonify
+    from flask import jsonify, request
     import pandas as pd
+
+    # get PCA selected components from the request query parameters
+    components = request.args.get('components', 'PC1,PC2').split(',')
+
+    # add feature to the beginning of the list
+    components.insert(0, 'feature')
 
     # read the loadings from the csv file and return them tolist
     df = pd.read_csv(config.LOADINGS)
-    loadings = df[['feature', 'PC1', 'PC2']].values.tolist()
+    loadings = df[components].values.tolist()
     return jsonify({"loadings": loadings})

@@ -5,6 +5,7 @@ const margin = { top: 40, right: 40, bottom: 60, left: 60 };
 
 // Set up global variables
 let selectedPCAs = [];
+let selectedComponents = [];
 
 /**
  * Return the SVG element by Id.
@@ -19,8 +20,26 @@ function getSVG(id) {
   return svg
 }
 
+/**
+ * Get the index of the item in the list.
+ * @param {Array} list 
+ * @param {Number} item 
+ * @returns index of the item in the list
+ */
 function getIndex(list, item) {
   return list.findIndex(d => parseFloat(d.toFixed(2)) === parseFloat(item.toFixed(2)));
+}
+
+/**
+ * Add or remove the selected component from the list.
+ * @param {Number} component
+ */
+function addToSelectedComponents(component) {
+  if (selectedComponents.includes(component)) {
+    selectedComponents = selectedComponents.filter(c => c !== component);
+  } else {
+    selectedComponents.push(component);
+  }
 }
 
 /**
@@ -29,9 +48,11 @@ function getIndex(list, item) {
 async function plotEigenvalues() {
   Promise.all([
     d3.json('/api/eigenvectors'),
-  ]).then(([eigenvectors]) => {
+    d3.json('/api/elbowindex')
+  ]).then(([eigenvectors, ei]) => {
     // extract eigenvalues from the response
     const eigenvalues = eigenvectors.eigenvalues;
+    const elbowIndex = ei.elbow_index;
     
     // get the SVG element and set its dimensions
     const svg = getSVG("#plot");
@@ -163,6 +184,9 @@ async function plotEigenvalues() {
         selectedPCAs.push(i);
       }
 
+      // update selected components
+      addToSelectedComponents(getIndex(eigenvalues, i)+1);
+
       // update vertical lines
       const lines = verticalLinesGroup.selectAll("line").data(selectedPCAs, d => d);
 
@@ -185,7 +209,13 @@ async function plotEigenvalues() {
       d3.selectAll(".eigen-circle").attr("fill", (d, _) => (selectedPCAs.includes(d) ? "#a12500" : "#006de1"));
       d3.selectAll(".eigen-circle").attr("r", (d, _) => (selectedPCAs.includes(d) ? 12 : 8));
       d3.selectAll(".data-label").attr("font-size", (d, _) => (selectedPCAs.includes(d) ? "10px" : "6px"));
+
+      // call plotPCA
+      plotPCA();
     }
+
+    // call onSelectedAction with the elbow index
+    onSelectedAction(eigenvalues[elbowIndex]);
   }).catch(error => {
     console.error("Error fetching eigenvalues:", error);
     showAlert("Failed to fetch eigenvalues.", "danger")}
@@ -196,9 +226,21 @@ async function plotEigenvalues() {
  * Plots the PCA biplot of our sampled dataset.
  */
 async function plotPCA() {
+  let components = [];
+  if (selectedComponents.length >= 2) {
+    components = selectedComponents.sort((a, b) => a - b).slice(0, 2);
+  } else if (selectedComponents.length === 1) {
+    components = [1, selectedComponents[0]];
+  } else {
+    components = [1, 2];
+  }
+
+  // convert them to PC{i}
+  components = components.map(c => `PC${c}`);
+
   Promise.all([
-    d3.json('/api/loadings'),
-    d3.json('/api/principalcomponents')
+    d3.json(`/api/loadings?components=${components.join(",")}`),
+    d3.json(`/api/principalcomponents?components=${components.join(",")}`)
   ]).then(([ev, dp]) => {
     const eigenvectors = ev.loadings;
     const dataPoints = dp.principal_components;
@@ -258,7 +300,7 @@ async function plotPCA() {
       .attr("y", height - margin.bottom / 4)
       .attr("text-anchor", "middle")
       .attr("class", "axis-label")
-      .text("Principal Component 1");
+      .text(components[0]);
     
     svg.append("text")
       .attr("transform", "rotate(-90)")
@@ -266,7 +308,7 @@ async function plotPCA() {
       .attr("y", margin.left / 4)
       .attr("text-anchor", "middle")
       .attr("class", "axis-label")
-      .text("Principal Component 2");
+      .text(components[1]);
 
     // plot data points
     svg.selectAll(".pca-point")

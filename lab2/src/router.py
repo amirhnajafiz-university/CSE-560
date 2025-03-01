@@ -25,6 +25,9 @@ def configure_routes(app: Flask):
     # define a route that returns the principal components of the sampled data
     app.add_url_rule('/api/principalcomponents', 'principal_components', controller.principal_components)
 
+    # define a route that returns the elbow index of the sampled data
+    app.add_url_rule('/api/elbowindex', 'elbow_index', controller.get_elbow_index)
+
     # define a route that returns the loadings of the sampled data
     app.add_url_rule('/api/loadings', 'loadings', controller.loadings)
 
