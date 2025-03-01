@@ -33,3 +33,9 @@ def configure_routes(app: Flask):
 
     # define a route that returns the eigenvalues and eigenvectors of the sampled data
     app.add_url_rule('/api/eigenvectors', 'eigenvectors', controller.eigenvectors_and_values)
+
+    # define a route that returns the explained variance of the sampled data
+    app.add_url_rule('/api/pcaattributes', 'pca_attributes', controller.pca_attributes)
+
+    # define a route that returns the data of pca attributes
+    app.add_url_rule('/api/pcaattributesdata', 'pca_scatterplot_matrix', controller.pca_scatterplot_matrix)

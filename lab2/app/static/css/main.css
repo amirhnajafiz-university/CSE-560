@@ -140,3 +140,18 @@ body {
 .grid {
     color: rgb(177, 177, 177);
 }
+
+.pca-point {
+    stroke: #006de1;
+    stroke-width: 0.5;
+}
+
+.hidden {
+    opacity: 0.1;
+}
+
+.brush .selection {
+    fill: #006de1;
+    fill-opacity: 0.3;
+    stroke: none;
+}

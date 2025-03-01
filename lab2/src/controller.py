@@ -157,3 +157,43 @@ def loadings():
     df = pd.read_csv(config.LOADINGS)
     loadings = df[components].values.tolist()
     return jsonify({"loadings": loadings})
+
+def pca_attributes():
+    """
+    Return the 4 attributes with the highest squared sum of PCA loadings.
+    :return: The 4 attributes with the highest squared sum of PCA loadings.
+    """
+    from flask import jsonify
+    import pandas as pd
+    import numpy as np
+
+    # read the loadings from the csv file
+    df = pd.read_csv(config.LOADINGS)
+
+    # calculate the squared sum of PCA loadings
+    df['squared_sum'] = np.square(df.drop('feature', axis=1)).sum(axis=1)
+
+    # sort the attributes by squared sum of PCA loadings
+    df = df.sort_values(by='squared_sum', ascending=False)
+
+    # return the top 4 attributes
+    attributes = df['feature'].head(4).tolist()
+    return jsonify({"attributes": attributes})
+
+def pca_scatterplot_matrix():
+    """
+    Return the data of the 4 attributes with the highest squared sum of PCA loadings.
+    :return: The data of the 4 attributes with the highest squared sum of PCA loadings.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # read the sampled dataset
+    df = pd.read_csv(config.SAMPLED_DATASET)
+
+    # read the top 4 attributes
+    attributes = pca_attributes().json['attributes']
+
+    # return the data of the top 4 attributes
+    data = df[attributes].values.tolist()
+    return jsonify({"data": data})

@@ -445,6 +445,113 @@ async function plotPCA(components) {
     .style("text-anchor", "middle");
 }
 
+/**
+ * Plots the scatter matrix of our sampled dataset using 4 top PCA attributes.
+ */
+async function plotScatterMatrix() {
+  Promise.all([
+    d3.json('/api/pcaattributesdata')
+  ]).then(([atr]) => {
+    const data = atr.data;
+
+    // initialize subplot dimensions
+    const size = 150; // subplot size
+    const padding = 20;
+    const columns = data[0].length;
+
+    // get the SVG element and set its dimensions
+    const svg = getSVG("#scatter");
+
+    // create scales for each attribute
+    const xScales = Array.from({ length: columns }, (_, i) =>
+      d3.scaleLinear()
+        .domain(d3.extent(data, d => d[i]))
+        .range([padding, size - padding])
+        .nice()
+    );
+    
+    const yScales = xScales;
+
+    // color scale for points (optional grouping by category)
+    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+    // create a group for all scatterplots
+    const cellGroup = svg.append("g");
+
+    // store all points globally for brushing
+    const allPoints = [];
+
+    // create scatter plots in a grid
+    for (let colX = 0; colX < columns; colX++) {
+      for (let colY = 0; colY < columns; colY++) {
+        const g = cellGroup.append("g")
+          .attr("transform", `translate(${colX * size}, ${colY * size})`);
+
+        // Add scatterplot points
+        const points = g.selectAll(".pca-point")
+          .data(data)
+          .enter()
+          .append("circle")
+          .attr("class", "pca-point")
+          .attr("cx", d => xScales[colX](d[colX]))
+          .attr("cy", d => yScales[colY](d[colY]))
+          .attr("r", 4) // Adjust point size
+          .attr("fill", d => colorScale(d.group || colX)) // Optional color coding by group
+          .attr("fill-opacity", 0.7); // Transparency for overlapping points
+
+        allPoints.push(points);
+
+        // Add brushing functionality
+        const brush = d3.brush()
+          .extent([[0, 0], [size, size]])
+          .on("start brush end", brushed);
+
+        g.append("g")
+          .attr("class", "brush")
+          .call(brush);
+
+        function brushed(event) {
+          if (!event.selection) {
+            allPoints.forEach(selection => selection.classed("hidden", false));
+            return;
+          }
+
+          const [[x0, y0], [x1, y1]] = event.selection;
+
+          allPoints.forEach(selection =>
+            selection.classed("hidden", d =>
+              xScales[colX](d[colX]) < x0 || xScales[colX](d[colX]) > x1 ||
+              yScales[colY](d[colY]) < y0 || yScales[colY](d[colY]) > y1
+            )
+          );
+        }
+
+        // Add axes
+        g.append("g")
+          .attr("transform", `translate(0,${size - padding})`)
+          .call(d3.axisBottom(xScales[colX]).ticks(5));
+
+        g.append("g")
+          .attr("transform", `translate(${padding},0)`)
+          .call(d3.axisLeft(yScales[colY]).ticks(5));
+
+        // Add axis labels on the diagonal plots
+        if (colX === colY) {
+          g.append("text")
+            .attr("class", "axis-label")
+            .attr("x", size / 2)
+            .attr("y", size / 2)
+            .text(`Attr ${colX + 1}`);
+        }
+      }
+    }
+  }).catch(error => {
+    console.error("Error fetching scatter matrix:", error);
+    showAlert("Failed to fetch scatter matrix.", "danger");
+  });
+}
+
 // --- Initialization ---
 plotEigenvalues();
 getComponents().then((c) => plotPCA(c));
+plotScatterMatrix();
