@@ -100,8 +100,8 @@ document.getElementById('line-color-picker').addEventListener('input', function(
 
 document.getElementById('plot-color-picker').addEventListener('input', function() {
   // get class plot and set color to the value of the color picker
-  document.querySelectorAll('.circle').forEach(plot => plot.style.fill = this.value);
-  document.querySelectorAll('.point').forEach(plot => plot.style.fill = this.value);
+  document.querySelectorAll('.eigen-circle').forEach(plot => plot.style.fill = this.value);
+  document.querySelectorAll('.pca-point').forEach(plot => plot.style.fill = this.value);
 });
 
 // --- Initialization ---

@@ -3,6 +3,9 @@ const width = 800;
 const height = 600;
 const margin = { top: 40, right: 40, bottom: 60, left: 60 };
 
+// Set up global variables
+let selectedPCAs = [];
+
 /**
  * Return the SVG element by Id.
  * @param {String} id 
@@ -14,6 +17,10 @@ function getSVG(id) {
   svg.attr("width", width).attr("height", height);
 
   return svg
+}
+
+function getIndex(list, item) {
+  return list.findIndex(d => parseFloat(d.toFixed(2)) === parseFloat(item.toFixed(2)));
 }
 
 /**
@@ -115,11 +122,11 @@ async function plotEigenvalues() {
       .attr("d", line);
     
     // add circles for data points
-    chartGroup.selectAll("circle")
+    chartGroup.selectAll(".eigen-circle")
       .data(eigenvalues)
       .enter()
       .append("circle")
-      .attr("class", "circle")
+      .attr("class", "eigen-circle")
       .attr("cx", (_, i) => xScale(i))
       .attr("cy", d => yScale(d))
       .attr("r", 8)
@@ -142,16 +149,42 @@ async function plotEigenvalues() {
       .text((d, _) => `${d.toFixed(2)}`)
       .on("click", (_, i) => onSelectedAction(i));
     
+    // add a group element for the vertical lines
+    const verticalLinesGroup = chartGroup.append("g").attr("class", "vertical-lines");
+    
     // function to handle click on data points
     function onSelectedAction(i) {
-      // highlight selected point and reset others
       selectedIndex = i;
-      d3.selectAll("circle").attr("fill", (d, _) => (d === selectedIndex ? "#a12500" : "#006de1"));
-      d3.selectAll("circle").attr("r", (d, _) => (d === selectedIndex ? 12 : 8));
-      d3.selectAll(".data-label").attr("font-size", (d, _) => (d === selectedIndex ? "10px" : "6px"));
 
-      // show alert with eigenvalue
-      showAlert(`Intrinsic Dimensionality Index: ${i + 1}`, "warning");
+      // loop over the selectedPCAs, if the index is there delete it, else add the selected item
+      if (selectedPCAs.includes(i)) {
+        selectedPCAs = selectedPCAs.filter(index => index !== i);
+      } else {
+        selectedPCAs.push(i);
+      }
+
+      // update vertical lines
+      const lines = verticalLinesGroup.selectAll("line").data(selectedPCAs, d => d);
+
+      // remove old lines
+      lines.exit().remove();
+
+      // add new lines
+      lines.enter()
+        .append("line")
+        .attr("class", "line")
+        .attr("x1", d => xScale(getIndex(eigenvalues, d)))
+        .attr("y1", d => yScale(d) + 11)
+        .attr("x2", d => xScale(getIndex(eigenvalues, d)))
+        .attr("y2", yScale(0))
+        .attr("stroke", "#006de1")
+        .attr("stroke-width", 2)
+        .attr("stroke-dasharray", "5,5");
+
+      // highlight selected point and reset others
+      d3.selectAll(".eigen-circle").attr("fill", (d, _) => (selectedPCAs.includes(d) ? "#a12500" : "#006de1"));
+      d3.selectAll(".eigen-circle").attr("r", (d, _) => (selectedPCAs.includes(d) ? 12 : 8));
+      d3.selectAll(".data-label").attr("font-size", (d, _) => (selectedPCAs.includes(d) ? "10px" : "6px"));
     }
   }).catch(error => {
     console.error("Error fetching eigenvalues:", error);
@@ -236,11 +269,11 @@ async function plotPCA() {
       .text("Principal Component 2");
 
     // plot data points
-    svg.selectAll(".point")
+    svg.selectAll(".pca-point")
       .data(dataPoints)
       .enter()
       .append("circle")
-      .attr("class", "point")
+      .attr("class", "pca-point")
       .attr("cx", d => xScale(d[1]))
       .attr("cy", d => yScale(d[2]))
       .attr("r", 4)
