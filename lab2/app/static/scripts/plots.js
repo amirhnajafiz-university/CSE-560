@@ -14,7 +14,7 @@ async function plotEigenvalues() {
     const eigenvalues = eigenvectors.eigenvalues;
     
     // get the SVG element and set its dimensions
-    const svg = d3.select('#chart');
+    const svg = d3.select('#plot');
     svg.selectAll('*').remove();
     svg.attr("width", width).attr("height", height);
     
@@ -160,7 +160,7 @@ async function plotPCA() {
     const dataPoints = dp.principal_components;
 
     // get the SVG element and set its dimensions
-    const svg = d3.select('#chart');
+    const svg = d3.select('#biplot');
     svg.selectAll('*').remove();
     svg.attr("width", width).attr("height", height);
 
@@ -309,3 +309,7 @@ async function plotPCA() {
     showAlert("Failed to fetch PCA data.", "danger");
   });
 }
+
+// --- Initialization ---
+plotEigenvalues();
+plotPCA();

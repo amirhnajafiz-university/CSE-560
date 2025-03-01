@@ -20,18 +20,19 @@ body {
 }
 
 .options {
-    position: relative;
-    bottom: 0px;
-    left: 0;
-    width: 450px;
-    padding: 5px 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    padding: 5px;
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 5px;
     display: flex;
-    align-items: center; /* vertically centers the items */
-    justify-content: space-between; /* horizontally centers the items */
-    gap: 15px; /* adds spacing between elements */
+    flex-direction: column;
+    align-items: start; /* vertically centers the items */
+    justify-content: start; /* horizontally centers the items */
+    gap: 5px; /* adds spacing between elements */
 }
 
 .options input {
@@ -71,13 +72,13 @@ body {
     height: 0;
     transition: all 1s ease;
     background-color: #f8f9fa;
-    font-size: 14px;
+    font-size: 12px;
     z-index: 1000;
 }
 
 .toolbar-content.show {
     padding: 5px;
-    height: 180px;
+    height: 190px;
 }
 
 .icon-arrow-down::before {
@@ -105,16 +106,6 @@ body {
     background-color: #007bff;
     border-color: #007bff;
     color: white;
-}
-
-.operation-btn {
-    background-color: #f3f3f3;
-    transition: all 0.5s ease;
-}
-
-.operation-btn:hover, .operation-btn-selected {
-    color: white;
-    background-color: #007bff !important;
 }
 
 #alert-container {
