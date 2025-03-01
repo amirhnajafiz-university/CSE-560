@@ -284,7 +284,8 @@ async function plotPCA() {
     // plot eigenvector arrows
     svg.selectAll(".arrow")
       .data(eigenvectors)
-      .enter().append("line")
+      .enter()
+      .append("line")
       .attr("class", "arrow")
       .attr("x1", xScale(0))
       .attr("y1", yScale(0))

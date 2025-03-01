@@ -43,7 +43,7 @@ def eigendecomposition():
     Perform eigendecomposition on the sampled dataset.
     :return: The eigenvalues and eigenvectors of the sampled dataset.
     """
-    from flask import jsonify
+    from flask import jsonify, request
     import pandas as pd
     import numpy as np
     from sklearn.decomposition import PCA
@@ -51,13 +51,19 @@ def eigendecomposition():
 
     # read the sampled dataset
     df = pd.read_csv(config.SAMPLED_DATASET)
+
+    # read two boolean values from request query parameters (dstandardize)
+    standardize = request.args.get('standardize', 'true').lower() == 'true'
     
     # create Standardize
     scaler = StandardScaler()
     pca = PCA()
 
     # standardize the data
-    scaled_data = scaler.fit_transform(df)
+    if standardize:
+        scaled_data = scaler.fit_transform(df)
+    else:
+        scaled_data = df
 
     # fit the PCA model to the data
     principal_components = pca.fit_transform(scaled_data)

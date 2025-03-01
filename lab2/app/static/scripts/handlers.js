@@ -53,6 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.getElementById('tickness').addEventListener('input', function() {
+    // get class line and set stroke-width to the value of the range input
+    document.querySelectorAll('.line').forEach(line => line.style.strokeWidth = this.value);
+    document.querySelectorAll('.arrow').forEach(line => line.style.strokeWidth = this.value);
+});
+document.getElementById('toggle-titles').addEventListener('change', function() {
+    if (this.checked) {
+        // get class title and set visibility to visible
+        document.querySelectorAll('.title').forEach(title => title.style.visibility = 'visible');
+    } else {
+        // get class title and set visibility to hidden
+        document.querySelectorAll('.title').forEach(title => title.style.visibility = 'hidden');
+    }
+});
 document.getElementById('toggle-grids').addEventListener('change', function() {
     if (this.checked) {
         // get class grid and set visibility to visible

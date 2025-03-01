@@ -92,7 +92,8 @@ async function displayHeaders() {
  * Call /api/eigendecomposition in order to perform PCA.
  */
 async function performPCA() {
-  const response = await fetchDataFromAPI("/api/eigendecomposition");
+  const standardize = document.getElementById("standardize").checked;
+  const response = await fetchDataFromAPI(`/api/eigendecomposition?standardize=${standardize}`);
   if (response) {
     showAlert("Performed PCA successfully!", "success");
   } else {
@@ -105,8 +106,13 @@ async function performPCA() {
  * Change the value of the range input by a given delta.
  */
 async function updateData() {
-  sampleData();
-  displayHeaders();
+  // check the sample option
+  const doSample = document.getElementById("resample").checked;
+  if (doSample) {
+    sampleData();
+  }
+
+  // perform PCA
   performPCA();
 }
 
@@ -117,6 +123,8 @@ function resetData() {
   document.getElementById("sample-number").value = 500;
   document.getElementById("drop-none").checked = true;
   document.getElementById("drop-categorical").checked = true;
+  document.getElementById("standardize").checked = true;
+  document.getElementById("resample").checked = false;
   updateRangeValue();
 }
 
