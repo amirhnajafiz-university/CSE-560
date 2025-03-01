@@ -177,7 +177,7 @@ def pca_attributes():
     df = df.sort_values(by='squared_sum', ascending=False)
 
     # return the top 4 attributes
-    attributes = df['feature'].head(4).tolist()
+    attributes = df[['feature', 'squared_sum']].values.tolist()[:4]
     return jsonify({"attributes": attributes})
 
 def pca_scatterplot_matrix():
@@ -191,8 +191,8 @@ def pca_scatterplot_matrix():
     # read the sampled dataset
     df = pd.read_csv(config.SAMPLED_DATASET)
 
-    # read the top 4 attributes
-    attributes = pca_attributes().json['attributes']
+    # read the top 4 attributes using the pca_attributes function
+    attributes = [attribute[0] for attribute in pca_attributes().json['attributes']]
 
     # return the data of the top 4 attributes
     data = df[attributes].values.tolist()

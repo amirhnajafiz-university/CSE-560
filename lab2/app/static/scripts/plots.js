@@ -82,7 +82,11 @@ async function getComponents() {
   if (selectedComponents.length >= 2) {
     components = selectedComponents.sort((a, b) => a - b).slice(0, 2);
   } else if (selectedComponents.length === 1) {
-    components = [1, selectedComponents[0]];
+    if (selectedComponents[0] === 1) {
+      components = [1, 2];
+    } else {
+      components = [1, selectedComponents[0]];
+    }
   } else {
     components = [1, 2];
   }
@@ -446,6 +450,30 @@ async function plotPCA(components) {
 }
 
 /**
+ * Plots the table of PCA attributes.
+ */
+async function plotTable() {
+  // fetch the PCA attributes
+  const response = await fetchDataFromAPI("/api/pcaattributes");
+  if (!response) {
+    showAlert("Failed to fetch PCA attributes.", "danger");
+    return
+  }
+
+  const attributes = response.attributes;
+  const table = document.getElementById("attributes");
+
+  // insert attributes into the table with attribute[0] as first cell and attribute[1] as second cell
+  attributes.forEach(attribute => {
+    const row = table.insertRow();
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    cell1.innerHTML = attribute[0];
+    cell2.innerHTML = attribute[1];
+  });
+}
+
+/**
  * Plots the scatter matrix of our sampled dataset using 4 top PCA attributes.
  */
 async function plotScatterMatrix() {
@@ -554,4 +582,5 @@ async function plotScatterMatrix() {
 // --- Initialization ---
 plotEigenvalues();
 getComponents().then((c) => plotPCA(c));
+plotTable();
 plotScatterMatrix();
