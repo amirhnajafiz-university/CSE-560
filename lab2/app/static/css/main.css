@@ -155,3 +155,33 @@ body {
     fill-opacity: 0.3;
     stroke: none;
 }
+
+
+.cell {
+    font: 10px sans-serif;
+}
+
+.point {
+    fill-opacity: 1;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.grid line {
+    stroke: #ddd;
+    stroke-dasharray: 2, 2;
+}
+
+.grid path {
+    display: none;
+}
+
+.title {
+    font: bold 12px sans-serif;
+    text-anchor: middle;
+}

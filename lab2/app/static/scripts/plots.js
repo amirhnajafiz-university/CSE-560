@@ -473,110 +473,176 @@ async function plotTable() {
   });
 }
 
-/**
- * Plots the scatter matrix of our sampled dataset using 4 top PCA attributes.
- */
 async function plotScatterMatrix() {
-  Promise.all([
-    d3.json('/api/pcaattributesdata')
-  ]).then(([atr]) => {
-    const data = atr.data;
+  try {
+    // Fetch data from API endpoints
+    const [atr, vars] = await Promise.all([
+      d3.json('/api/pcaattributesdata'),
+      d3.json('/api/pcaattributes')
+  ]);
 
-    // initialize subplot dimensions
-    const size = 150; // subplot size
-    const padding = 20;
-    const columns = data[0].length;
+  const data = atr.data;
+  const attributes = vars.attributes;
 
-    // get the SVG element and set its dimensions
-    const svg = getSVG("#scatter");
-
-    // create scales for each attribute
-    const xScales = Array.from({ length: columns }, (_, i) =>
-      d3.scaleLinear()
-        .domain(d3.extent(data, d => d[i]))
-        .range([padding, size - padding])
-        .nice()
-    );
-    
-    const yScales = xScales;
-
-    // color scale for points (optional grouping by category)
-    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
-    // create a group for all scatterplots
-    const cellGroup = svg.append("g");
-
-    // store all points globally for brushing
-    const allPoints = [];
-
-    // create scatter plots in a grid
-    for (let colX = 0; colX < columns; colX++) {
-      for (let colY = 0; colY < columns; colY++) {
-        const g = cellGroup.append("g")
-          .attr("transform", `translate(${colX * size}, ${colY * size})`);
-
-        // Add scatterplot points
-        const points = g.selectAll(".pca-point")
-          .data(data)
-          .enter()
-          .append("circle")
-          .attr("class", "pca-point")
-          .attr("cx", d => xScales[colX](d[colX]))
-          .attr("cy", d => yScales[colY](d[colY]))
-          .attr("r", 4) // Adjust point size
-          .attr("fill", d => colorScale(d.group || colX)) // Optional color coding by group
-          .attr("fill-opacity", 0.7); // Transparency for overlapping points
-
-        allPoints.push(points);
-
-        // Add brushing functionality
-        const brush = d3.brush()
-          .extent([[0, 0], [size, size]])
-          .on("start brush end", brushed);
-
-        g.append("g")
-          .attr("class", "brush")
-          .call(brush);
-
-        function brushed(event) {
-          if (!event.selection) {
-            allPoints.forEach(selection => selection.classed("hidden", false));
-            return;
-          }
-
-          const [[x0, y0], [x1, y1]] = event.selection;
-
-          allPoints.forEach(selection =>
-            selection.classed("hidden", d =>
-              xScales[colX](d[colX]) < x0 || xScales[colX](d[colX]) > x1 ||
-              yScales[colY](d[colY]) < y0 || yScales[colY](d[colY]) > y1
-            )
-          );
-        }
-
-        // Add axes
-        g.append("g")
-          .attr("transform", `translate(0,${size - padding})`)
-          .call(d3.axisBottom(xScales[colX]).ticks(5));
-
-        g.append("g")
-          .attr("transform", `translate(${padding},0)`)
-          .call(d3.axisLeft(yScales[colY]).ticks(5));
-
-        // Add axis labels on the diagonal plots
-        if (colX === colY) {
-          g.append("text")
-            .attr("class", "axis-label")
-            .attr("x", size / 2)
-            .attr("y", size / 2)
-            .text(`Attr ${colX + 1}`);
-        }
-      }
-    }
-  }).catch(error => {
-    console.error("Error fetching scatter matrix:", error);
-    showAlert("Failed to fetch scatter matrix.", "danger");
+  // Transform data into object format
+  const observations = data.map((d, i) => {
+      const observation = {};
+      attributes.forEach((attr, j) => {
+          observation[attr] = d[j];
+      });
+      return observation;
   });
+
+  // Visualization parameters
+  const size = 150; // Increased size for better visibility
+  const margin = { top: 60, right: 40, bottom: 40, left: 60 };
+  const width = size - 20;
+  const height = size - 20;
+
+  // Create SVG container
+  const svg = d3.select("#matrix").append("svg")
+      .attr("width", size * attributes.length + margin.left + margin.right)
+      .attr("height", size * attributes.length + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Define variables and scales
+  const variables = attributes;
+  const colors = d3.schemeCategory10; // Use D3's color scheme for distinct colors
+
+  const xScales = {};
+  const yScales = {};
+
+  variables.forEach((v) => {
+      const values = observations.map(d => d[v]);
+      const min = d3.min(values);
+      const max = d3.max(values);
+
+      xScales[v] = d3.scaleLinear()
+          .domain([min, max])
+          .range([0, width])
+          .nice();
+
+      yScales[v] = d3.scaleLinear()
+          .domain([min, max])
+          .range([height, 0])
+          .nice();
+  });
+
+  // Create grid cells
+  const cell = svg.selectAll(".cell")
+      .data(d3.cross(variables, variables))
+      .enter().append("g")
+      .attr("class", "cell")
+      .attr("transform", d => `translate(${variables.indexOf(d[0]) * size},${variables.indexOf(d[1]) * size})`);
+
+  // Add grid lines
+  cell.each(function ([xVar, yVar]) {
+      const cellGroup = d3.select(this);
+
+      // X-axis grid
+      cellGroup.append("g")
+          .attr("class", "grid")
+          .attr("transform", `translate(0,${height})`)
+          .call(d3.axisBottom(xScales[xVar]).ticks(4).tickSize(-height).tickFormat(""));
+
+      // Y-axis grid
+      cellGroup.append("g")
+          .attr("class", "grid")
+          .call(d3.axisLeft(yScales[yVar]).ticks(4).tickSize(-width).tickFormat(""));
+  });
+
+  // Add axes
+  cell.each(function ([xVar, yVar]) {
+      const idxX = variables.indexOf(xVar);
+      const idxY = variables.indexOf(yVar);
+
+      // X-axis (top row)
+      if (idxY === 0 && idxX % 2 === 0) {
+          d3.select(this).append("g")
+              .call(d3.axisTop(xScales[xVar]).ticks(4));
+      }
+
+      // X-axis (bottom row)
+      if (idxY === variables.length - 1 && idxX % 2 === 1) {
+          d3.select(this).append("g")
+              .attr("transform", `translate(0,${height})`)
+              .call(d3.axisBottom(xScales[xVar]).ticks(4));
+      }
+
+      // Y-axis (first column)
+      if (idxX === 0 && idxY % 2 === 0) {
+          d3.select(this).append("g")
+              .call(d3.axisLeft(yScales[yVar]).ticks(4));
+      }
+
+      // Y-axis (second column)
+      if (idxX === variables.length - 1 && idxY % 2 === 1) {
+          d3.select(this).append("g")
+              .attr("transform", `translate(${width},0)`)
+              .call(d3.axisRight(yScales[yVar]).ticks(4));
+      }
+  });
+
+  // Add points with different colors for variables
+  cell.each(function ([xVar, yVar]) {
+      d3.select(this).selectAll(".point")
+          .data(observations)
+          .enter().append("circle")
+          .attr("class", "point")
+          .attr("cx", d => xScales[xVar](d[xVar]))
+          .attr("cy", d => yScales[yVar](d[yVar]))
+          .attr("r", 3)
+          .style("fill", (_, i) => colors[i % colors.length]); // Assign color based on index
+  });
+
+  // Define the brush
+  const brush = d3.brush()
+      .extent([[0, 0], [width, height]])
+      .on("start brush", brushed)
+      .on("end", brushended);
+
+  // Add the brush to each cell
+  cell.call(brush);
+
+  // Brush event handler
+  function brushed(event) {
+      if (event.selection === null) return;
+
+      const [[x0, y0], [x1, y1]] = event.selection;
+
+      cell.selectAll(".point")
+          .style("opacity", function(d) {
+              const cx = xScales[d3.select(this.parentNode).datum()[0]](d[d3.select(this.parentNode).datum()[0]]);
+              const cy = yScales[d3.select(this.parentNode).datum()[1]](d[d3.select(this.parentNode).datum()[1]]);
+              return (x0 <= cx && cx <= x1 && y0 <= cy && cy <= y1) ? 1 : 0.1;
+          });
+  }
+
+  // Brush end event handler
+  function brushended(event) {
+      if (event.selection === null) {
+          cell.selectAll(".point").style("opacity", 1);
+      }
+  }
+
+  // Add titles for each column and row
+  variables.forEach((v, i) => {
+      svg.append("text")
+          .attr("class", "title")
+          .attr("x", i * size + width / 2)
+          .attr("y", -40) // Above the top row
+          .text(v[0]);
+
+      svg.append("text")
+          .attr("class", "title")
+          .attr("transform", `translate(-50,${i * size + height / 2}) rotate(-90)`) // Rotate for row titles
+          .text(v[0]);
+  });
+  } catch (error) {
+    console.error("Error:", error);
+    showAlert("Failed to load scatter matrix.", "danger");
+  }
 }
 
 // --- Initialization ---
