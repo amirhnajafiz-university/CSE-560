@@ -34,6 +34,7 @@ body {
     z-index: 1005;
     padding: 20px;
     overflow: auto;
+    border-radius: 5px;
 }
 
 .faded {

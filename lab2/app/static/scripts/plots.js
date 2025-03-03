@@ -969,8 +969,11 @@ async function plotClusters(k) {
 }
 
 // --- Initialization ---
-plotEigenvalues();
-getComponents().then((c) => plotPCA(c));
-plotTable();
-plotScatterMatrix();
+plotEigenvalues().then(() => {
+  plotTable();
+  plotScatterMatrix();
+});
+getComponents().then((c) => {
+  plotPCA(c)
+});
 plotMSE().then(() => plotClusters(kmean_index));
