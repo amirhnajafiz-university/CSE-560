@@ -524,7 +524,7 @@ async function plotScatterMatrix() {
 
   // Visualization parameters
   const size = 150; // Increased size for better visibility
-  const margin = { top: 60, right: 40, bottom: 40, left: 60 };
+  const margin = { top: 100, right: 40, bottom: 40, left: 60 };
   const width = size - 20;
   const height = size - 20;
 
@@ -538,9 +538,17 @@ async function plotScatterMatrix() {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
+  // Add SVG title
+  svg.append("text")
+      .attr("x", (size * attributes.length) / 2)
+      .attr("y", -80)
+      .attr("text-anchor", "middle")
+      .attr("class", "title")
+      .text("Scatter Matrix of PCA Attributes");
+
   // Define variables and scales
   const variables = attributes;
-  const colors = d3.schemeCategory10; // Use D3's color scheme for distinct colors
+  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);  // Use D3's color scheme for distinct colors
 
   const xScales = {};
   const yScales = {};
@@ -625,7 +633,7 @@ async function plotScatterMatrix() {
           .attr("cx", d => xScales[xVar](d[xVar]))
           .attr("cy", d => yScales[yVar](d[yVar]))
           .attr("r", 3)
-          .style("fill", (_, i) => colors[i % colors.length]); // Assign color based on index
+          .style("fill", colorScale(xVar+yVar)); // Assign color based on index
   });
 
   // Define the brush
@@ -661,14 +669,16 @@ async function plotScatterMatrix() {
   // Add titles for each column and row
   variables.forEach((v, i) => {
       svg.append("text")
-          .attr("class", "title")
+          .attr("class", "axis-label")
+          .attr("text-anchor", "middle")
           .attr("x", i * size + width / 2)
           .attr("y", -40) // Above the top row
           .text(v[0]);
 
       svg.append("text")
-          .attr("class", "title")
-          .attr("transform", `translate(-50,${i * size + height / 2}) rotate(-90)`) // Rotate for row titles
+          .attr("class", "axis-label")
+          .attr("text-anchor", "middle")
+          .attr("transform", `translate(-40,${i * size + height / 2}) rotate(-90)`) // Rotate for row titles
           .text(v[0]);
   });
   } catch (error) {

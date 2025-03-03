@@ -15,6 +15,10 @@ body {
 }
 
 /* Global classes */
+.title {
+    font-size: 1.5em !important; 
+}
+
 .range-container {
     text-align: center;
 }

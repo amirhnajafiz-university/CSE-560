@@ -6,6 +6,53 @@
     <title>Vislab - Lab 2(a)</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1005;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .faded {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1004;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .fixed-btn {
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            text-align: center;
+            border: 0;
+            background-color: #006de1;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
     <div id="alert-container"></div>
@@ -64,15 +111,21 @@
     <!-- Main Content -->
     <div class="container mt-4" style="min-height: 650px;">
         <!-- Holders -->
-        <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px;">
+        <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px; position: relative;">
+            <!-- Fixed Button -->
+            <button class="fixed-btn" onclick="showPopup()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
+                    <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0"/>
+                </svg>
+            </button>
+
             <!-- Title -->
-            <h1 class="text-center mb-5">Laptop Prices</h1>
+            <h1 class="text-center mb-3">Laptop Prices</h1>
 
             <!-- Description -->
             <p style="text-align: justify;">
                 Hello, and welcome to the Laptop Prices Dataset Analysis.
                 In this task, we will apply dimensionality reduction techniques to our dataset to identify the most relevant features for analysis. This will help us focus on the key attributes that have the most impact on laptop pricing.
-                Here you can see the dataset numerical attributes related to laptop specifications.
             </p>
 
             <!-- SVGs for Charts -->
@@ -87,7 +140,7 @@
                 <svg id="biplot"></svg>
             </div>
             <div class="d-flex justify-content-center flex-column align-items-center mb-4 mt-4 pt-4">
-                <h5 class="mb-3">Top 4 Attributes</h3>
+                <div class="title mb-3">Top 4 Attributes</div>
                 <table id="attributes" class="table table-sm table-striped table-bordered table-hover w-25">
                     <thead class="thead-dark">
                         <tr>
@@ -103,7 +156,7 @@
             </div>
 
             <!-- Options -->
-            <div class="options options-small">
+            <div class="options options-small shadow">
                 <div class="d-flex justify-content-center w-100 mb-2">
                     <button class="btn btn-sm" onclick="decScale()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-zoom-in" viewBox="0 0 16 16">
@@ -148,10 +201,29 @@
         </div>
     </div>
 
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <button class="btn btn-danger shadow close-btn" onclick="hidePopup()">X</button>
+        <h2>About</h2>
+        <p>This is a big popup. You can add any content here.</p>
+    </div>
+    <div class="faded" id="fade"></div>
+
     <!-- Scripts -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/handlers.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/plots.js') }}"></script>
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
