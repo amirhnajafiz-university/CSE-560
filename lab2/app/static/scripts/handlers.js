@@ -37,6 +37,22 @@ function toggleToolbarContent() {
   }
 }
 
+/**
+ * Toggle the visibility of the toolbar.
+ */
+function showPopup() {
+  document.getElementById('popup').style.display = 'block';
+  document.getElementById('fade').style.display = 'block';
+}
+
+/**
+ * Toggle the visibility of the toolbar.
+ */
+function hidePopup() {
+  document.getElementById('popup').style.display = 'none';
+  document.getElementById('fade').style.display = 'none';
+}
+
 // --- Event Listeners ---
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.operation-btn');

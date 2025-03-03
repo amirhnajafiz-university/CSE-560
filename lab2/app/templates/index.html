@@ -6,55 +6,9 @@
     <title>Vislab - Lab 2(a)</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <style>
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1005;
-            padding: 20px;
-            overflow: auto;
-        }
-
-        .faded {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1004;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .fixed-btn {
-            position: absolute;
-            top: -20px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            border-radius: 100%;
-            text-align: center;
-            border: 0;
-            background-color: #006de1;
-            color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
 </head>
 <body>
+    <!-- Alert Container -->
     <div id="alert-container"></div>
 
     <!-- Toolbar -->
@@ -136,11 +90,13 @@
                 <input type="checkbox" id="change-di" checked />
                 <label for="change-di">Change Intrinsic Dimensionality Index</label>
             </div>
+
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
                 <svg id="biplot"></svg>
             </div>
+
             <div class="d-flex justify-content-center flex-column align-items-center mb-4 mt-4 pt-4">
-                <div class="title mb-3">Top 4 Attributes</div>
+                <div class="title mb-3">Top Attributes</div>
                 <table id="attributes" class="table table-sm table-striped table-bordered table-hover w-25">
                     <thead class="thead-dark">
                         <tr>
@@ -151,12 +107,15 @@
                     <tbody></tbody>
                 </table>
             </div>
+
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
                 <div id="matrix"></div>
             </div>
+
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
                 <svg id="kmse"></svg>
             </div>
+
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
                 <svg id="clusters"></svg>
             </div>
@@ -223,31 +182,31 @@
             Then we will apply K-Means clustering to group the laptops based on their features and analyze the clusters to identify the key attributes that differentiate them.
         </p>
         <ul class="list-group">
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 Inches: The size of the laptop screen in inches.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 Ram: The amount of Random Access Memory (RAM) in the laptop.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 Weight: The weight of the laptop in kilograms.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 Price: The price of the laptop in US dollars.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 ScreenW: The width of the laptop screen in pixels.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 ScreenH: The height of the laptop screen in pixels.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 CpuSpeed: The speed of the laptop's Central Processing Unit (CPU) in GHz.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 PrimaryStorage: The size of the laptop's primary storage in gigabytes.
             </li>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item">
                 SecondaryStorage: The size of the laptop's secondary storage in gigabytes.
             </li>
         </ul>
@@ -259,16 +218,5 @@
     <script src="{{ url_for('static', filename='scripts/handlers.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/plots.js') }}"></script>
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('fade').style.display = 'block';
-        }
-
-        function hidePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('fade').style.display = 'none';
-        }
-    </script>
 </body>
 </html>

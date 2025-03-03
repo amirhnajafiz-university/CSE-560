@@ -798,6 +798,11 @@ async function plotMSE() {
   }
 }
 
+/**
+ * Plots the clusters of the selected k.
+ * @param {Number} k
+ * @returns {Promise<void>}
+ */
 async function plotClusters(k) {
   try {
     // Fetch data from API endpoints
