@@ -56,14 +56,14 @@ function showAlert(message, type) {
 }
 
 /**
- * Call /api/sample in order to generate dataset. 
+ * Call /api/data/sample in order to generate dataset. 
  */
 async function sampleData() {
   const numberOfSamples = document.getElementById("sample-number").value;
   const dropNone = document.getElementById("drop-none").checked;
   const dropCategorical = document.getElementById("drop-categorical").checked;
 
-  const response = await fetchDataFromAPI(`/api/sample/${numberOfSamples}?drop_none=${dropNone}&drop_categorical=${dropCategorical}`);
+  const response = await fetchDataFromAPI(`/api/data/sample/${numberOfSamples}?drop_none=${dropNone}&drop_categorical=${dropCategorical}`);
   if (response) {
     showAlert("Sampled data successfully!", "success");
   } else {
@@ -72,12 +72,12 @@ async function sampleData() {
 }
 
 /**
- * Call /api/eigendecomposition in order to perform PCA.
+ * Call /api/pca/create in order to perform PCA.
  */
 async function performPCA() {
   const standardize = document.getElementById("standardize").checked;
   
-  const response = await fetchDataFromAPI(`/api/eigendecomposition?standardize=${standardize}`);
+  const response = await fetchDataFromAPI(`/api/pca/create?standardize=${standardize}`);
   if (response) {
     showAlert("Performed PCA successfully!", "success");
   } else {

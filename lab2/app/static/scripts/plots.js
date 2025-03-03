@@ -71,8 +71,8 @@ function addToSelectedComponents(component) {
  * @param {Array} components
  */
 async function fetchLoadings(components) {
-  loadings = await d3.json(`/api/loadings?components=${components.join(",")}`);
-  principalComponents = await d3.json(`/api/principalcomponents?components=${components.join(",")}`);
+  loadings = await d3.json(`/api/pca/loadings?components=${components.join(",")}`);
+  principalComponents = await d3.json(`/api/pca?components=${components.join(",")}`);
 }
 
 /**
@@ -108,8 +108,8 @@ async function getComponents() {
  */
 async function plotEigenvalues() {
   Promise.all([
-    d3.json('/api/eigenvectors'),
-    d3.json('/api/elbowindex')
+    d3.json('/api/pca/eigenvectors'),
+    d3.json('/api/pca/elbow')
   ]).then(([eigenvectors, ei]) => {
     // extract eigenvalues from the response
     const eigenvalues = eigenvectors.eigenvalues;
@@ -476,7 +476,7 @@ async function plotPCA(components) {
  */
 async function plotTable() {
   // fetch the PCA attributes
-  const response = await fetchDataFromAPI(`/api/pcaattributes?dimensionality_index=${dimensionality_index+1}`);
+  const response = await fetchDataFromAPI(`/api/pca/attributes?dimensionality_index=${dimensionality_index+1}`);
   if (!response) {
     showAlert("Failed to fetch PCA attributes.", "danger");
     return
@@ -506,8 +506,8 @@ async function plotScatterMatrix() {
   try {
     // Fetch data from API endpoints
     const [atr, vars] = await Promise.all([
-      d3.json(`/api/pcaattributesdata?dimensionality_index=${dimensionality_index+1}`),
-      d3.json(`/api/pcaattributes?dimensionality_index=${dimensionality_index+1}`)
+      d3.json(`/api/pca/attributes/data?dimensionality_index=${dimensionality_index+1}`),
+      d3.json(`/api/pca/attributes?dimensionality_index=${dimensionality_index+1}`)
   ]);
 
   const data = atr.data;
@@ -694,10 +694,10 @@ let kmean_index = null;
  */
 async function plotMSE() {
   try {
-    const response = await d3.json('/api/mse');
+    const response = await d3.json('/api/kmeans/mse');
     const mseData = response.mse;
 
-    const response2 = await d3.json('/api/bestk');
+    const response2 = await d3.json('/api/kmeans/bestk');
     const bestK = response2.best_k;
 
     // get the SVG element and set its dimensions
@@ -802,8 +802,8 @@ async function plotClusters(k) {
   try {
     // Fetch data from API endpoints
     const [kmeansResults, clusterCentersRsp] = await Promise.all([
-      d3.json(`/api/kmeansresults?k=${k}`),
-      d3.json(`/api/clustercenters?k=${k}`)
+      d3.json(`/api/kmeans/results?k=${k}`),
+      d3.json(`/api/kmeans/centers?k=${k}`)
     ]);
 
     const dataPoints = kmeansResults.map(d => ({
