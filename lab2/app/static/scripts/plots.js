@@ -784,6 +784,9 @@ async function plotMSE() {
 
       // highlight selected bar and reset others
       d3.selectAll(".bar").attr("fill", d => (d[0] === cluster ? "orange" : "#006de1"));
+
+      // call plotClusters
+      plotClusters(cluster);
     }
 
     // call onSelectedBar with the best K
@@ -795,9 +798,174 @@ async function plotMSE() {
   }
 }
 
+async function plotClusters(k) {
+  try {
+    // Fetch data from API endpoints
+    const [kmeansResults, clusterCentersRsp] = await Promise.all([
+      d3.json(`/api/kmeansresults?k=${k}`),
+      d3.json(`/api/clustercenters?k=${k}`)
+    ]);
+
+    const dataPoints = kmeansResults.map(d => ({
+      coordinates: JSON.parse(d.coordinates),
+      cluster_id: d.cluster_id
+    }));
+
+    const centers = clusterCentersRsp.centers.map(d => ({
+      coordinates: d.coordinates,
+      cluster_id: d.cluster_id,
+      radius: d.radius
+    }));
+
+    // Get the SVG element and set its dimensions
+    const tmp = getSVG("#clusters");
+    tmp.append("defs")
+      .append("clipPath")
+      .attr("id", "clip")
+      .append("rect")
+      .attr("x", margin.left)
+      .attr("y", margin.top)
+      .attr("width", width - margin.left - margin.right)
+      .attr("height", height - margin.top - margin.bottom);
+
+    const svg = tmp.append("g")
+      .attr("clip-path", "url(#clip)");
+
+    // Calculate the domain based on the data points
+    const xExtent = d3.extent(dataPoints, d => d.coordinates[0]);
+    const yExtent = d3.extent(dataPoints, d => d.coordinates[1]);
+
+    // Ensure the center is at (0, 0)
+    const xDomain = [Math.min(xExtent[0], -xExtent[1]) * 2, Math.max(xExtent[1], -xExtent[0]) * 2];
+    const yDomain = [Math.min(yExtent[0], -yExtent[1]) * 2, Math.max(yExtent[1], -yExtent[0]) * 2];
+
+    const xScale = d3.scaleLinear().domain(xDomain).range([margin.left, width - margin.right]).nice();
+    const yScale = d3.scaleLinear().domain(yDomain).range([height - margin.bottom, margin.top]).nice();
+
+    // Define the zoom behavior
+    const zoom = d3.zoom()
+      .scaleExtent([0.5, 10])
+      .translateExtent([[0, 0], [width, height]])
+      .on("zoom", zoomed);
+
+    // Apply the zoom behavior to the SVG element
+    tmp.call(zoom);
+
+    // Axes
+    const xAxis = tmp.append("g")
+      .attr("transform", `translate(0,${height - margin.bottom})`)
+      .call(d3.axisBottom(xScale));
+    const yAxis = tmp.append("g")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(yScale));
+
+    // Add grid lines
+    const gridX = svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(yScale)
+        .tickSize(-width + margin.left + margin.right)
+        .tickFormat("")
+        .ticks(20)
+      );
+
+    const gridY = svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", `translate(0,${height - margin.bottom})`)
+      .call(d3.axisBottom(xScale)
+        .tickSize(-height + margin.top + margin.bottom)
+        .tickFormat("")
+        .ticks(20)
+      );
+
+    // Add x-axis label
+    tmp.append("text")
+      .attr("x", width / 2)
+      .attr("y", height - margin.bottom / 4)
+      .attr("text-anchor", "middle")
+      .attr("class", "axis-label")
+      .text("X");
+
+    // Add y-axis label
+    tmp.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2)
+      .attr("y", margin.left / 4)
+      .attr("text-anchor", "middle")
+      .attr("class", "axis-label")
+      .text("Y");
+
+    // Add title
+    tmp.append("text")
+      .attr("x", (width / 2))
+      .attr("y", margin.top / 2)
+      .attr("text-anchor", "middle")
+      .attr("class", "title")
+      .text("K-Means Clusters Biplot");
+
+    // Plot cluster centers with lower opacity
+    const clusterCenters = svg.selectAll(".cluster-center")
+      .data(centers)
+      .enter()
+      .append("circle")
+      .attr("class", "cluster-center")
+      .attr("cx", d => xScale(d.coordinates[0]))
+      .attr("cy", d => yScale(d.coordinates[1]))
+      .attr("r", d => d.radius * Math.min(xScale(3) - xScale(0), yScale(0) - yScale(3)))
+      .style("fill", d => d3.schemeCategory10[d.cluster_id])
+      .style("opacity", 0.7);
+
+    // Plot data points
+    const clusterPoints = svg.selectAll(".cluster-point")
+      .data(dataPoints)
+      .enter()
+      .append("circle")
+      .attr("class", "cluster-point")
+      .attr("cx", d => xScale(d.coordinates[0]))
+      .attr("cy", d => yScale(d.coordinates[1]))
+      .attr("r", 3)
+      .style("fill", d => d3.schemeCategory10[d.cluster_id]);
+
+    // Zoom function
+    function zoomed(event) {
+      const transform = event.transform;
+      const newXScale = transform.rescaleX(xScale);
+      const newYScale = transform.rescaleY(yScale);
+
+      xAxis.call(d3.axisBottom(newXScale));
+      yAxis.call(d3.axisLeft(newYScale));
+
+      gridX.call(d3.axisLeft(newYScale)
+        .tickSize(-width + margin.left + margin.right)
+        .tickFormat("")
+        .ticks(20)
+      );
+
+      gridY.call(d3.axisBottom(newXScale)
+        .tickSize(-height + margin.top + margin.bottom)
+        .tickFormat("")
+        .ticks(20)
+      );
+
+      clusterCenters
+        .attr("cx", d => newXScale(d.coordinates[0]))
+        .attr("cy", d => newYScale(d.coordinates[1]))
+        .attr("r", d => d.radius * Math.min(newXScale(3) - newXScale(0), newYScale(0) - newYScale(3)));
+
+      clusterPoints
+        .attr("cx", d => newXScale(d.coordinates[0]))
+        .attr("cy", d => newYScale(d.coordinates[1]));
+    }
+
+  } catch (error) {
+    console.error("Error fetching cluster data:", error);
+    showAlert("Failed to fetch cluster data.", "danger");
+  }
+}
+
 // --- Initialization ---
 plotEigenvalues();
 getComponents().then((c) => plotPCA(c));
 plotTable();
 plotScatterMatrix();
-plotMSE();
+plotMSE().then(() => plotClusters(kmean_index));
