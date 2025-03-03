@@ -39,3 +39,18 @@ def configure_routes(app: Flask):
 
     # define a route that returns the data of pca attributes
     app.add_url_rule('/api/pcaattributesdata', 'pca_scatterplot_matrix', controller.pca_scatterplot_matrix)
+
+    # define a route that performs k-means clustering on the sampled data
+    app.add_url_rule('/api/kmeans', 'kmeans', controller.kmeans_clustering)
+
+    # define a route that returns the mse of the k-means clustering
+    app.add_url_rule('/api/mse', 'mse', controller.get_mse)
+
+    # define a route that returns the best k value for k-means clustering
+    app.add_url_rule('/api/bestk', 'best_k', controller.get_best_k)
+
+    # define a route that returns the results of k-means clustering
+    app.add_url_rule('/api/kmeansresults', 'kmeans_results', controller.get_kmeans_results)
+
+    # define a route that returns the cluster centers of k-means clustering
+    app.add_url_rule('/api/clustercenters', 'cluster_centers', controller.get_cluster_centers)
