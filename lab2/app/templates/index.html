@@ -211,7 +211,46 @@
     <div class="popup" id="popup">
         <button class="btn btn-danger shadow close-btn" onclick="hidePopup()">X</button>
         <h2>About</h2>
-        <p>This is a big popup. You can add any content here.</p>
+        <p style="text-align: justify;">
+            This dataset is a refined version of the well-known Laptop Price dataset, designed to offer a comprehensive collection of information on various laptops, facilitating detailed analysis of their specifications and pricing. It consists of 23 columns containing both numerical and categorical values.  
+            The original dataset was highly compact, with extensive details embedded within each column. While this format was human-readable and concise, it was not optimal for Machine Learning algorithms, which perform better when distinct attributes are stored in separate columns. To enhance efficiency, the dataset was restructured by extracting individual details into separate fields. As a result, 28 duplicate rows were identified and removed, leading to the finalized version presented here.
+            From the 23 columns, the categorical columns with only Yes or No values were dropped. The dataset is available in CSV format and can be downloaded from the link below.
+        </p>
+        <p>Source: <a href="https://www.kaggle.com/datasets/owm4096/laptop-prices" target="_blank">Laptop Prices Dataset on Kaggle</a></p>
+        <p style="text-align: justify;">
+            As for the purpose of this analysis, we will apply dimensionality reduction techniques to identify the most relevant features for analysis. This will help us focus on the key attributes that have the most impact on laptop pricing.
+            The dataset is preprocessed to drop any missing values and standardize the data. We will then apply PCA to reduce the dimensionality of the dataset and identify the most important features.
+            Then we will apply K-Means clustering to group the laptops based on their features and analyze the clusters to identify the key attributes that differentiate them.
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-primary">
+                Inches: The size of the laptop screen in inches.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                Ram: The amount of Random Access Memory (RAM) in the laptop.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                Weight: The weight of the laptop in kilograms.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                Price: The price of the laptop in US dollars.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                ScreenW: The width of the laptop screen in pixels.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                ScreenH: The height of the laptop screen in pixels.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                CpuSpeed: The speed of the laptop's Central Processing Unit (CPU) in GHz.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                PrimaryStorage: The size of the laptop's primary storage in gigabytes.
+            </li>
+            <li class="list-group-item list-group-item-primary">
+                SecondaryStorage: The size of the laptop's secondary storage in gigabytes.
+            </li>
+        </ul>
     </div>
     <div class="faded" id="fade"></div>
 
