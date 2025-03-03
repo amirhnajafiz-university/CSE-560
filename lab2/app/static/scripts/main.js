@@ -86,17 +86,35 @@ async function performPCA() {
 }
 
 /**
+ * Call /api/clustering in order to perform clustering.
+ */
+async function performClustering() {
+  const response = await fetchDataFromAPI(`/api/kmeans`);
+  if (response) {
+    showAlert("Performed clustering successfully!", "success");
+  } else {
+    showAlert("Failed to perform clustering.", "danger");
+  }
+}
+
+/**
  * Change the value of the range input by a given delta.
  */
 async function updateData() {
   // check the sample option
   const doSample = document.getElementById("resample").checked;
   if (doSample) {
+    showAlert("Resampling data...", "warning");
     sampleData();
   }
 
   // perform PCA
-  performPCA();
+  showAlert("Performing PCA...", "warning");
+  performPCA().then(() => {
+    // perform clustering
+    showAlert("Performing clustering...", "warning");
+    performClustering();
+  });
 }
 
 /**
