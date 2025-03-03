@@ -163,9 +163,12 @@ def pca_attributes():
     Return the 4 attributes with the highest squared sum of PCA loadings.
     :return: The 4 attributes with the highest squared sum of PCA loadings.
     """
-    from flask import jsonify
+    from flask import jsonify, request
     import pandas as pd
     import numpy as np
+
+    # get the dimensionality index from the request query parameters
+    dimensionality_index = int(request.args.get('dimensionality_index', 4))
 
     # read the loadings from the csv file
     df = pd.read_csv(config.LOADINGS)
@@ -177,23 +180,37 @@ def pca_attributes():
     df = df.sort_values(by='squared_sum', ascending=False)
 
     # return the top 4 attributes
-    attributes = df[['feature', 'squared_sum']].values.tolist()[:4]
+    attributes = df[['feature', 'squared_sum']].values.tolist()[:dimensionality_index]
     return jsonify({"attributes": attributes})
 
 def pca_scatterplot_matrix():
     """
-    Return the data of the 4 attributes with the highest squared sum of PCA loadings.
-    :return: The data of the 4 attributes with the highest squared sum of PCA loadings.
+    Return the data of the top attributes based on the selected dimensionality index.
+    :return: The data of the top attributes based on the selected dimensionality index.
     """
-    from flask import jsonify
+    from flask import jsonify, request
     import pandas as pd
+    import numpy as np
+
+    # get the dimensionality index from the request query parameters
+    dimensionality_index = int(request.args.get('dimensionality_index', 4))
+
+    # read the loadings from the csv file
+    df_loadings = pd.read_csv(config.LOADINGS)
+
+    # calculate the squared sum of PCA loadings for the selected number of components
+    selected_components = [f'PC{i+1}' for i in range(dimensionality_index)]
+    df_loadings['squared_sum'] = np.square(df_loadings[selected_components]).sum(axis=1)
+
+    # sort the attributes by squared sum of PCA loadings
+    df_loadings = df_loadings.sort_values(by='squared_sum', ascending=False)
+
+    # get the top attributes based on the selected dimensionality index
+    top_attributes = df_loadings['feature'].values.tolist()[:dimensionality_index]
 
     # read the sampled dataset
-    df = pd.read_csv(config.SAMPLED_DATASET)
+    df_sampled = pd.read_csv(config.SAMPLED_DATASET)
 
-    # read the top 4 attributes using the pca_attributes function
-    attributes = [attribute[0] for attribute in pca_attributes().json['attributes']]
-
-    # return the data of the top 4 attributes
-    data = df[attributes].values.tolist()
+    # return the data of the top attributes
+    data = df_sampled[top_attributes].values.tolist()
     return jsonify({"data": data})

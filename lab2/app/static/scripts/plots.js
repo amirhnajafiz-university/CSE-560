@@ -11,6 +11,7 @@ let selectedComponents = [];
 let currentPCAs = [];
 let loadings = null;
 let principalComponents = null;
+let dimensionality_index = 3;
 
 // --- Helper Functions ---
 /**
@@ -235,6 +236,22 @@ async function plotEigenvalues() {
     
     // function to handle click on data points
     function onSelectedAction(i) {
+      // check if the change-di checkbox is checked
+      const changeDiCheckbox = document.getElementById("change-di");
+      if (changeDiCheckbox.checked) {
+        // change the color of dimensionality index to orange
+        d3.selectAll(".eigen-circle").attr("fill", (d, _) => (d === i ? "orange" : "#006de1"));
+        d3.selectAll(".eigen-circle").attr("r", (d, _) => (d === i ? 12 : 8));
+        d3.selectAll(".data-label").attr("font-size", (d, _) => (d === i ? "10px" : "6px"));
+
+        // change the intrinsic dimensionality index
+        dimensionality_index = getIndex(eigenvalues, i);
+        plotTable();
+        plotScatterMatrix();
+
+        return;
+      }
+
       selectedIndex = i;
 
       // loop over the selectedPCAs, if the index is there delete it, else add the selected item
@@ -276,7 +293,12 @@ async function plotEigenvalues() {
     }
 
     // call onSelectedAction with the elbow index
-    onSelectedAction(eigenvalues[elbowIndex]);
+    dimensionality_index = elbowIndex;
+    
+    // change the color of dimensionality index to orange
+    d3.selectAll(".eigen-circle").attr("fill", (d, _) => (d === eigenvalues[elbowIndex] ? "orange" : "#006de1"));
+    d3.selectAll(".eigen-circle").attr("r", (d, _) => (d === eigenvalues[elbowIndex] ? 12 : 8));
+    d3.selectAll(".data-label").attr("font-size", (d, _) => (d === eigenvalues[elbowIndex] ? "10px" : "6px"));
   }).catch(error => {
     console.error("Error fetching eigenvalues:", error);
     showAlert("Failed to fetch eigenvalues.", "danger")}
@@ -454,7 +476,7 @@ async function plotPCA(components) {
  */
 async function plotTable() {
   // fetch the PCA attributes
-  const response = await fetchDataFromAPI("/api/pcaattributes");
+  const response = await fetchDataFromAPI(`/api/pcaattributes?dimensionality_index=${dimensionality_index+1}`);
   if (!response) {
     showAlert("Failed to fetch PCA attributes.", "danger");
     return
@@ -462,6 +484,13 @@ async function plotTable() {
 
   const attributes = response.attributes;
   const table = document.getElementById("attributes");
+
+  // clear the table rows but keep the heaeders
+  table.querySelectorAll("tr").forEach((row, i) => {
+    if (i !== 0) {
+      row.remove();
+    }
+  });
 
   // insert attributes into the table with attribute[0] as first cell and attribute[1] as second cell
   attributes.forEach(attribute => {
@@ -477,8 +506,8 @@ async function plotScatterMatrix() {
   try {
     // Fetch data from API endpoints
     const [atr, vars] = await Promise.all([
-      d3.json('/api/pcaattributesdata'),
-      d3.json('/api/pcaattributes')
+      d3.json(`/api/pcaattributesdata?dimensionality_index=${dimensionality_index+1}`),
+      d3.json(`/api/pcaattributes?dimensionality_index=${dimensionality_index+1}`)
   ]);
 
   const data = atr.data;
@@ -498,6 +527,9 @@ async function plotScatterMatrix() {
   const margin = { top: 60, right: 40, bottom: 40, left: 60 };
   const width = size - 20;
   const height = size - 20;
+
+  // Clear the matrix element
+  d3.select("#matrix").selectAll("*").remove();
 
   // Create SVG container
   const svg = d3.select("#matrix").append("svg")
