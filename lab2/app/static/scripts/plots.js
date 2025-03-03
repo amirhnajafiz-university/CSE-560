@@ -687,8 +687,117 @@ async function plotScatterMatrix() {
   }
 }
 
+let kmean_index = null;
+
+/**
+ * Plots the MSE of clusters.
+ */
+async function plotMSE() {
+  try {
+    const response = await d3.json('/api/mse');
+    const mseData = response.mse;
+
+    const response2 = await d3.json('/api/bestk');
+    const bestK = response2.best_k;
+
+    // get the SVG element and set its dimensions
+    const svg = getSVG("#kmse");
+
+    // create a group element for the chart content and apply margin transformation
+    const chartGroup = svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // define scales
+    const xScale = d3.scaleBand()
+      .domain(mseData.map(d => d[0]))
+      .range([0, width - margin.left - margin.right])
+      .padding(0.1);
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(mseData, d => d[1])])
+      .range([height - margin.top - margin.bottom, 0])
+      .nice();
+
+    // define axes
+    const xAxis = d3.axisBottom(xScale).tickFormat(d => `k=${d}`);
+    const yAxis = d3.axisLeft(yScale);
+
+    // append and position x-axis
+    chartGroup.append("g")
+      .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
+      .call(xAxis);
+
+    // append and position y-axis
+    chartGroup.append("g")
+      .call(yAxis);
+
+    // add grid lines
+    chartGroup.append("g")
+      .attr("class", "grid")
+      .call(d3.axisLeft(yScale)
+        .tickSize(-width + margin.left + margin.right)
+        .tickFormat("")
+        .ticks(10)
+      );
+
+    // append title
+    chartGroup.append("text")
+      .attr("x", (width - margin.left - margin.right) / 2)
+      .attr("y", -20)
+      .attr("text-anchor", "middle")
+      .attr("class", "title")
+      .text("Mean Squared Error of Clusters");
+
+    // append and position x-axis label
+    chartGroup.append("text")
+      .attr("transform", `translate(${(width - margin.left - margin.right) / 2}, ${height - margin.bottom})`)
+      .attr("class", "axis-label")
+      .attr("text-anchor", "middle")
+      .text("k-means");
+
+    // append and position y-axis label
+    chartGroup.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x", 0 - (height / 2))
+      .attr("dy", "1em")
+      .attr("class", "axis-label")
+      .attr("text-anchor", "middle")
+      .text("MSE");
+
+    // add bars
+    chartGroup.selectAll(".bar")
+      .data(mseData)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", d => xScale(d[0]))
+      .attr("y", d => yScale(d[1]))
+      .attr("width", xScale.bandwidth())
+      .attr("height", d => height - margin.top - margin.bottom - yScale(d[1]))
+      .attr("fill", "#006de1")
+      .style("cursor", "pointer")
+      .on("click", (_, d) => onSelectedBar(d[0]));
+
+    // function to handle click on bars
+    function onSelectedBar(cluster) {
+      kmean_index = cluster;
+
+      // highlight selected bar and reset others
+      d3.selectAll(".bar").attr("fill", d => (d[0] === cluster ? "orange" : "#006de1"));
+    }
+
+    // call onSelectedBar with the best K
+    kmean_index = bestK;
+    onSelectedBar(bestK);
+  } catch (error) {
+    console.error("Error fetching MSE data:", error);
+    showAlert("Failed to fetch MSE data.", "danger");
+  }
+}
+
 // --- Initialization ---
 plotEigenvalues();
 getComponents().then((c) => plotPCA(c));
 plotTable();
 plotScatterMatrix();
+plotMSE();
