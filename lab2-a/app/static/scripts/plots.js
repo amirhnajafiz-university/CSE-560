@@ -241,8 +241,8 @@ async function plotEigenvalues() {
       if (changeDiCheckbox.checked) {
         // change the color of dimensionality index to orange
         d3.selectAll(".eigen-circle").attr("fill", (d, _) => (d === i ? "orange" : "#006de1"));
-        d3.selectAll(".eigen-circle").attr("r", (d, _) => (d === i ? 12 : 8));
-        d3.selectAll(".data-label").attr("font-size", (d, _) => (d === i ? "10px" : "6px"));
+        d3.selectAll(".eigen-circle").attr("r", (d, _) => (d === i ? 14 : 8));
+        d3.selectAll(".data-label").attr("font-size", (d, _) => (d === i ? "12px" : "6px"));
 
         // change the intrinsic dimensionality index
         dimensionality_index = getIndex(eigenvalues, i);
@@ -297,8 +297,8 @@ async function plotEigenvalues() {
     
     // change the color of dimensionality index to orange
     d3.selectAll(".eigen-circle").attr("fill", (d, _) => (d === eigenvalues[elbowIndex] ? "orange" : "#006de1"));
-    d3.selectAll(".eigen-circle").attr("r", (d, _) => (d === eigenvalues[elbowIndex] ? 12 : 8));
-    d3.selectAll(".data-label").attr("font-size", (d, _) => (d === eigenvalues[elbowIndex] ? "10px" : "6px"));
+    d3.selectAll(".eigen-circle").attr("r", (d, _) => (d === eigenvalues[elbowIndex] ? 14 : 8));
+    d3.selectAll(".data-label").attr("font-size", (d, _) => (d === eigenvalues[elbowIndex] ? "12px" : "6px"));
   }).catch(error => {
     console.error("Error fetching eigenvalues:", error);
     showAlert("Failed to fetch eigenvalues.", "danger")}
