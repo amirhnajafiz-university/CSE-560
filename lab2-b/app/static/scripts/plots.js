@@ -38,7 +38,7 @@ var plots = {
 
 // plot function that takes a name and calls a plot function based on the name
 function plot(name) {
-  showAlert('Drawing ' + name.toUpperCase(), 'dark');
+  showAlert('Drawing `' + name.toUpperCase().replace("-", " ") + '`', 'dark');
   plots[name]();
 }
 
