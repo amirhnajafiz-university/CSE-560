@@ -2,7 +2,7 @@ from src import config
 
 
 
-def data_mds():
+def create_data_mds():
     """
     Perform MDS on the sampled dataset and save the transformed data.
     """
@@ -36,7 +36,20 @@ def data_mds():
 
     return jsonify({"message": "MDS completed successfully"}), 200
 
-def variables_mds():
+def get_data_mds():
+    """
+    Load the transformed data from the MDS analysis.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # load the transformed data
+    df = pd.read_csv(config.MDS_TRANSFORMED)
+
+    # return the transformed data as a JSON response
+    return jsonify(df.to_dict(orient='records')), 200
+
+def create_variables_mds():
     """
     Perform MDS on the sampled dataset using only the variables selected by the user and save the transformed data.
     """
@@ -73,3 +86,16 @@ def variables_mds():
     df_mds.to_csv(config.VARS_MDS_TRANSFORMED, index=False)
 
     return jsonify({"message": "Variables MDS completed successfully"}), 200
+
+def get_variables_mds():
+    """
+    Load the transformed data from the variable-based MDS analysis.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # load the transformed data
+    df = pd.read_csv(config.VARS_MDS_TRANSFORMED)
+
+    # return the transformed data as a JSON response
+    return jsonify(df.to_dict(orient='records')), 200
