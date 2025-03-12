@@ -1,3 +1,19 @@
+// global variables
+const WIDTH = 800;
+const HEIGHT = 600;
+const MARGIN = { top: 40, right: 40, bottom: 40, left: 40 };
+const SVGID = "#plot";
+
+// helper functions
+function getSVG() {
+  return d3.select(SVGID)
+    .selectAll("*")
+    .remove()
+    .attr("width", WIDTH)
+    .attr("height", HEIGHT)
+    .style("overflow", "hidden");
+}
+
 // data MDS plot function
 function dataMDSPlot() {
   return;
