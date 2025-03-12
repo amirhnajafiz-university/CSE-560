@@ -16,7 +16,7 @@
         <!-- Holders -->
         <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px; position: relative;">
             <!-- Fixed Button -->
-            <button class="fixed-btn" onclick="showPopup()">
+            <button class="fixed-btn" onclick="togglePopup(true)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
                     <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0"/>
                 </svg>
@@ -89,7 +89,7 @@
 
     <!-- Popup -->
     <div class="popup" id="popup">
-        <button class="btn btn-danger shadow close-btn" onclick="hidePopup()">X</button>
+        <button class="btn btn-danger shadow close-btn" onclick="togglePopup(false)">X</button>
         <h2>About</h2>
         <p style="text-align: justify;">
             This dataset is a refined version of the well-known Laptop Price dataset, designed to offer a comprehensive collection of information on various laptops, facilitating detailed analysis of their specifications and pricing. It consists of 23 columns containing both numerical and categorical values.  
