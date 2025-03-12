@@ -15,3 +15,6 @@ def configure_routes(app: Flask):
 
     # define a route that performs MDS on the data
     app.add_url_rule('/api/data/mds', 'data_mds', mds.data_mds, methods=['POST'])
+
+    # define a route that performs variable-based MDS on the data
+    app.add_url_rule('/api/data/mds/variables', 'variables_mds', mds.variables_mds, methods=['POST'])
