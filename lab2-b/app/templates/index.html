@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vislab - Lab 2(b)</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plots.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
@@ -60,10 +61,6 @@
                     </button>
                 </div>
                 <div>
-                    <input type="number" id="tickness" min="1" max="4" value="2" />
-                    <label for="toggle-grids">Tickness</label>
-                </div>
-                <div>
                     <input type="checkbox" id="toggle-titles" class="mr-2" checked />
                     <label for="toggle-titles">Titles</label>
                 </div>
@@ -76,11 +73,15 @@
                     <label for="toggle-labels">Labels</label>
                 </div>
                 <div>
-                    <input type="color" id="line-color-picker" style="width: 30px;" value="#006de1" />
+                    <input type="number" id="tickness" class="mr-2" min="1" max="4" value="2" style="width: 30px;" />
+                    <label for="toggle-grids">Tickness</label>
+                </div>
+                <div>
+                    <input type="color" id="line-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" />
                     <label for="line-color-picker">Line Color</label>
                 </div>
                 <div>
-                    <input type="color" id="plot-color-picker" style="width: 30px;" value="#006de1" />
+                    <input type="color" id="plot-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" />
                     <label for="plot-color-picker">Plot Color</label>
                 </div>
             </div>
