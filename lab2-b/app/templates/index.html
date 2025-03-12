@@ -30,12 +30,23 @@
             </button>
 
             <!-- Title -->
-            <h2 class="text-center mb-4">Laptop Prices Dimensionality Reduction</h2>
+            <h2 class="text-center mb-4">Multidimensional Visualization</h2>
 
             <!-- Description -->
             <p style="text-align: justify;">
-                Hello, and welcome to the Laptop Prices Dataset Analysis.
+                Hello, and welcome to the Laptop Prices Dataset Analysis. The purpose of this lab is to explore and visualize complex multidimensional data in a meaningful way.
+                You can select the type of plot you want to generate from the list below. Also, you can customize the plot by changing the line color, plot color, and tickness.
+                Read more about the dataset by clicking the info button on the top right corner.
             </p>
+
+            <!-- Select -->
+            <div class="d-flex justify-content-center mt-4">
+                <select id="plot-type" class="form-control form-control-sm w-25">
+                    <option value="data-mds">Data MDS Plot</option>
+                    <option value="vars-mds">Variables MDS Plot</option>
+                    <option value="pcp">Parallel Coordinates Plot</option>
+                </select>
+            </div>
 
             <!-- SVGs for Charts -->
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
