@@ -64,23 +64,23 @@
                     <label for="toggle-grids">Tickness</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="toggle-titles" checked />
+                    <input type="checkbox" id="toggle-titles" class="mr-2" checked />
                     <label for="toggle-titles">Titles</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="toggle-grids" checked />
+                    <input type="checkbox" id="toggle-grids" class="mr-2" checked />
                     <label for="toggle-grids">Grids</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="toggle-labels" checked />
+                    <input type="checkbox" id="toggle-labels" class="mr-2" checked />
                     <label for="toggle-labels">Labels</label>
                 </div>
                 <div>
-                    <input type="color" id="line-color-picker" style="width: 20px;" value="#006de1" />
+                    <input type="color" id="line-color-picker" style="width: 30px;" value="#006de1" />
                     <label for="line-color-picker">Line Color</label>
                 </div>
                 <div>
-                    <input type="color" id="plot-color-picker" style="width: 20px;" value="#006de1" />
+                    <input type="color" id="plot-color-picker" style="width: 30px;" value="#006de1" />
                     <label for="plot-color-picker">Plot Color</label>
                 </div>
             </div>
@@ -131,8 +131,8 @@
 
     <!-- Scripts -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/handlers.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/handlers.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/plots.js') }}"></script>
 </body>
 </html>
