@@ -17,7 +17,6 @@
 body {
     font-family: 'Open Sans' !important;
     font-size: 14px !important;
-    margin: 20px;
     background-image: linear-gradient(to bottom right, var(--secondary-color), var(--primary-color));
 }
 
@@ -55,7 +54,7 @@ body {
     right: 10px;
 }
 
-.fixed-btn {
+.fixed-btn, .fixed-btn-reload {
     position: absolute;
     top: -20px;
     right: 10px;
@@ -64,20 +63,16 @@ body {
     border-radius: 100%;
     text-align: center;
     border: 0;
+}
+
+.fixed-btn {
     background-color: var(--primary-color);
     color: var(--white-text-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .fixed-btn-reload {
-    position: absolute;
-    top: -20px;
     right: 60px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    text-align: center;
-    border: 0;
     background-color: var(--secondary-color);
     color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -101,7 +96,7 @@ body {
 }
 
 .options input {
-    height: 20px; /* normalizes height */
+    height: 20px;
     vertical-align: middle;
 }
 
@@ -139,4 +134,3 @@ body {
     transform: translateY(-20px);
     transition: all 0.5s ease;
 }
-
