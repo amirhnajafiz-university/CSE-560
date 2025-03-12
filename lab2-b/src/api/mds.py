@@ -84,6 +84,7 @@ def create_variables_mds():
 
     # save the transformed data
     df_mds.to_csv(config.VARS_MDS_TRANSFORMED, index=False)
+    correlation_matrix.to_csv(config.CORRELATIONS, index=False)
 
     return jsonify({"message": "Variables MDS completed successfully"}), 200
 
