@@ -53,13 +53,13 @@ function dataMDSPlot() {
       .attr("class", "axis-label")
       .attr("text-anchor", "middle")
       .attr("transform", `translate(${WIDTH / 2}, ${HEIGHT - 10})`)
-      .text("X");
+      .text("2D MDS-X");
 
     svg.append("text")
       .attr("class", "axis-label")
       .attr("text-anchor", "middle")
       .attr("transform", `translate(10, ${HEIGHT / 2}) rotate(-90)`)
-      .text("Y");
+      .text("2D MDS-Y");
 
     // add title
     svg.append("text")
@@ -92,24 +92,22 @@ function dataMDSPlot() {
       .call(d3.axisLeft(y).tickSize(-WIDTH + MARGIN.left + MARGIN.right).tickFormat(''));
 
     // add grid lines
-    const gridX = svg.append("g")
+    svg.append("g")
       .attr("class", "grid")
       .attr("transform", `translate(0, ${HEIGHT - MARGIN.bottom})`)
       .call(d3.axisBottom(x)
         .tickSize(-HEIGHT + MARGIN.top + MARGIN.bottom)
         .tickFormat(''))
       .selectAll("line")
-        .style("stroke", "lightblack")
         .style("stroke-dasharray", "3,3");
 
-    const gridY = svg.append("g")
+    svg.append("g")
       .attr("class", "grid")
       .attr("transform", `translate(${MARGIN.left}, 0)`)
       .call(d3.axisLeft(y)
         .tickSize(-WIDTH + MARGIN.left + MARGIN.right)
         .tickFormat(''))
       .selectAll("line")
-        .style("stroke", "lightblack")
         .style("stroke-dasharray", "3,3");
 
     // add data points
@@ -148,14 +146,6 @@ function dataMDSPlot() {
       gX.call(d3.axisBottom(newX));
       gY.call(d3.axisLeft(newY));
 
-      gridX.call(d3.axisBottom(newX)
-        .tickSize(-HEIGHT + MARGIN.top + MARGIN.bottom)
-        .tickFormat(''));
-
-      gridY.call(d3.axisLeft(newY)
-        .tickSize(-WIDTH + MARGIN.left + MARGIN.right)
-        .tickFormat(''));
-
       circles
         .attr("cx", d => newX(d.x))
         .attr("cy", d => newY(d.y));
@@ -172,8 +162,11 @@ function dataMDSPlot() {
       .on("zoom", zoomed);
 
     svg.call(zoom);
-  }).catch(error => {
-    console.error("Error drawing MDS plot:", error);
+
+    // explicitly call the axis rendering functions to ensure they are displayed initially
+    gX.call(d3.axisBottom(x));
+    gY.call(d3.axisLeft(y));
+  }).catch(_ => {
     showAlert("Failed to draw MDS plot.", "danger");
   });
 }
