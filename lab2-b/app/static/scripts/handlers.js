@@ -13,7 +13,7 @@ async function fetchDataFromAPI(endpoint) {
     return await handledResponse.json();
   } catch (error) {
     console.error(`Error fetching data from ${endpoint}:`, error);
-    showAlert(`Failed to fetch data from ${endpoint}.`, "error");
+    showAlert(`Failed to fetch data from ${endpoint}.`, "danger");
     return null;
   }
 }
