@@ -304,7 +304,7 @@ function variablesDMSPlot() {
     gX.call(d3.axisBottom(x));
     gY.call(d3.axisLeft(y));
   }).catch(_ => {
-    showAlert("Failed to draw MDS plot.", "danger");
+    showAlert("Failed to draw variables MDS plot.", "danger");
   });
 }
 
