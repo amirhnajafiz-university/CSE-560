@@ -6,12 +6,31 @@ const SVGID = "#plot";
 
 // helper functions
 function getSVG() {
+  // create an SVG element with the specified width and height
   const svg = d3.select(SVGID)
     .attr("width", WIDTH)
     .attr("height", HEIGHT)
     .style("overflow", "hidden");
 
+  // clear the SVG element
   svg.selectAll("*").remove();
+
+  // add a clip path to prevent data points from overflowing the plot area
+  svg.append("defs").append("clipPath")
+      .attr("id", "clip")
+      .append("rect")
+      .attr("x", MARGIN.left)
+      .attr("y", MARGIN.top)
+      .attr("width", WIDTH - MARGIN.left - MARGIN.right)
+      .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom);
+
+  // add a background rectangle to the SVG element
+  svg.append("rect")
+    .attr("x", MARGIN.left)
+    .attr("y", MARGIN.top)
+    .attr("width", WIDTH - MARGIN.left - MARGIN.right)
+    .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom)
+    .attr("fill", "#f0f0f0");
   
   return svg;
 }
@@ -21,26 +40,13 @@ function dataMDSPlot() {
   Promise.all([
     d3.json("/api/data/mds"),
   ]).then(([data]) => {
+    // check if data is returned
     if (!data) {
       throw new Error("No data returned from API.");
     }
 
+    // get the SVG element
     const svg = getSVG();
-    svg.append("defs").append("clipPath")
-      .attr("id", "clip")
-      .append("rect")
-      .attr("x", MARGIN.left)
-      .attr("y", MARGIN.top)
-      .attr("width", WIDTH - MARGIN.left - MARGIN.right)
-      .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom);
-
-    // add light background
-    svg.append("rect")
-      .attr("x", MARGIN.left)
-      .attr("y", MARGIN.top)
-      .attr("width", WIDTH - MARGIN.left - MARGIN.right)
-      .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom)
-      .attr("fill", "#f0f0f0");
 
     // add axis labels
     svg.append("text")
@@ -62,6 +68,7 @@ function dataMDSPlot() {
       .attr("transform", `translate(${WIDTH / 2}, ${MARGIN.top / 2})`)
       .text("MDS Plot");
 
+    // create scales
     const x = d3.scaleLinear()
       .domain(d3.extent(data, d => d.x))
       .range([MARGIN.left, WIDTH - MARGIN.right])
@@ -72,8 +79,10 @@ function dataMDSPlot() {
       .range([HEIGHT - MARGIN.bottom, MARGIN.top])
       .nice();
     
+    // create color scale
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
+    // add axis
     const gX = svg.append("g")
       .attr("transform", `translate(0, ${HEIGHT - MARGIN.bottom})`)
       .call(d3.axisBottom(x).tickSize(-HEIGHT + MARGIN.top + MARGIN.bottom).tickFormat(''));
@@ -82,7 +91,7 @@ function dataMDSPlot() {
       .attr("transform", `translate(${MARGIN.left}, 0)`)
       .call(d3.axisLeft(y).tickSize(-WIDTH + MARGIN.left + MARGIN.right).tickFormat(''));
 
-    // Add grid lines
+    // add grid lines
     const gridX = svg.append("g")
       .attr("class", "grid")
       .attr("transform", `translate(0, ${HEIGHT - MARGIN.bottom})`)
@@ -103,6 +112,7 @@ function dataMDSPlot() {
         .style("stroke", "lightblack")
         .style("stroke-dasharray", "3,3");
 
+    // add data points
     const circles = svg.append("g")
       .attr("clip-path", "url(#clip)")
       .selectAll("circle")
@@ -114,23 +124,19 @@ function dataMDSPlot() {
       .attr("r", 3)
       .attr("fill", d => color(d.cluster))
       .on("mouseover", function(_, d) {
-        d3.select(this)
-          .attr("r", 6); // Increase the radius of the circle on hover
-
+        d3.select(this).attr("r", 6); // increase the radius of the circle on hover
         svg.append("text")
           .attr("id", "tooltip")
           .attr("x", x(d.x))
-          .attr("y", y(d.y) - 10) // Position the text slightly above the circle
+          .attr("y", y(d.y) - 10) // position the text slightly above the circle
           .attr("text-anchor", "middle")
           .attr("font-size", "10px")
           .attr("fill", "black")
           .text(`(${d.x.toFixed(2)}, ${d.y.toFixed(2)})`);
       })
       .on("mouseout", function() {
-        d3.select(this)
-          .attr("r", 3); // Reset the radius of the circle
-
-        d3.select("#tooltip").remove(); // Remove the tooltip text
+        d3.select(this).attr("r", 3); // reset the radius of the circle
+        d3.select("#tooltip").remove(); // remove the tooltip text
       });
 
     // zoom function
