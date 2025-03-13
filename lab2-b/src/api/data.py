@@ -18,8 +18,12 @@ def get_data():
             df[col] = df[col].astype('category')
             df[col] = df[col].cat.codes
 
+    # only return 10 columns by randomly selecting them, make sure to always include the cluster column with the data
+    sdf = df.sample(n=10, axis=1, random_state=1)
+    sdf = pd.concat([df['cluster'], sdf], axis=1)
+
     # return the sampled dataset as a JSON response
-    return jsonify(df.to_dict(orient='records')), 200
+    return jsonify(sdf.to_dict(orient='records')), 200
 
 def create_cluster_data():
     """

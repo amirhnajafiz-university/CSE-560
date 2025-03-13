@@ -1,5 +1,5 @@
 // global variables
-const WIDTH = 800;
+const WIDTH = 1000;
 const HEIGHT = 600;
 const MARGIN = { top: 40, right: 40, bottom: 40, left: 40 };
 const SVGID = "#plot";
@@ -310,7 +310,81 @@ function variablesDMSPlot() {
 
 // parallel coordinates plot function
 function pcpPlot() {
-  return;
+  Promise.all([
+    d3.json("/api/data"),
+  ]).then(([data]) => {
+    // check if data is returned
+    if (!data) {
+      throw new Error("No data returned from API.");
+    }
+
+    // get the SVG element
+    const svg = getSVG();
+
+    // set dimensions and margins for the plot
+    const margin = MARGIN;
+    const width = WIDTH - margin.left - margin.right;
+    const height = HEIGHT - margin.top - margin.bottom;
+
+    // create a color scale
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    // extract the list of dimensions and create a scale for each
+    const dimensions = Object.keys(data[0]).filter(d => d !== "cluster");
+    const y = {};
+    for (const dim of dimensions) {
+      y[dim] = d3.scaleLinear()
+        .domain(d3.extent(data, d => +d[dim]))
+        .range([height, 0]);
+    }
+
+    // create an x scale for the dimensions
+    const x = d3.scalePoint()
+      .range([0, width])
+      .padding(1)
+      .domain(dimensions);
+
+    // add the polylines for each data point
+    svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .selectAll("path")
+      .data(data)
+      .enter().append("path")
+      .attr("d", d => {
+        return d3.line()(dimensions.map(p => [x(p), y[p](d[p])]));
+      })
+      .style("fill", "none")
+      .style("stroke", d => color(d.cluster))
+      .style("opacity", 0.5);
+
+    // add an axis and title for each dimension
+    svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .selectAll("g")
+      .data(dimensions)
+      .enter().append("g")
+      .attr("transform", d => `translate(${x(d)})`)
+      .each(function(d) {
+        d3.select(this).call(d3.axisLeft(y[d]));
+      })
+      .append("text")
+      .style("text-anchor", "middle")
+      .attr("y", -40)
+      .selectAll("text")
+      .data(d => d.split('').reduce((acc, word, i) => {
+        if (i % 7 === 0) acc.push([]);
+        acc[acc.length - 1].push(word);
+        return acc;
+      }, []).map(words => words.join('')))
+      .enter()
+      .append("tspan")
+      .attr("x", 0)
+      .attr("dy", "1.2em")
+      .text(d => d)
+      .style("fill", "black");
+  }).catch(_ => {
+    showAlert("Failed to draw parallel coordinates plot.", "danger");
+  });
 }
 
 // creating a map variable to reference the plot functions
