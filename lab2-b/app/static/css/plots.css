@@ -1,0 +1,8 @@
+.bg-purple {
+    background-color: var(--light-gray) !important;
+}
+
+.bg-purple:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--white-text-color) !important;
+}

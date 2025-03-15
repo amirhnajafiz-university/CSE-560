@@ -318,8 +318,13 @@ function pcpPlot() {
       throw new Error("No data returned from API.");
     }
 
-    // get the SVG element
-    const svg = getSVG();
+    // create an SVG element with the specified width and height
+    const svg = d3.select(SVGID)
+      .attr("width", WIDTH)
+      .attr("height", HEIGHT);
+
+    // clear the SVG element
+    svg.selectAll("*").remove();
 
     // set dimensions and margins for the plot
     const margin = MARGIN;
@@ -369,10 +374,10 @@ function pcpPlot() {
       })
       .append("text")
       .style("text-anchor", "middle")
-      .attr("y", -40)
+      .attr("y", (d, i) => i % 2 === 0 ? -30 : height + 10)
       .selectAll("text")
       .data(d => d.split('').reduce((acc, word, i) => {
-        if (i % 7 === 0) acc.push([]);
+        if (i % 16 === 0) acc.push([]);
         acc[acc.length - 1].push(word);
         return acc;
       }, []).map(words => words.join('')))
@@ -396,12 +401,16 @@ var plots = {
 
 // plot function that takes a name and calls a plot function based on the name
 function plot(name) {
+  document.getElementById('pcp-setting').style.display = name === 'pcp' ? 'block' : 'none';
+  document.querySelectorAll('.pcp-settings').forEach(el => {
+    el.style.display = name === 'pcp' ? 'block' : 'none';
+  });
   plots[name]();
 }
 
 // add an event listener to the plot type dropdown to call the plot function
 document.getElementById('plot-type').addEventListener('change', function() {
-  plot(this.value)
+  plot(this.value);
 });
 
 // initial plot call
