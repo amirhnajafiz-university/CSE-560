@@ -377,7 +377,7 @@ function pcpPlot(orderType='original') {
       })
       .style("fill", "none")
       .style("stroke", d => color(d.cluster))
-      .style("opacity", 0.5);
+      .style("opacity", 0.1);
 
     // add an axis and title for each dimension
     const g = svg.append("g")
@@ -390,14 +390,21 @@ function pcpPlot(orderType='original') {
 
     // add an axis and title for each dimension
     g.each(function(d) {
-      d3.select(this).call(d3.axisLeft(y[d]));
+      if (d !== "Product") {
+        d3.select(this).call(d3.axisLeft(y[d]));
+      } else {
+        d3.select(this).call(d3.axisLeft(y[d]).tickFormat(d => " "));
+      }
     })
     .append("text")
       .style("text-anchor", "middle")
+      .attr("class", "dtext")
       .style("cursor", "pointer")
       .attr("y", (_, i) => i % 2 === 0 ? -20 : height + 20)
       .text(d => d.length > 10 ? d.slice(0, 10) + '..' : d)
       .style("fill", "black")
+      .style("font-size", "10px")
+      .style("font-weight", "bold")
       .on("click", function(_, d) {
         if (!orderBy.includes(d)) {
           orderBy.push(d);
@@ -405,15 +412,22 @@ function pcpPlot(orderType='original') {
           orderBy = orderBy.filter(item => item !== d);
         }
 
-        d3.selectAll(".dimension text")
-          .text(d => {
-            let placeholder = d.length > 10 ? d.slice(0, 10) + '..' : d;
-            return orderBy.includes(d) ? `${placeholder} (${orderBy.indexOf(d) + 1})` : placeholder; 
-          })
-          .style("fill", function(dim) {
-            return orderBy.includes(dim) ? "red" : "black";
-          });
+        updateAxisTitles();
       });
+
+    function updateAxisTitles() {
+      d3.selectAll(".dimension .dtext")
+        .text(d => {
+          let placeholder = d.length > 10 ? d.slice(0, 10) + '..' : d;
+          return orderBy.includes(d) ? `${placeholder} (${orderBy.indexOf(d) + 1})` : placeholder; 
+        })
+        .style("fill", function(dim) {
+          return orderBy.includes(dim) ? "red" : "black";
+        });
+    }
+
+    // Initial call to update axis titles
+    updateAxisTitles();
   }).catch(_ => {
     showAlert("Failed to draw parallel coordinates plot.", "danger");
   });
