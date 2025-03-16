@@ -5,6 +5,7 @@ from src import router
 
 # create a Flask app
 app = Flask(__name__, static_folder='app/static', template_folder='app/templates')
+app.config["JSON_SORT_KEYS"] = False
 
 # configure the routes
 router.configure_routes(app)

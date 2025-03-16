@@ -50,9 +50,9 @@
 
             <!-- SVGs for Charts -->
             <div id="pcp-setting" class="d-flex justify-content-center" style="display: none;">
-                <button class="btn btn-sm bg-purple pcp-settings mx-1">Original Ordering</button>
-                <button class="btn btn-sm bg-purple pcp-settings mx-1">Correlations Ordering</button>
-                <button class="btn btn-sm bg-purple pcp-settings mx-1">Customize Ordering</button>
+                <button class="btn btn-sm bg-purple pcp-settings mx-1" onclick="pcpPlot()">Original Ordering</button>
+                <button class="btn btn-sm bg-purple pcp-settings mx-1" onclick="pcpPlot(orderType='correlations')">Correlations Ordering</button>
+                <button class="btn btn-sm bg-purple pcp-settings mx-1" onclick="pcpPlot(orderType='customize')">Customize Ordering</button>
             </div>
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
                 <svg id="plot"></svg>

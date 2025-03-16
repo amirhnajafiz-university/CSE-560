@@ -308,23 +308,24 @@ function variablesDMSPlot() {
   });
 }
 
+// parallel coordinates plot variables
+var orderBy = [];
+
 // parallel coordinates plot function
-function pcpPlot() {
+function pcpPlot(orderType='original') {
   Promise.all([
-    d3.json("/api/data"),
+    d3.json(`/api/data?order_type=${orderType}&order_by=${orderBy}`),
   ]).then(([data]) => {
     // check if data is returned
     if (!data) {
       throw new Error("No data returned from API.");
     }
 
-    // create an SVG element with the specified width and height
-    const svg = d3.select(SVGID)
-      .attr("width", WIDTH)
-      .attr("height", HEIGHT);
+    // empty the orderByList
+    orderBy = [];
 
-    // clear the SVG element
-    svg.selectAll("*").remove();
+    // create an SVG element with the specified width and height
+    const svg = getSVG();
 
     // set dimensions and margins for the plot
     const margin = MARGIN;
@@ -374,10 +375,16 @@ function pcpPlot() {
       })
       .append("text")
       .style("text-anchor", "middle")
-      .attr("y", (d, i) => i % 2 === 0 ? -30 : height + 10)
+      .style("cursor", "pointer")
+      .attr("y", (_, i) => i % 2 === 0 ? -30 : height + 10)
+      .on("click", function(_, d) {
+        if (!orderBy.includes(d)) {
+          orderBy.push(d);
+        }
+      })
       .selectAll("text")
       .data(d => d.split('').reduce((acc, word, i) => {
-        if (i % 16 === 0) acc.push([]);
+        if (i % 32 === 0) acc.push([]);
         acc[acc.length - 1].push(word);
         return acc;
       }, []).map(words => words.join('')))
