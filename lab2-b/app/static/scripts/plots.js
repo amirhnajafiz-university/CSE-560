@@ -426,7 +426,7 @@ function pcpPlot(orderType='original') {
         });
     }
 
-    // Initial call to update axis titles
+    // initial call to update axis titles
     updateAxisTitles();
   }).catch(_ => {
     showAlert("Failed to draw parallel coordinates plot.", "danger");
