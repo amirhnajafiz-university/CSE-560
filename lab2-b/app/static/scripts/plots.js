@@ -1,11 +1,11 @@
 // global variables
 const WIDTH = 1000;
 const HEIGHT = 600;
-const MARGIN = { top: 40, right: 40, bottom: 40, left: 40 };
+const MARGIN = { top: 40, right: 20, bottom: 40, left: 50 };
 const SVGID = "#plot";
 
 // helper functions
-function getSVG() {
+function getSVG(inPadding=false) {
   // create an SVG element with the specified width and height
   const svg = d3.select(SVGID)
     .attr("width", WIDTH)
@@ -26,11 +26,15 @@ function getSVG() {
 
   // add a background rectangle to the SVG element
   svg.append("rect")
-    .attr("x", MARGIN.left)
-    .attr("y", MARGIN.top)
-    .attr("width", WIDTH - MARGIN.left - MARGIN.right)
-    .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom)
-    .attr("fill", "#f0f0f0");
+    .attr("x", inPadding ? MARGIN.left - 5 : MARGIN.left)
+    .attr("y", inPadding ? MARGIN.top - 5 : MARGIN.top)
+    .attr("width", inPadding? WIDTH - MARGIN.left - MARGIN.right + 10 : WIDTH - MARGIN.left - MARGIN.right)
+    .attr("height", inPadding ? HEIGHT - MARGIN.top - MARGIN.bottom + 10 : HEIGHT - MARGIN.top - MARGIN.bottom)
+    .attr("fill", "#f0f0f0")
+    .style("stroke", "#ccc")
+    .style("stroke-width", "1px")
+    .style("rx", "5px")
+    .style("ry", "5px");
   
   return svg;
 }
@@ -330,7 +334,7 @@ function pcpPlot(orderType='original') {
     orderBy = [];
 
     // create an SVG element with the specified width and height
-    const svg = getSVG();
+    const svg = getSVG(inPadding=true);
 
     // set dimensions and margins for the plot
     const margin = MARGIN;
@@ -405,6 +409,12 @@ function pcpPlot(orderType='original') {
       .style("fill", "black")
       .style("font-size", "10px")
       .style("font-weight", "bold")
+      .on("mouseover", function() {
+        d3.select(this).text(d => d);
+      })
+      .on("mouseout", function() {
+        updateAxisTitles();
+      })
       .on("click", function(_, d) {
         if (!orderBy.includes(d)) {
           orderBy.push(d);

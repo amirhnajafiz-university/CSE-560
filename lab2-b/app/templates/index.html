@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vislab - Lab 2(b)</title>
+    <link rel="icon" type="image/x-icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Flink_6928929&psig=AOvVaw3IfV4rImSKCDBL9qLnO__g&ust=1742190543876000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjshtjzjYwDFQAAAAAdAAAAABAE" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/plots.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        .custom-select {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-select option {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-select option i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
     <!-- Alert Container -->
@@ -18,35 +35,31 @@
         <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px; position: relative;">
             <!-- Fixed Button -->
             <button class="fixed-btn" onclick="togglePopup(true)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                    <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0"/>
-                </svg>
+                <i class="fa-solid fa-list-ul" style="font-size: 20px;"></i>  
             </button>
             <button class="fixed-btn-reload" onclick="window.location.reload()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-                </svg>
+                <i class="fa-solid fa-rotate-right" style="font-size: 20px;"></i>
             </button>
 
             <!-- Title -->
-            <h2 class="text-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-back" viewBox="0 0 16 16">
-                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
-                </svg>
-                Multidimensional Visualization
+            <h2 class="text-center mb-4 in-row-center">
+                <i class="fa-solid fa-cubes"></i> 
+                <span class="ml-2">
+                    Multidimensional Visualization
+                </span>
             </h2>
 
             <!-- Description -->
             <p style="text-align: justify;">
                 Hello, and welcome to the Laptop Prices Dataset Analysis. The purpose of this lab is to explore and visualize complex multidimensional data in a meaningful way.
-                You can select the type of plot you want to generate from the list below. Also, you can customize the plot by changing the line color, plot color, and tickness.
+                You can select the type of plot you want to generate from the list below.
+                Also, you can customize the plot by changing the line color, plot color, and tickness.
                 Read more about the dataset by clicking the info button on the top right corner.
             </p>
 
             <!-- Select -->
             <div class="d-flex justify-content-center my-5">
-                <select id="plot-type" class="form-control form-control-sm w-25 rounded">
+                <select id="plot-type" class="form-control form-control-sm w-50 rounded custom-select">
                     <option value="data-mds">Data MDS Plot</option>
                     <option value="variables-mds">Variables MDS Plot</option>
                     <option value="pcp">Parallel Coordinates Plot</option>
@@ -55,23 +68,23 @@
 
             <!-- SVGs for Charts -->
             <div id="pcp-setting" class="d-flex justify-content-center" style="display: none;">
-                <button class="btn btn-sm bg-purple pcp-settings mx-1" onclick="pcpPlot()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bounding-box-circles" viewBox="0 0 16 16">
-                        <path d="M2 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2M0 2a2 2 0 0 1 3.937-.5h8.126A2 2 0 1 1 14.5 3.937v8.126a2 2 0 1 1-2.437 2.437H3.937A2 2 0 1 1 1.5 12.063V3.937A2 2 0 0 1 0 2m2.5 1.937v8.126c.703.18 1.256.734 1.437 1.437h8.126a2 2 0 0 1 1.437-1.437V3.937A2 2 0 0 1 12.063 2.5H3.937A2 2 0 0 1 2.5 3.937M14 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2M2 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
-                    </svg>
-                    Original Ordering
+                <button class="btn btn-sm bg-purple pcp-settings mx-1 in-row-center" onclick="pcpPlot()">
+                    <i class="fa-solid fa-align-left"></i>
+                    <span class="ml-2">
+                        Original Ordering
+                    </span>
                 </button>
-                <button class="btn btn-sm bg-purple pcp-settings mx-1" onclick="pcpPlot(orderType='correlations')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10M.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8"/>
-                    </svg>
-                    Correlations Ordering
+                <button class="btn btn-sm bg-purple pcp-settings mx-1 in-row-center" onclick="pcpPlot(orderType='correlations')">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="ml-2">
+                        Correlations Ordering
+                    </span>
                 </button>
-                <button class="btn btn-sm bg-purple pcp-settings mx-1" onclick="pcpPlot(orderType='customize')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
-                        <path d="M6 1v3H1V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm14 12v3h-5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM6 8v7H1V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm14-6v7h-5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/>
-                    </svg>
-                    Customize Ordering
+                <button class="btn btn-sm bg-purple pcp-settings mx-1 in-row-center" onclick="pcpPlot(orderType='customize')">
+                    <i class="fa-solid fa-sort"></i>
+                    <span class="ml-2">
+                        Customize Ordering
+                    </span>
                 </button>
             </div>
             <div class="d-flex justify-content-center mb-4 mt-4 pt-4">
@@ -110,8 +123,12 @@
 
     <!-- Popup -->
     <div class="popup" id="popup">
-        <button class="btn btn-danger shadow close-btn" onclick="togglePopup(false)">X</button>
-        <h2>About</h2>
+        <button class="btn btn-danger shadow close-btn" onclick="togglePopup(false)">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>
+            <i class="fa-solid fa-info-circle"></i> About
+        </h2>
         <p style="text-align: justify;">
             This dataset is a refined version of the well-known Laptop Price dataset, designed to offer a comprehensive collection of information on various laptops, facilitating detailed analysis of their specifications and pricing. It consists of 23 columns containing both numerical and categorical values.  
             The original dataset was highly compact, with extensive details embedded within each column. While this format was human-readable and concise, it was not optimal for Machine Learning algorithms, which perform better when distinct attributes are stored in separate columns. To enhance efficiency, the dataset was restructured by extracting individual details into separate fields. As a result, 28 duplicate rows were identified and removed, leading to the finalized version presented here.
@@ -151,6 +168,7 @@
     <div class="faded" id="fade"></div>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/handlers.js') }}"></script>
