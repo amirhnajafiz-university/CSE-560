@@ -256,23 +256,22 @@ function variablesDMSPlot() {
       .attr("cx", d => x(d.MDS1))
       .attr("cy", d => y(d.MDS2))
       .attr("r", 10)
-      .attr("fill", d => color(d.variable))
-      .on("mouseover", function(_, d) {
-        d3.select(this).attr("r", 12); // increase the radius of the circle on hover
-        svg.append("text")
-          .attr("id", "tooltip")
-          .attr("x", x(d.MDS1))
-          .attr("y", y(d.MDS2) - 20) // position the text slightly above the circle
-          .attr("text-anchor", "middle")
-          .attr("font-size", "14px")
-          .attr("font-weight", "bold")
-          .attr("fill", "black")
-          .text(`${d.variable}: (${d.MDS1.toFixed(2)}, ${d.MDS2.toFixed(2)})`);
-      })
-      .on("mouseout", function() {
-        d3.select(this).attr("r", 10); // reset the radius of the circle
-        d3.select("#tooltip").remove(); // remove the tooltip text
-      });
+      .attr("fill", d => color(d.variable));
+
+    // append text elements separately
+    const labels = svg.append("g")
+      .attr("clip-path", "url(#clip)")
+      .selectAll("text")
+      .data(data)
+      .enter()
+      .append("text")
+      .attr("x", d => x(d.MDS1))
+      .attr("y", d => y(d.MDS2) - 20)
+      .attr("text-anchor", "middle")
+      .attr("font-size", "14px")
+      .attr("font-weight", "bold")
+      .attr("fill", "black")
+      .text(d => `${d.variable}: (${d.MDS1.toFixed(2)}, ${d.MDS2.toFixed(2)})`);
 
     // zoom function
     function zoomed(event) {
@@ -286,6 +285,10 @@ function variablesDMSPlot() {
       circles
         .attr("cx", d => newX(d.MDS1))
         .attr("cy", d => newY(d.MDS2));
+
+      labels
+        .attr("x", d => newX(d.MDS1))
+        .attr("y", d => newY(d.MDS2) - 20);
 
       d3.selectAll("#tooltip")
         .attr("x", d => newX(d.MDS1))
@@ -303,7 +306,8 @@ function variablesDMSPlot() {
     // explicitly call the axis rendering functions to ensure they are displayed initially
     gX.call(d3.axisBottom(x));
     gY.call(d3.axisLeft(y));
-  }).catch(_ => {
+  }).catch(e => {
+    console.error(e);
     showAlert("Failed to draw variables MDS plot.", "danger");
   });
 }
@@ -340,9 +344,15 @@ function pcpPlot(orderType='original') {
     const dimensions = columns.filter(d => d !== "cluster");
     const y = {};
     for (const dim of dimensions) {
-      y[dim] = d3.scaleLinear()
-        .domain(d3.extent(data, d => +d[dim]))
-        .range([height, 0]);
+      if (typeof data[0][dim] === 'number') {
+        y[dim] = d3.scaleLinear()
+          .domain(d3.extent(data, d => +d[dim]))
+          .range([height, 0]);
+      } else {
+        y[dim] = d3.scalePoint()
+          .domain(data.map(d => d[dim]).filter((v, i, a) => a.indexOf(v) === i))
+          .range([height, 0]);
+      }
     }
 
     // create an x scale for the dimensions
@@ -358,43 +368,52 @@ function pcpPlot(orderType='original') {
       .data(data)
       .enter().append("path")
       .attr("d", d => {
-        return d3.line()(dimensions.map(p => [x(p), y[p](d[p])]));
+        return d3.line()(dimensions.map(p => {
+          if (y[p] && d !== undefined && d[p] !== undefined) {
+            return [x(p), y[p](d[p])];
+          }
+          return [x(p), null];
+        }));
       })
       .style("fill", "none")
       .style("stroke", d => color(d.cluster))
       .style("opacity", 0.5);
 
     // add an axis and title for each dimension
-    svg.append("g")
+    const g = svg.append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`)
-      .selectAll("g")
+      .selectAll(".dimension")
       .data(dimensions)
       .enter().append("g")
+      .attr("class", "dimension")
       .attr("transform", d => `translate(${x(d)})`)
-      .each(function(d) {
-        d3.select(this).call(d3.axisLeft(y[d]));
-      })
-      .append("text")
+
+    // add an axis and title for each dimension
+    g.each(function(d) {
+      d3.select(this).call(d3.axisLeft(y[d]));
+    })
+    .append("text")
       .style("text-anchor", "middle")
       .style("cursor", "pointer")
-      .attr("y", (_, i) => i % 2 === 0 ? -30 : height + 10)
+      .attr("y", (_, i) => i % 2 === 0 ? -20 : height + 20)
+      .text(d => d.length > 10 ? d.slice(0, 10) + '..' : d)
+      .style("fill", "black")
       .on("click", function(_, d) {
         if (!orderBy.includes(d)) {
           orderBy.push(d);
+        } else {
+          orderBy = orderBy.filter(item => item !== d);
         }
-      })
-      .selectAll("text")
-      .data(d => d.split('').reduce((acc, word, i) => {
-        if (i % 32 === 0) acc.push([]);
-        acc[acc.length - 1].push(word);
-        return acc;
-      }, []).map(words => words.join('')))
-      .enter()
-      .append("tspan")
-      .attr("x", 0)
-      .attr("dy", "1.2em")
-      .text(d => d)
-      .style("fill", "black");
+
+        d3.selectAll(".dimension text")
+          .text(d => {
+            let placeholder = d.length > 10 ? d.slice(0, 10) + '..' : d;
+            return orderBy.includes(d) ? `${placeholder} (${orderBy.indexOf(d) + 1})` : placeholder; 
+          })
+          .style("fill", function(dim) {
+            return orderBy.includes(dim) ? "red" : "black";
+          });
+      });
   }).catch(_ => {
     showAlert("Failed to draw parallel coordinates plot.", "danger");
   });

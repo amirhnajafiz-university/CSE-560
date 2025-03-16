@@ -17,11 +17,12 @@ def get_data():
         if df[col].nunique() == 2:
             df = df.drop(col, axis=1)
 
-    # convert non-numeric data columns to categorical data
-    for col in df.columns:
-        if df[col].dtype == 'object' or df[col].dtype.name == 'category':
-            df[col] = df[col].astype('category')
-            df[col] = df[col].cat.codes
+    # drop company and product columns
+    df = df.drop(['Company', 'Product'], axis=1)
+
+    # set 5 letter limit for all string columns
+    for col in df.select_dtypes(include='object').columns:
+        df[col] = df[col].str[:5]
 
     # return the sampled dataset as a JSON response
     return jsonify(df.to_dict(orient='records')), 200
@@ -44,6 +45,9 @@ def get_data_columns():
     for col in df.columns:
         if df[col].nunique() == 2:
             df = df.drop(col, axis=1)
+    
+    # drop company and product columns
+    df = df.drop(['Company', 'Product'], axis=1)
 
     # order the columns based on the order_type
     if order_type == 'correlations':
