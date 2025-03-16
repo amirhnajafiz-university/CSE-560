@@ -17,12 +17,12 @@ function getSVG() {
 
   // add a clip path to prevent data points from overflowing the plot area
   svg.append("defs").append("clipPath")
-      .attr("id", "clip")
-      .append("rect")
-      .attr("x", MARGIN.left)
-      .attr("y", MARGIN.top)
-      .attr("width", WIDTH - MARGIN.left - MARGIN.right)
-      .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom);
+    .attr("id", "clip")
+    .append("rect")
+    .attr("x", MARGIN.left)
+    .attr("y", MARGIN.top)
+    .attr("width", WIDTH - MARGIN.left - MARGIN.right)
+    .attr("height", HEIGHT - MARGIN.top - MARGIN.bottom);
 
   // add a background rectangle to the SVG element
   svg.append("rect")
@@ -429,9 +429,8 @@ var plots = {
 // plot function that takes a name and calls a plot function based on the name
 function plot(name) {
   document.getElementById('pcp-setting').style.display = name === 'pcp' ? 'block' : 'none';
-  document.querySelectorAll('.pcp-settings').forEach(el => {
-    el.style.display = name === 'pcp' ? 'block' : 'none';
-  });
+  document.querySelectorAll('.pcp-settings').forEach(el => el.style.display = name === 'pcp' ? 'block' : 'none');
+
   plots[name]();
 }
 
