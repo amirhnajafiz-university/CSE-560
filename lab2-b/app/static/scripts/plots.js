@@ -314,10 +314,11 @@ var orderBy = [];
 // parallel coordinates plot function
 function pcpPlot(orderType='original') {
   Promise.all([
-    d3.json(`/api/data?order_type=${orderType}&order_by=${orderBy}`),
-  ]).then(([data]) => {
+    d3.json("/api/data"),
+    d3.json(`/api/data/columns?order_type=${orderType}&order_by=${orderBy}`),
+  ]).then(([data, columns]) => {
     // check if data is returned
-    if (!data) {
+    if (!data || !columns) {
       throw new Error("No data returned from API.");
     }
 
@@ -336,7 +337,7 @@ function pcpPlot(orderType='original') {
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     // extract the list of dimensions and create a scale for each
-    const dimensions = Object.keys(data[0]).filter(d => d !== "cluster");
+    const dimensions = columns.filter(d => d !== "cluster");
     const y = {};
     for (const dim of dimensions) {
       y[dim] = d3.scaleLinear()

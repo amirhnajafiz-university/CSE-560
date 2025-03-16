@@ -35,10 +35,15 @@ def get_data_columns():
 
     # read two query parameters (order_type (correlations, original, customize), order_by (array of columns))
     order_type = request.args.get('order_type', 'original')
-    order_by = request.args.get('order_by').split(',')
+    order_by = request.args.get('order_by').split(',') if request.args.get('order_by') else []
 
     # load sampled dataset
     df = pd.read_csv(config.CLUSTER_DATA)
+
+    # drop columns with only yes or no values
+    for col in df.columns:
+        if df[col].nunique() == 2:
+            df = df.drop(col, axis=1)
 
     # order the columns based on the order_type
     if order_type == 'correlations':
