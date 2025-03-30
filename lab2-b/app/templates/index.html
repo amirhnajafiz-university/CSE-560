@@ -79,6 +79,10 @@
             <!-- Options -->
             <div class="options options-small shadow">
                 <div>
+                    <input type="checkbox" id="pcpa" class="mr-2" />
+                    <label for="pcpa">Aggregation</label>
+                </div>
+                <div>
                     <input type="checkbox" id="toggle-titles" class="mr-2" checked />
                     <label for="toggle-titles">Titles</label>
                 </div>
@@ -91,15 +95,15 @@
                     <label for="toggle-labels">Labels</label>
                 </div>
                 <div>
-                    <input type="number" id="tickness" class="mr-2" min="1" max="4" value="2" style="width: 30px;" />
+                    <input type="number" id="tickness" class="mr-2" min="1" max="4" value="2" style="width: 30px;" disabled />
                     <label for="toggle-grids">Tickness</label>
                 </div>
                 <div>
-                    <input type="color" id="line-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" />
+                    <input type="color" id="line-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" disabled />
                     <label for="line-color-picker">Line Color</label>
                 </div>
                 <div>
-                    <input type="color" id="plot-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" />
+                    <input type="color" id="plot-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" disabled />
                     <label for="plot-color-picker">Plot Color</label>
                 </div>
             </div>

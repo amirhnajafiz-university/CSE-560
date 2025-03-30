@@ -379,9 +379,45 @@ function pcpPlot(orderType='original') {
           return [x(p), null];
         }));
       })
+      .attr("class", "path-line")
       .style("fill", "none")
       .style("stroke", d => color(d.cluster))
       .style("opacity", 0.1);
+
+    // calculate mean values for each cluster
+    const clusterMeans = d3.groups(data, d => d.cluster).map(([cluster, values]) => {
+      const meanValues = {};
+      dimensions.forEach(dim => {
+        if (typeof values[0][dim] === 'number') {
+          meanValues[dim] = d3.mean(values, d => d[dim]);
+        } else {
+          const modeValue = d3.rollup(values, v => v.length, d => d[dim]);
+          meanValues[dim] = Array.from(modeValue.entries()).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+        }
+      });
+      return { cluster, meanValues };
+    });
+
+    // add mean cluster lines
+    svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .selectAll(".mean-line")
+      .data(clusterMeans)
+      .enter().append("path")
+      .attr("class", "path-mean-line")
+      .attr("d", d => {
+        return d3.line()(dimensions.map(p => {
+          if (y[p] && d.meanValues[p] !== undefined) {
+            return [x(p), y[p](d.meanValues[p])];
+          }
+          return [x(p), null];
+        }));
+      })
+      .style("fill", "none")
+      .style("visibility", "hidden")
+      .style("stroke", d => color(d.cluster))
+      .style("stroke-width", 10)
+      .style("opacity", 0.6);
 
     // add an axis and title for each dimension
     const g = svg.append("g")
@@ -390,7 +426,7 @@ function pcpPlot(orderType='original') {
       .data(dimensions)
       .enter().append("g")
       .attr("class", "dimension")
-      .attr("transform", d => `translate(${x(d)})`)
+      .attr("transform", d => `translate(${x(d)})`);
 
     // add an axis and title for each dimension
     g.each(function(d) {
