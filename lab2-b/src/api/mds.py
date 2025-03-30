@@ -19,7 +19,7 @@ def create_data_mds():
     scaler = StandardScaler()
     df_scaled = scaler.fit_transform(df)
 
-    # computer MDS
+    # compute MDS
     mds = MDS(n_components=2, dissimilarity='euclidean', random_state=42)
     mds_transformed = mds.fit_transform(df_scaled)
 
