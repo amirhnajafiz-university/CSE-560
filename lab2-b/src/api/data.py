@@ -1,6 +1,42 @@
 from src import config
 
 
+def create_dataset():
+    """
+    Create a sampled dataset from the original dataset.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # load the original dataset
+    df = pd.read_csv(config.RAW_DATA)
+
+    # remove rows with missing values
+    df = df.dropna()
+
+    # normalize the numeric columns to a range of 0-1 for consistency
+    numeric_cols = df.select_dtypes(include='number').columns
+    df[numeric_cols] = (df[numeric_cols] - df[numeric_cols].min()) / (df[numeric_cols].max() - df[numeric_cols].min())
+
+    # remove duplicate rows to ensure uniqueness
+    df = df.drop_duplicates()
+
+    # remove outliers in numeric columns using the IQR method
+    for col in numeric_cols:
+        Q1 = df[col].quantile(0.25)
+        Q3 = df[col].quantile(0.75)
+        IQR = Q3 - Q1
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+        # filter out the outliers
+        df = df[(df[col] >= lower_bound) & (df[col] <= upper_bound)]
+    
+
+    # save the sampled dataset to a CSV file
+    df.to_csv(config.ORIGINAL_DATASET, index=False)
+
+    return jsonify({'message': 'dataset created'}), 200
+
 
 def get_data():
     """

@@ -1,3 +1,4 @@
+RAW_DATA="./data/org_laptop_prices.csv"
 ORIGINAL_DATASET="./data/laptop_prices.csv"
 SAMPLED_DATASET="./data/dataset.csv"
 CLUSTER_DATA="./data/cluster_data.csv"

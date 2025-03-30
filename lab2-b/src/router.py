@@ -16,6 +16,9 @@ def configure_routes(app: Flask):
     # define a route that returns the sampled dataset
     app.add_url_rule('/api/data', 'data', data.get_data, methods=['GET'])
 
+    # define a route for creating the dataset
+    app.add_url_rule('/api/data', 'create_data', data.create_dataset, methods=['POST'])
+
     # define a route that returns the columns of the dataset
     app.add_url_rule('/api/data/columns', 'data_columns', data.get_data_columns, methods=['GET'])
 
@@ -23,7 +26,7 @@ def configure_routes(app: Flask):
     app.add_url_rule('/api/data/cluster_means', 'cluster_means', data.get_cluster_means, methods=['GET'])
 
     # define a route that performs clustering on the data
-    app.add_url_rule('/api/data', 'cluster_data', data.create_cluster_data, methods=['POST'])
+    app.add_url_rule('/api/data/cluster', 'cluster_data', data.create_cluster_data, methods=['POST'])
 
     # define a route that performs MDS on the data
     app.add_url_rule('/api/data/mds', 'data_mds', mds.create_data_mds, methods=['POST'])
