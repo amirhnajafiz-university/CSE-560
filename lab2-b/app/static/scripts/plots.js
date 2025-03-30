@@ -1,5 +1,5 @@
 // global variables
-const WIDTH = 1000;
+const WIDTH = 1200;
 const HEIGHT = 600;
 const MARGIN = { top: 40, right: 20, bottom: 40, left: 50 };
 const SVGID = "#plot";
