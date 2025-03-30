@@ -1,6 +1,42 @@
 from src import config
 
 
+def create_dataset():
+    """
+    Create a sampled dataset from the original dataset.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # load the original dataset
+    df = pd.read_csv(config.RAW_DATA)
+
+    # remove rows with missing values
+    df = df.dropna()
+
+    # normalize the numeric columns to a range of 0-1 for consistency
+    numeric_cols = df.select_dtypes(include='number').columns
+    df[numeric_cols] = (df[numeric_cols] - df[numeric_cols].min()) / (df[numeric_cols].max() - df[numeric_cols].min())
+
+    # remove duplicate rows to ensure uniqueness
+    df = df.drop_duplicates()
+
+    # remove outliers in numeric columns using the IQR method
+    for col in numeric_cols:
+        Q1 = df[col].quantile(0.25)
+        Q3 = df[col].quantile(0.75)
+        IQR = Q3 - Q1
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+        # filter out the outliers
+        df = df[(df[col] >= lower_bound) & (df[col] <= upper_bound)]
+    
+
+    # save the sampled dataset to a CSV file
+    df.to_csv(config.ORIGINAL_DATASET, index=False)
+
+    return jsonify({'message': 'dataset created'}), 200
+
 
 def get_data():
     """
@@ -59,6 +95,37 @@ def get_data_columns():
     columns = list(df.columns)
 
     return jsonify(columns), 200
+
+def get_cluster_means():
+    """
+    Get the means of each cluster, including frequency means for object columns.
+    """
+    from flask import jsonify
+    import pandas as pd
+
+    # load the cluster data
+    df = pd.read_csv(config.CLUSTER_DATA)
+
+    # separate numeric and object columns
+    numeric_cols = df.select_dtypes(include='number').columns
+    object_cols = df.select_dtypes(include='object').columns
+
+    # drop cluster column from numeric columns to avoid it being included in the mean calculation
+    numeric_cols = numeric_cols.drop('cluster', errors='ignore')
+
+    # calculate the means for numeric columns
+    cluster_means_numeric = df.groupby('cluster')[numeric_cols].mean()
+
+    # calculate the frequency mean (mode) for object columns
+    cluster_modes_object = df.groupby('cluster')[object_cols].agg(lambda x: x.mode().iloc[0] if not x.mode().empty else None)
+
+    # combine numeric means and object modes
+    cluster_means = pd.concat([cluster_means_numeric, cluster_modes_object], axis=1).reset_index()
+
+    # convert to dictionary format for JSON response
+    cluster_means_dict = cluster_means.to_dict(orient='records')
+
+    return jsonify(cluster_means_dict), 200
 
 def create_cluster_data():
     """

@@ -26,6 +26,11 @@ document.getElementById('toggle-labels').addEventListener('change', function() {
   document.querySelectorAll('.axis-label').forEach(label => label.style.visibility = this.checked ? 'visible' : 'hidden');
 });
 
+document.getElementById('pcpa').addEventListener('change', function() {
+  document.querySelectorAll('.path-mean-line').forEach(line => line.style.visibility = this.checked ? 'visible' : 'hidden');
+  document.querySelectorAll('.path-line').forEach(line => line.style.visibility = this.checked ? 'hidden' : 'visible');
+});
+
 // get class line and set color to the value of the color picker
 document.getElementById('line-color-picker').addEventListener('input', function() {
   document.querySelectorAll('.line').forEach(line => line.style.stroke = this.value);
@@ -33,5 +38,4 @@ document.getElementById('line-color-picker').addEventListener('input', function(
 });
 
 // get class plot and set color to the value of the color picker
-document.getElementById('plot-color-picker').addEventListener('input', function() {
-});
+document.getElementById('plot-color-picker').addEventListener('input', function() {});

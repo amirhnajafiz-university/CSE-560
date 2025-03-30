@@ -9,30 +9,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/plots.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <style>
-        .custom-select {
-            display: flex;
-            align-items: center;
-        }
-
-        .custom-select option {
-            display: flex;
-            align-items: center;
-        }
-
-        .custom-select option i {
-            margin-right: 8px;
-        }
-    </style>
 </head>
 <body>
     <!-- Alert Container -->
     <div id="alert-container"></div>
 
     <!-- Main Content -->
-    <div class="container mt-4" style="min-height: 650px;">
+    <div class="mt-4" style="min-height: 650px;">
         <!-- Holders -->
-        <div class="my-5 bg-light p-3 rounded shadow" style="min-height: 300px; position: relative;">
+        <div class="p-3" style="min-height: 300px; position: relative;">
             <!-- Fixed Button -->
             <button class="fixed-btn" onclick="togglePopup(true)">
                 <i class="fa-solid fa-list-ul" style="font-size: 20px;"></i>  
@@ -50,7 +35,7 @@
             </h2>
 
             <!-- Description -->
-            <p style="text-align: justify;">
+            <p style="text-align: justify;" class="p-3">
                 Hello, and welcome to the Laptop Prices Dataset Analysis. The purpose of this lab is to explore and visualize complex multidimensional data in a meaningful way.
                 You can select the type of plot you want to generate from the list below.
                 Also, you can customize the plot by changing the line color, plot color, and tickness.
@@ -94,6 +79,10 @@
             <!-- Options -->
             <div class="options options-small shadow">
                 <div>
+                    <input type="checkbox" id="pcpa" class="mr-2" />
+                    <label for="pcpa">Aggregation</label>
+                </div>
+                <div>
                     <input type="checkbox" id="toggle-titles" class="mr-2" checked />
                     <label for="toggle-titles">Titles</label>
                 </div>
@@ -106,15 +95,15 @@
                     <label for="toggle-labels">Labels</label>
                 </div>
                 <div>
-                    <input type="number" id="tickness" class="mr-2" min="1" max="4" value="2" style="width: 30px;" />
+                    <input type="number" id="tickness" class="mr-2" min="1" max="4" value="2" style="width: 30px;" disabled />
                     <label for="toggle-grids">Tickness</label>
                 </div>
                 <div>
-                    <input type="color" id="line-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" />
+                    <input type="color" id="line-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" disabled />
                     <label for="line-color-picker">Line Color</label>
                 </div>
                 <div>
-                    <input type="color" id="plot-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" />
+                    <input type="color" id="plot-color-picker" class="mr-2" style="width: 30px;" value="#1e00ff" disabled />
                     <label for="plot-color-picker">Plot Color</label>
                 </div>
             </div>
