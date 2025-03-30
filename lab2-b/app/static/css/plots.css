@@ -6,3 +6,17 @@
     background-color: var(--primary-color) !important;
     color: var(--white-text-color) !important;
 }
+
+.custom-select {
+    display: flex;
+    align-items: center;
+}
+
+.custom-select option {
+    display: flex;
+    align-items: center;
+}
+
+.custom-select option i {
+    margin-right: 8px;
+}

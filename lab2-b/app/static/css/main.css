@@ -19,7 +19,6 @@
 body {
     font-family: 'Open Sans' !important;
     font-size: 14px !important;
-    background-image: linear-gradient(to bottom right, var(--secondary-color), var(--primary-color));
 }
 
 /* Centering */
