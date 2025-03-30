@@ -19,6 +19,9 @@ def configure_routes(app: Flask):
     # define a route that returns the columns of the dataset
     app.add_url_rule('/api/data/columns', 'data_columns', data.get_data_columns, methods=['GET'])
 
+    # define a route that returns the means of each cluster
+    app.add_url_rule('/api/data/cluster_means', 'cluster_means', data.get_cluster_means, methods=['GET'])
+
     # define a route that performs clustering on the data
     app.add_url_rule('/api/data', 'cluster_data', data.create_cluster_data, methods=['POST'])
 
